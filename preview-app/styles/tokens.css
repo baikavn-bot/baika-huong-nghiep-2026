@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light;
+
+  /* Primitive colors — Figma collection Primitives.
+     Component code SHOULD use semantic tokens below; primitives are kept for full token parity/auditing. */
+  --hn-primitive-blue-50: #eef4ff;
+  --hn-primitive-blue-100: #dce8ff;
+  --hn-primitive-blue-200: #b9d0ff;
+  --hn-primitive-blue-300: #8ab0ff;
+  --hn-primitive-blue-400: #4f86fc;
+  --hn-primitive-blue-500: #0159f9;
+  --hn-primitive-blue-600: #004bd6;
+  --hn-primitive-blue-700: #003dad;
+  --hn-primitive-blue-800: #0b2f7a;
+  --hn-primitive-blue-900: #0e2350;
+  --hn-primitive-blue-950: #111d38;
+  --hn-primitive-orange-50: #fff4ea;
+  --hn-primitive-orange-100: #ffe6d1;
+  --hn-primitive-orange-200: #ffcba3;
+  --hn-primitive-orange-300: #ffaa6b;
+  --hn-primitive-orange-400: #fe852c;
+  --hn-primitive-orange-500: #f06c0e;
+  --hn-primitive-orange-600: #c95508;
+  --hn-primitive-orange-700: #9a4007;
+  --hn-primitive-orange-950: #2a1c12;
+  --hn-primitive-ink-50: #eef1f5;
+  --hn-primitive-ink-100: #f1f1ef;
+  --hn-primitive-ink-200: #e4e6e9;
+  --hn-primitive-ink-300: #ccd1d7;
+  --hn-primitive-ink-400: #a3aab3;
+  --hn-primitive-ink-500: #7d8590;
+  --hn-primitive-ink-600: #626a75;
+  --hn-primitive-ink-700: #4a515b;
+  --hn-primitive-ink-800: #343a42;
+  --hn-primitive-ink-900: #23282e;
+  --hn-primitive-paper-50: #fffdf9;
+  --hn-primitive-paper-100: #fbf8f2;
+  --hn-primitive-paper-200: #f4efe6;
+  --hn-primitive-paper-300: #eae3d6;
+  --hn-primitive-mint-50: #e7f6ee;
+  --hn-primitive-mint-300: #5fd39c;
+  --hn-primitive-mint-500: #1e9e6a;
+  --hn-primitive-mint-700: #12714b;
+  --hn-primitive-mint-900: #12301f;
+  --hn-primitive-red-50: #fdecea;
+  --hn-primitive-red-300: #f2877c;
+  --hn-primitive-red-500: #d93a2b;
+  --hn-primitive-red-700: #a32418;
+  --hn-primitive-red-900: #3a1a17;
+  --hn-primitive-sun-200: #ffe7a3;
+  --hn-primitive-white: #ffffff;
+  --hn-primitive-night-950: #0a0e17;
+  --hn-primitive-night-900: #0f1420;
+  --hn-primitive-night-800: #171d2b;
+  --hn-primitive-night-700: #222a3b;
+  --hn-primitive-night-600: #2e374b;
+
+  /* Semantic color tokens — Figma 03 · Foundations / Color / Light */
+  --hn-bg-canvas: #fbf8f2;
+  --hn-bg-surface: #ffffff;
+  --hn-bg-sunken: #f4efe6;
+  --hn-bg-sky: #eef4ff;
+  --hn-bg-peach: #fff4ea;
+  --hn-bg-inverse: #23282e;
+
+  --hn-text-primary: #23282e;
+  --hn-text-secondary: #4a515b;
+  --hn-text-muted: #626a75;
+  --hn-text-on-brand: #ffffff;
+  --hn-text-inverse: #ffffff;
+  --hn-text-link: #004bd6;
+
+  --hn-brand-primary: #0159f9;
+  --hn-brand-primary-hover: #004bd6;
+  --hn-brand-primary-soft: #dce8ff;
+  --hn-brand-spark: #fe852c;
+  --hn-brand-spark-text: #9a4007;
+
+  --hn-border-default: #e4e6e9;
+  --hn-border-strong: #a3aab3;
+
+  --hn-status-open-bg: #e7f6ee;
+  --hn-status-open-fg: #12714b;
+  --hn-status-soon-bg: #fdecea;
+  --hn-status-soon-fg: #a32418;
+  --hn-status-closed-bg: #f1f1ef;
+  --hn-status-closed-fg: #626a75;
+
+  --hn-focus-ring: #4f86fc;
+  --hn-highlight-marker: #ffe7a3;
+
+  /* Spacing */
+  --hn-space-4: 4px;
+  --hn-space-8: 8px;
+  --hn-space-12: 12px;
+  --hn-space-16: 16px;
+  --hn-space-20: 20px;
+  --hn-space-24: 24px;
+  --hn-space-32: 32px;
+  --hn-space-40: 40px;
+  --hn-space-48: 48px;
+  --hn-space-64: 64px;
+  --hn-space-80: 80px;
+  --hn-space-96: 96px;
+  --hn-space-128: 128px;
+
+  /* Radius */
+  --hn-radius-sm: 8px;
+  --hn-radius-md: 14px;
+  --hn-radius-lg: 20px;
+  --hn-radius-xl: 28px;
+  --hn-radius-full: 999px;
+
+  /* Motion */
+  --hn-motion-duration-fast: 120ms;
+  --hn-motion-duration-base: 200ms;
+  --hn-motion-duration-slow: 320ms;
+  --hn-motion-duration-door: 480ms;
+  --hn-motion-stagger-card: 40ms;
+  --hn-motion-stagger-bar: 60ms;
+  --hn-motion-distance-rise: 24px;
+
+  /* Effects */
+  --hn-shadow-soft: 0 2px 6px rgba(35, 40, 46, .06), 0 14px 32px -12px rgba(35, 40, 46, .12);
+  --hn-shadow-lift: 0 20px 40px -16px rgba(1, 89, 249, .22);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --hn-bg-canvas: #0f1420;
+  --hn-bg-surface: #171d2b;
+  --hn-bg-sunken: #0a0e17;
+  --hn-bg-sky: #111d38;
+  --hn-bg-peach: #2a1c12;
+  --hn-bg-inverse: #eef1f5;
+  --hn-text-primary: #eef1f5;
+  --hn-text-secondary: #ccd1d7;
+  --hn-text-muted: #a3aab3;
+  --hn-text-on-brand: #ffffff;
+  --hn-text-inverse: #23282e;
+  --hn-text-link: #8ab0ff;
+  --hn-brand-primary: #4f86fc;
+  --hn-brand-primary-hover: #8ab0ff;
+  --hn-brand-primary-soft: #0e2350;
+  --hn-brand-spark: #fe852c;
+  --hn-brand-spark-text: #ffaa6b;
+  --hn-border-default: #2e374b;
+  --hn-border-strong: #626a75;
+  --hn-status-open-bg: #12301f;
+  --hn-status-open-fg: #5fd39c;
+  --hn-status-soon-bg: #3a1a17;
+  --hn-status-soon-fg: #f2877c;
+  --hn-status-closed-bg: #222a3b;
+  --hn-status-closed-fg: #a3aab3;
+  --hn-focus-ring: #8ab0ff;
+  --hn-highlight-marker: #2a1c12;
+}

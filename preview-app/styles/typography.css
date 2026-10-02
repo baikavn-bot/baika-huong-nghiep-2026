@@ -1,0 +1,35 @@
+:root {
+  --hn-font-ui: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hn-font-serif: "Fraunces", Georgia, serif;
+  --hn-font-hand: "Patrick Hand", cursive;
+  --hn-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.hn-display-xl { font: 800 76px/1.04 var(--hn-font-ui); letter-spacing: -0.025em; }
+.hn-display-l { font: 800 56px/1.08 var(--hn-font-ui); letter-spacing: -0.02em; }
+.hn-h1 { font: 700 40px/1.15 var(--hn-font-ui); letter-spacing: -0.015em; }
+.hn-h2 { font: 700 32px/1.20 var(--hn-font-ui); letter-spacing: -0.01em; }
+.hn-h3 { font: 700 24px/1.25 var(--hn-font-ui); letter-spacing: -0.005em; }
+.hn-title-l { font: 600 20px/1.35 var(--hn-font-ui); letter-spacing: -0.003em; }
+.hn-title-m { font: 600 17px/1.40 var(--hn-font-ui); }
+.hn-body-l { font: 400 18px/1.60 var(--hn-font-ui); }
+.hn-body-m { font: 400 16px/1.60 var(--hn-font-ui); }
+.hn-body-s { font: 400 14px/1.55 var(--hn-font-ui); }
+.hn-caption { font: 500 12px/1.45 var(--hn-font-ui); letter-spacing: .002em; }
+.hn-eyebrow { font: 600 12px/1.30 var(--hn-font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.hn-button-m { font: 600 16px/1.20 var(--hn-font-ui); }
+.hn-button-s { font: 600 14px/1.20 var(--hn-font-ui); }
+.hn-accent-xl { font: italic 600 76px/1.04 var(--hn-font-serif); letter-spacing: -0.02em; }
+.hn-accent-m { font: italic 400 22px/1.40 var(--hn-font-serif); }
+.hn-note-hand { font: 400 20px/1.25 var(--hn-font-hand); }
+.hn-data { font: 500 14px/1.40 var(--hn-font-mono); }
+.hn-data-bold { font: 700 14px/1.40 var(--hn-font-mono); }
+
+@media (max-width: 1023px) {
+  .hn-display-xl { font-size: 56px; }
+  .hn-h1 { font-size: 32px; }
+}
+@media (max-width: 599px) {
+  .hn-display-xl, .hn-display-l { font-size: 44px; }
+  .hn-h1 { font-size: 28px; }
+}

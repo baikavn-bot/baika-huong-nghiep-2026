@@ -1,0 +1,809 @@
+<!doctype html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Hướng nghiệp, học bổng, du học và nghề nghiệp cho học sinh, sinh viên Việt Nam"><title>Hướng Nghiệp — Trang chủ V1</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Fraunces:ital,wght@1,400;1,600&family=JetBrains+Mono:wght@500;700&family=Patrick+Hand&display=swap"><style>:root {
+  color-scheme: light;
+
+  /* Primitive colors — Figma collection Primitives.
+     Component code SHOULD use semantic tokens below; primitives are kept for full token parity/auditing. */
+  --hn-primitive-blue-50: #eef4ff;
+  --hn-primitive-blue-100: #dce8ff;
+  --hn-primitive-blue-200: #b9d0ff;
+  --hn-primitive-blue-300: #8ab0ff;
+  --hn-primitive-blue-400: #4f86fc;
+  --hn-primitive-blue-500: #0159f9;
+  --hn-primitive-blue-600: #004bd6;
+  --hn-primitive-blue-700: #003dad;
+  --hn-primitive-blue-800: #0b2f7a;
+  --hn-primitive-blue-900: #0e2350;
+  --hn-primitive-blue-950: #111d38;
+  --hn-primitive-orange-50: #fff4ea;
+  --hn-primitive-orange-100: #ffe6d1;
+  --hn-primitive-orange-200: #ffcba3;
+  --hn-primitive-orange-300: #ffaa6b;
+  --hn-primitive-orange-400: #fe852c;
+  --hn-primitive-orange-500: #f06c0e;
+  --hn-primitive-orange-600: #c95508;
+  --hn-primitive-orange-700: #9a4007;
+  --hn-primitive-orange-950: #2a1c12;
+  --hn-primitive-ink-50: #eef1f5;
+  --hn-primitive-ink-100: #f1f1ef;
+  --hn-primitive-ink-200: #e4e6e9;
+  --hn-primitive-ink-300: #ccd1d7;
+  --hn-primitive-ink-400: #a3aab3;
+  --hn-primitive-ink-500: #7d8590;
+  --hn-primitive-ink-600: #626a75;
+  --hn-primitive-ink-700: #4a515b;
+  --hn-primitive-ink-800: #343a42;
+  --hn-primitive-ink-900: #23282e;
+  --hn-primitive-paper-50: #fffdf9;
+  --hn-primitive-paper-100: #fbf8f2;
+  --hn-primitive-paper-200: #f4efe6;
+  --hn-primitive-paper-300: #eae3d6;
+  --hn-primitive-mint-50: #e7f6ee;
+  --hn-primitive-mint-300: #5fd39c;
+  --hn-primitive-mint-500: #1e9e6a;
+  --hn-primitive-mint-700: #12714b;
+  --hn-primitive-mint-900: #12301f;
+  --hn-primitive-red-50: #fdecea;
+  --hn-primitive-red-300: #f2877c;
+  --hn-primitive-red-500: #d93a2b;
+  --hn-primitive-red-700: #a32418;
+  --hn-primitive-red-900: #3a1a17;
+  --hn-primitive-sun-200: #ffe7a3;
+  --hn-primitive-white: #ffffff;
+  --hn-primitive-night-950: #0a0e17;
+  --hn-primitive-night-900: #0f1420;
+  --hn-primitive-night-800: #171d2b;
+  --hn-primitive-night-700: #222a3b;
+  --hn-primitive-night-600: #2e374b;
+
+  /* Semantic color tokens — Figma 03 · Foundations / Color / Light */
+  --hn-bg-canvas: #fbf8f2;
+  --hn-bg-surface: #ffffff;
+  --hn-bg-sunken: #f4efe6;
+  --hn-bg-sky: #eef4ff;
+  --hn-bg-peach: #fff4ea;
+  --hn-bg-inverse: #23282e;
+
+  --hn-text-primary: #23282e;
+  --hn-text-secondary: #4a515b;
+  --hn-text-muted: #626a75;
+  --hn-text-on-brand: #ffffff;
+  --hn-text-inverse: #ffffff;
+  --hn-text-link: #004bd6;
+
+  --hn-brand-primary: #0159f9;
+  --hn-brand-primary-hover: #004bd6;
+  --hn-brand-primary-soft: #dce8ff;
+  --hn-brand-spark: #fe852c;
+  --hn-brand-spark-text: #9a4007;
+
+  --hn-border-default: #e4e6e9;
+  --hn-border-strong: #a3aab3;
+
+  --hn-status-open-bg: #e7f6ee;
+  --hn-status-open-fg: #12714b;
+  --hn-status-soon-bg: #fdecea;
+  --hn-status-soon-fg: #a32418;
+  --hn-status-closed-bg: #f1f1ef;
+  --hn-status-closed-fg: #626a75;
+
+  --hn-focus-ring: #4f86fc;
+  --hn-highlight-marker: #ffe7a3;
+
+  /* Spacing */
+  --hn-space-4: 4px;
+  --hn-space-8: 8px;
+  --hn-space-12: 12px;
+  --hn-space-16: 16px;
+  --hn-space-20: 20px;
+  --hn-space-24: 24px;
+  --hn-space-32: 32px;
+  --hn-space-40: 40px;
+  --hn-space-48: 48px;
+  --hn-space-64: 64px;
+  --hn-space-80: 80px;
+  --hn-space-96: 96px;
+  --hn-space-128: 128px;
+
+  /* Radius */
+  --hn-radius-sm: 8px;
+  --hn-radius-md: 14px;
+  --hn-radius-lg: 20px;
+  --hn-radius-xl: 28px;
+  --hn-radius-full: 999px;
+
+  /* Motion */
+  --hn-motion-duration-fast: 120ms;
+  --hn-motion-duration-base: 200ms;
+  --hn-motion-duration-slow: 320ms;
+  --hn-motion-duration-door: 480ms;
+  --hn-motion-stagger-card: 40ms;
+  --hn-motion-stagger-bar: 60ms;
+  --hn-motion-distance-rise: 24px;
+
+  /* Effects */
+  --hn-shadow-soft: 0 2px 6px rgba(35, 40, 46, .06), 0 14px 32px -12px rgba(35, 40, 46, .12);
+  --hn-shadow-lift: 0 20px 40px -16px rgba(1, 89, 249, .22);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --hn-bg-canvas: #0f1420;
+  --hn-bg-surface: #171d2b;
+  --hn-bg-sunken: #0a0e17;
+  --hn-bg-sky: #111d38;
+  --hn-bg-peach: #2a1c12;
+  --hn-bg-inverse: #eef1f5;
+  --hn-text-primary: #eef1f5;
+  --hn-text-secondary: #ccd1d7;
+  --hn-text-muted: #a3aab3;
+  --hn-text-on-brand: #ffffff;
+  --hn-text-inverse: #23282e;
+  --hn-text-link: #8ab0ff;
+  --hn-brand-primary: #4f86fc;
+  --hn-brand-primary-hover: #8ab0ff;
+  --hn-brand-primary-soft: #0e2350;
+  --hn-brand-spark: #fe852c;
+  --hn-brand-spark-text: #ffaa6b;
+  --hn-border-default: #2e374b;
+  --hn-border-strong: #626a75;
+  --hn-status-open-bg: #12301f;
+  --hn-status-open-fg: #5fd39c;
+  --hn-status-soon-bg: #3a1a17;
+  --hn-status-soon-fg: #f2877c;
+  --hn-status-closed-bg: #222a3b;
+  --hn-status-closed-fg: #a3aab3;
+  --hn-focus-ring: #8ab0ff;
+  --hn-highlight-marker: #2a1c12;
+}
+
+:root {
+  --hn-font-ui: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hn-font-serif: "Fraunces", Georgia, serif;
+  --hn-font-hand: "Patrick Hand", cursive;
+  --hn-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.hn-display-xl { font: 800 76px/1.04 var(--hn-font-ui); letter-spacing: -0.025em; }
+.hn-display-l { font: 800 56px/1.08 var(--hn-font-ui); letter-spacing: -0.02em; }
+.hn-h1 { font: 700 40px/1.15 var(--hn-font-ui); letter-spacing: -0.015em; }
+.hn-h2 { font: 700 32px/1.20 var(--hn-font-ui); letter-spacing: -0.01em; }
+.hn-h3 { font: 700 24px/1.25 var(--hn-font-ui); letter-spacing: -0.005em; }
+.hn-title-l { font: 600 20px/1.35 var(--hn-font-ui); letter-spacing: -0.003em; }
+.hn-title-m { font: 600 17px/1.40 var(--hn-font-ui); }
+.hn-body-l { font: 400 18px/1.60 var(--hn-font-ui); }
+.hn-body-m { font: 400 16px/1.60 var(--hn-font-ui); }
+.hn-body-s { font: 400 14px/1.55 var(--hn-font-ui); }
+.hn-caption { font: 500 12px/1.45 var(--hn-font-ui); letter-spacing: .002em; }
+.hn-eyebrow { font: 600 12px/1.30 var(--hn-font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.hn-button-m { font: 600 16px/1.20 var(--hn-font-ui); }
+.hn-button-s { font: 600 14px/1.20 var(--hn-font-ui); }
+.hn-accent-xl { font: italic 600 76px/1.04 var(--hn-font-serif); letter-spacing: -0.02em; }
+.hn-accent-m { font: italic 400 22px/1.40 var(--hn-font-serif); }
+.hn-note-hand { font: 400 20px/1.25 var(--hn-font-hand); }
+.hn-data { font: 500 14px/1.40 var(--hn-font-mono); }
+.hn-data-bold { font: 700 14px/1.40 var(--hn-font-mono); }
+
+@media (max-width: 1023px) {
+  .hn-display-xl { font-size: 56px; }
+  .hn-h1 { font-size: 32px; }
+}
+@media (max-width: 599px) {
+  .hn-display-xl, .hn-display-l { font-size: 44px; }
+  .hn-h1 { font-size: 28px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--hn-bg-canvas);
+  color: var(--hn-text-primary);
+  font-family: var(--hn-font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+button, input, select, textarea { font: inherit; }
+a { color: var(--hn-text-link); }
+img, svg { display: block; max-width: 100%; }
+
+:focus-visible {
+  outline: 3px solid var(--hn-focus-ring);
+  outline-offset: 2px;
+}
+
+.hn-container {
+  width: min(1200px, calc(100% - 240px));
+  margin-inline: auto;
+}
+.hn-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; }
+
+.hn-section { padding-block: var(--hn-space-96); }
+.hn-section--canvas { background: var(--hn-bg-canvas); }
+.hn-section--sunken { background: var(--hn-bg-sunken); }
+.hn-section--sky { background: var(--hn-bg-sky); }
+.hn-section--surface { background: var(--hn-bg-surface); }
+
+.hn-marker { position: relative; z-index: 0; display: inline-block; }
+.hn-marker::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -1%; right: -1%; bottom: .02em;
+  height: .40em;
+  background: var(--hn-highlight-marker);
+  transform: rotate(-1deg);
+}
+.hn-stamp {
+  display: inline-flex; align-items: center;
+  padding: 3px 8px;
+  border: 1.2px dashed var(--hn-brand-primary);
+  border-radius: 5px;
+  color: var(--hn-text-link);
+  background: var(--hn-bg-surface);
+  font: 700 14px/1.4 var(--hn-font-mono);
+}
+.hn-spark { width: 18px; height: 13px; color: var(--hn-brand-spark); }
+
+.hn-dev-shell { max-width: 760px; margin: 15vh auto; padding: 32px; }
+.hn-dev-shell p { color: var(--hn-text-secondary); }
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .hn-container { width: calc(100% - 128px); max-width: 1200px; }
+}
+@media (max-width: 1023px) and (min-width: 600px) {
+  .hn-container { width: calc(100% - 80px); }
+  .hn-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 20px; }
+  .hn-section { padding-block: var(--hn-space-80); }
+}
+@media (max-width: 599px) {
+  .hn-container { width: calc(100% - 40px); }
+  .hn-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .hn-section { padding-block: var(--hn-space-64); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: var(--hn-motion-duration-fast) !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: var(--hn-motion-duration-fast) !important;
+    transform: none !important;
+  }
+}
+
+/* Component layer generated from Figma page 04 · Components.
+   Screen-specific composition remains in page CSS; do not add visual variants here unless Figma has them. */
+
+.hn-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--hn-space-8);
+  border: 0; cursor: pointer; text-decoration: none; white-space: nowrap;
+  border-radius: var(--hn-radius-md); transition: background var(--hn-motion-duration-base), border-color var(--hn-motion-duration-base), transform var(--hn-motion-duration-base);
+}
+.hn-button--m { min-height: 44px; padding: 12px 24px; font: 600 16px/1.2 var(--hn-font-ui); }
+.hn-button--s { min-height: 33px; padding: 8px 16px; font: 600 14px/1.2 var(--hn-font-ui); }
+.hn-button--primary { background: var(--hn-brand-primary); color: var(--hn-text-on-brand); }
+.hn-button--primary:hover { background: var(--hn-brand-primary-hover); }
+.hn-button--secondary { background: var(--hn-bg-surface); color: var(--hn-text-primary); border: 1.5px solid var(--hn-border-strong); }
+.hn-button--ghost { background: transparent; color: var(--hn-text-link); }
+.hn-button--spark { background: var(--hn-brand-spark); color: var(--hn-text-primary); }
+.hn-button:disabled, .hn-button[aria-disabled="true"] { background: var(--hn-bg-sunken); color: var(--hn-text-muted); cursor: not-allowed; border-color: transparent; }
+
+.hn-chip {
+  display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--hn-border-default); background: var(--hn-bg-surface);
+  color: var(--hn-text-secondary); border-radius: var(--hn-radius-full); cursor: pointer; white-space: nowrap;
+  font: 600 14px/1.2 var(--hn-font-ui);
+}
+.hn-chip--m { padding: 8px 16px; }
+.hn-chip--s { padding: 5px 12px; font-size: 12px; }
+.hn-chip[aria-pressed="true"] { background: var(--hn-brand-primary-soft); border-color: var(--hn-brand-primary); color: var(--hn-text-link); }
+.hn-chip__count { color: var(--hn-text-muted); font: 500 12px/1.45 var(--hn-font-ui); }
+
+.hn-status { display:inline-flex; gap:6px; align-items:center; padding:4px 12px; border-radius:var(--hn-radius-full); font:600 14px/1.2 var(--hn-font-ui); }
+.hn-status::before { content:""; width:8px; height:8px; border-radius:50%; background:currentColor; }
+.hn-status--open { background:var(--hn-status-open-bg); color:var(--hn-status-open-fg); }
+.hn-status--soon { background:var(--hn-status-soon-bg); color:var(--hn-status-soon-fg); }
+.hn-status--closed { background:var(--hn-status-closed-bg); color:var(--hn-status-closed-fg); }
+.hn-status--rolling { background:var(--hn-bg-sky); color:var(--hn-text-link); }
+
+.hn-search { display:flex; align-items:center; gap:12px; width:min(600px,100%); min-height:60px; padding:8px 8px 8px 20px; border:1.5px solid var(--hn-border-strong); border-radius:var(--hn-radius-md); background:var(--hn-bg-surface); }
+.hn-search:focus-within { border:2px solid var(--hn-brand-primary); box-shadow:0 0 0 3px color-mix(in srgb, var(--hn-focus-ring) 45%, transparent); }
+.hn-search input { flex:1; min-width:0; border:0; outline:0; background:transparent; color:var(--hn-text-primary); font:400 16px/1.6 var(--hn-font-ui); }
+.hn-search input::placeholder { color:var(--hn-text-muted); }
+
+.hn-select { min-height:45px; padding:10px 40px 10px 14px; border:1.5px solid var(--hn-border-strong); border-radius:var(--hn-radius-md); background:var(--hn-bg-surface); color:var(--hn-text-primary); }
+.hn-checkbox { display:inline-flex; align-items:center; gap:10px; min-height:26px; font:400 14px/1.55 var(--hn-font-ui); }
+.hn-checkbox input { width:20px; height:20px; accent-color:var(--hn-brand-primary); }
+
+.hn-nav-desktop { position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; min-height:76px; padding:0 max(64px,calc((100vw - 1200px)/2)); border-bottom:1px solid var(--hn-border-default); background:color-mix(in srgb,var(--hn-bg-canvas) 92%,transparent); backdrop-filter:blur(10px); }
+.hn-nav-link { position:relative; color:var(--hn-text-primary); text-decoration:none; font:600 14px/1.2 var(--hn-font-ui); }
+.hn-nav-link[aria-current="page"]::after { content:""; position:absolute; left:50%; bottom:-8px; width:18px; height:4px; border-radius:4px; background:var(--hn-brand-spark); transform:translateX(-50%); }
+.hn-nav-mobile { min-height:60px; display:flex; align-items:center; justify-content:space-between; padding-inline:20px; border-bottom:1px solid var(--hn-border-default); background:var(--hn-bg-canvas); }
+.hn-touch44 { min-width:44px; min-height:44px; display:inline-grid; place-items:center; }
+
+.hn-card { background:var(--hn-bg-surface); border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-lg); box-shadow:var(--hn-shadow-soft); }
+.hn-card--interactive { transition:transform var(--hn-motion-duration-base), box-shadow var(--hn-motion-duration-base), border-color var(--hn-motion-duration-base); }
+.hn-card--interactive:hover { transform:translateY(-2px); border-color:var(--hn-brand-primary); box-shadow:var(--hn-shadow-lift); }
+
+.hn-scholarship-card { width:100%; padding:24px; display:flex; flex-direction:column; gap:14px; }
+.hn-scholarship-card__top { display:flex; align-items:center; gap:8px; }
+.hn-scholarship-card__provider, .hn-scholarship-card__value { color:var(--hn-text-secondary); font:400 14px/1.55 var(--hn-font-ui); }
+.hn-scholarship-card__locked { padding:16px; border-radius:var(--hn-radius-md); background:var(--hn-bg-sunken); color:var(--hn-text-muted); }
+
+.hn-deadline-ticket { position:relative; display:grid; grid-template-columns:112px 1fr; min-height:119px; overflow:hidden; border-radius:16px; background:var(--hn-bg-surface); box-shadow:var(--hn-shadow-soft); }
+.hn-deadline-ticket__stub { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:2px; background:var(--hn-bg-peach); }
+.hn-deadline-ticket__date { font:700 28px/1.2 var(--hn-font-mono); }
+.hn-deadline-ticket__year { color:var(--hn-brand-spark-text); font:500 14px/1.4 var(--hn-font-mono); }
+.hn-deadline-ticket__body { display:flex; flex-direction:column; gap:6px; padding:18px 20px; }
+.hn-deadline-ticket::before,.hn-deadline-ticket::after { content:""; position:absolute; left:102px; width:20px; height:20px; border-radius:50%; background:var(--hn-bg-canvas); }
+.hn-deadline-ticket::before { top:-10px; } .hn-deadline-ticket::after { bottom:-10px; }
+
+.hn-country-card { overflow:hidden; }
+.hn-country-card__cover { position:relative; min-height:124px; background:var(--hn-bg-peach); }
+.hn-country-card__body { padding:20px; display:flex; flex-direction:column; gap:12px; }
+.hn-country-card[aria-selected="true"] { border-color:var(--hn-brand-primary); box-shadow:var(--hn-shadow-lift); }
+
+.hn-salary { display:flex; flex-direction:column; gap:8px; }
+.hn-salary__track { position:relative; height:26px; }
+.hn-salary__base { position:absolute; left:0; right:0; top:10px; height:6px; border-radius:99px; background:var(--hn-bg-sunken); }
+.hn-salary__range { position:absolute; top:1px; height:24px; border-radius:99px; background:var(--hn-brand-primary-soft); }
+.hn-salary__entry { position:absolute; top:6px; width:12px; height:12px; border-radius:50%; background:var(--hn-brand-spark); transform:translateX(-50%); }
+.hn-salary__ticks { display:flex; justify-content:space-between; color:var(--hn-text-muted); font:500 12px/1.45 var(--hn-font-ui); }
+
+.hn-job-card { padding:24px; display:flex; flex-direction:column; gap:14px; }
+.hn-job-card__meta { display:flex; gap:8px; align-items:center; }
+.hn-job-card__group { padding:4px 10px; border-radius:var(--hn-radius-full); background:var(--hn-bg-sunken); font:500 12px/1.45 var(--hn-font-ui); }
+.hn-job-card__holland { margin-left:auto; color:var(--hn-text-link); font:500 14px/1.4 var(--hn-font-mono); }
+
+.hn-journey-step { position:relative; padding:20px; border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-lg); background:var(--hn-bg-surface); }
+.hn-journey-step[data-state="current"] { border-color:var(--hn-brand-primary); }
+.hn-journey-step[data-state="current"]::before { content:""; position:absolute; top:14px; right:14px; width:18px; height:13px; background:var(--hn-brand-spark); clip-path:polygon(0 35%,100% 0,78% 100%,0 75%); }
+.hn-journey-step[data-state="done"] { background:var(--hn-bg-sky); }
+
+.hn-paywall { padding:32px; text-align:center; border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-xl); background:var(--hn-bg-sunken); }
+.hn-skeleton { display:block; height:14px; border-radius:7px; background:var(--hn-border-default); }
+
+.hn-section-heading { display:flex; gap:24px; align-items:flex-end; justify-content:space-between; }
+.hn-section-heading__lead { max-width:900px; }
+.hn-section-heading__eyebrow { display:flex; gap:10px; align-items:center; color:var(--hn-brand-spark-text); }
+.hn-section-heading__desc { max-width:640px; color:var(--hn-text-secondary); }
+
+.hn-quiz-option { width:100%; display:flex; align-items:center; gap:14px; padding:16px; border:1.5px solid var(--hn-border-strong); border-radius:var(--hn-radius-md); background:var(--hn-bg-surface); cursor:pointer; text-align:left; }
+.hn-quiz-option[aria-checked="true"] { border-color:var(--hn-brand-primary); background:var(--hn-brand-primary-soft); }
+.hn-quiz-option__letter { width:32px; height:32px; display:grid; place-items:center; border-radius:50%; border:1px solid var(--hn-border-strong); font:700 14px/1 var(--hn-font-mono); }
+
+.hn-pricing { padding:28px; border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-xl); background:var(--hn-bg-surface); }
+.hn-pricing[data-plan="year"] { border:2px solid var(--hn-brand-primary); }
+.hn-pricing__price { font:700 28px/1.2 var(--hn-font-mono); }
+.hn-pricing__badge { display:inline-flex; padding:4px 10px; border-radius:var(--hn-radius-full); background:var(--hn-brand-spark); color:var(--hn-text-primary); font:600 12px/1.3 var(--hn-font-ui); }
+
+.hn-compare-bar { position:fixed; z-index:60; left:50%; bottom:max(20px,env(safe-area-inset-bottom)); transform:translateX(-50%); width:min(760px,calc(100% - 40px)); min-height:61px; padding:8px 12px; display:flex; align-items:center; gap:12px; border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-lg); background:var(--hn-bg-surface); box-shadow:var(--hn-shadow-lift); }
+.hn-toast { position:fixed; z-index:80; right:24px; bottom:24px; max-width:428px; min-height:52px; padding:14px 18px; border-radius:var(--hn-radius-md); background:var(--hn-bg-inverse); color:var(--hn-text-inverse); box-shadow:var(--hn-shadow-soft); }
+
+.hn-auth-button { width:100%; min-height:48px; display:flex; align-items:center; justify-content:center; gap:10px; border:1.5px solid var(--hn-border-strong); border-radius:var(--hn-radius-md); background:var(--hn-bg-surface); color:var(--hn-text-primary); cursor:pointer; }
+
+.hn-bottom-sheet { position:fixed; z-index:90; left:0; right:0; bottom:0; max-height:min(84vh,700px); overflow:auto; padding:12px 20px calc(20px + env(safe-area-inset-bottom)); border-radius:28px 28px 0 0; background:var(--hn-bg-surface); box-shadow:0 -14px 40px rgba(35,40,46,.14); }
+.hn-bottom-sheet__handle { width:48px; height:5px; margin:0 auto 20px; border-radius:99px; background:var(--hn-border-strong); }
+
+.hn-footer { padding:80px max(40px,calc((100vw - 1200px)/2)) 40px; background:var(--hn-bg-sunken); color:var(--hn-text-secondary); }
+
+.hn-door-panel, .hn-rising-panel { display:block; background:var(--hn-brand-primary); }
+.hn-door-panel { clip-path:polygon(0 13%,100% 0,100% 100%,0 100%); border-radius:0 0 var(--hn-radius-xl) var(--hn-radius-xl); }
+.hn-rising-panel { clip-path:polygon(0 26%,100% 0,86% 100%,0 100%); }
+.hn-spark-shape { display:inline-block; width:18px; height:13px; background:var(--hn-brand-spark); clip-path:polygon(0 34%,100% 0,78% 100%,0 74%); }
+
+@media (max-width: 599px) {
+  .hn-nav-desktop { display:none; }
+  .hn-section-heading { align-items:flex-start; flex-direction:column; }
+  .hn-deadline-ticket { grid-template-columns:92px 1fr; }
+  .hn-deadline-ticket::before,.hn-deadline-ticket::after { left:82px; }
+  .hn-toast { left:20px; right:20px; bottom:calc(20px + env(safe-area-inset-bottom)); }
+}
+@media (min-width:600px) { .hn-nav-mobile { display:none; } }
+
+.hn-home { overflow:clip; background:var(--hn-bg-canvas); }
+.hn-home main { display:block; }
+.hn-home a { text-underline-offset:3px; }
+.hn-text-link { font:600 14px/1.2 var(--hn-font-ui); text-decoration:none; white-space:nowrap; }
+.hn-home-eyebrow { display:flex; align-items:center; gap:10px; color:var(--hn-brand-spark-text); margin-bottom:12px; }
+
+.hn-home-hero { position:relative; height:900px; background:var(--hn-bg-canvas); }
+.hn-home-hero__content { position:relative; height:100%; display:grid; grid-template-columns:660px 1fr; gap:24px; padding-top:112px; }
+.hn-home-hero__copy { position:relative; z-index:3; }
+.hn-home-hero h1 { margin:28px 0 0; max-width:660px; }
+.hn-home-hero h1 em { font-family:var(--hn-font-serif); font-weight:600; color:var(--hn-text-link); }
+.hn-home-hero__copy > .hn-body-l { max-width:580px; margin:22px 0 0; color:var(--hn-text-secondary); }
+.hn-home-hero__search { margin-top:28px; }
+.hn-home-hero__chips { display:flex; flex-wrap:wrap; gap:8px; max-width:660px; margin-top:28px; }
+.hn-home-stats { display:flex; gap:40px; margin-top:28px; }
+.hn-home-stats div { min-width:72px; }
+.hn-home-stats strong { display:block; font:700 28px/1.2 var(--hn-font-mono); }
+.hn-home-stats span { display:block; margin-top:2px; color:var(--hn-text-muted); font:400 12px/1.45 var(--hn-font-ui); }
+.hn-home-hero__door { position:absolute; left:calc(50% + 160px); top:70px; width:430px; height:760px; z-index:0; }
+.hn-home-hero__door .hn-door-panel { width:100%; height:100%; border-radius:0 0 28px 28px; }
+.hn-home-hero__step { position:absolute; left:calc(50% + 460px); top:720px; width:330px; height:150px; }
+.hn-home-hero__step .hn-rising-panel { width:100%; height:100%; background:var(--hn-brand-spark); opacity:.98; }
+.hn-home-hero__spark { position:absolute; left:calc(50% + 580px); top:112px; width:120px; height:84px; background:var(--hn-brand-spark); clip-path:polygon(0 34%,100% 0,78% 100%,0 74%); }
+.hn-home-hero__story { position:relative; z-index:4; }
+.hn-story-card { position:absolute; top:98px; left:156px; width:280px; min-height:239px; padding:22px; border-radius:var(--hn-radius-lg); background:var(--hn-bg-surface); box-shadow:var(--hn-shadow-soft); }
+.hn-story-card p { margin:8px 0 0; }
+.hn-story-card__code { display:block; margin-top:4px; font:700 32px/1.4 var(--hn-font-mono); color:var(--hn-brand-primary); }
+.hn-story-card hr { border:0; border-top:1px solid var(--hn-border-default); margin:8px 0; }
+.hn-story-card a { font:600 12px/1.4 var(--hn-font-ui); text-decoration:none; }
+.hn-story-note { position:absolute; top:56px; left:-62px; width:124px; color:var(--hn-text-secondary); transform:rotate(-5deg); }
+.hn-home-hero__deadline { position:absolute; top:408px; left:-4px; width:420px; }
+.hn-deadline-note { position:absolute; top:548px; left:-178px; width:120px; color:var(--hn-text-secondary); transform:rotate(-4deg); }
+
+.hn-entry-section { padding:48px 0 120px; }
+.hn-entry-section h2 { margin:0; }
+.hn-path-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px; }
+.hn-path-card { min-height:470px; display:flex; flex-direction:column; padding:32px; border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-lg); background:var(--hn-bg-surface); }
+.hn-path-card:nth-child(2) { background:var(--hn-bg-sky); }
+.hn-path-card:nth-child(3) { background:var(--hn-bg-peach); }
+.hn-path-card__marker { position:relative; width:72px; height:52px; margin-bottom:18px; }
+.hn-path-card__marker .hn-rising-panel { position:absolute; inset:0; width:72px; height:52px; }
+.hn-path-card__marker strong { position:absolute; inset:0; display:grid; place-items:center; color:#fff; font:700 18px/1 var(--hn-font-mono); }
+.hn-path-card h3 { margin:0; max-width:320px; }
+.hn-path-card > p { margin:12px 0 0; max-width:320px; color:var(--hn-text-secondary); }
+.hn-path-card__list { list-style:none; padding:0; margin:18px 0 26px; display:grid; gap:10px; color:var(--hn-text-secondary); font:400 14px/1.55 var(--hn-font-ui); }
+.hn-path-card__list li { display:flex; gap:10px; align-items:flex-start; }
+.hn-path__check { flex:0 0 18px; width:18px; height:18px; border-radius:50%; display:grid; place-items:center; background:var(--hn-brand-primary-soft); color:var(--hn-text-link); font-size:11px; }
+.hn-path-card > .hn-button { margin-top:auto; align-self:flex-start; }
+
+.hn-deadlines-section { padding:96px 0; }
+.hn-section-title-row { display:flex; justify-content:space-between; gap:32px; align-items:flex-end; }
+.hn-section-title-row h2 { margin:0; }
+.hn-section-title-row p { max-width:640px; margin:10px 0 0; color:var(--hn-text-secondary); }
+.hn-deadline-row { display:flex; gap:24px; margin-top:40px; overflow:auto; scrollbar-width:none; padding-bottom:4px; }
+.hn-deadline-row::-webkit-scrollbar { display:none; }
+.hn-deadline-row .hn-deadline-ticket { flex:0 0 420px; }
+.hn-reminder-row { display:flex; align-items:center; gap:12px; margin-top:40px; }
+.hn-reminder-row p { margin:0; color:var(--hn-text-secondary); }
+
+.hn-featured-section { padding:112px 0; }
+.hn-scholarship-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px; }
+.hn-lock-note { display:flex; gap:10px; margin-top:32px; color:var(--hn-text-secondary); font:400 14px/1.55 var(--hn-font-ui); }
+.hn-lock-note span + span::before { content:'·'; margin-right:10px; color:var(--hn-brand-spark); }
+
+.hn-country-section { padding:112px 0 128px; }
+.hn-country-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:40px; align-items:start; }
+.hn-country-grid .is-lower { padding-top:32px; }
+.hn-country-actions { display:flex; align-items:center; gap:16px; margin-top:40px; }
+.hn-country-actions span { color:var(--hn-text-secondary); }
+
+.hn-career-section { padding:120px 0; }
+.hn-career-layout { display:grid; grid-template-columns:360px 1fr; gap:48px; }
+.hn-career-copy h2 { margin:8px 0 0; }
+.hn-career-copy > p { color:var(--hn-text-secondary); }
+.hn-career-chips { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; }
+.hn-salary-note { display:block; width:130px; margin-top:18px; color:var(--hn-text-secondary); transform:rotate(-3deg); }
+.hn-job-masonry { display:grid; grid-template-columns:repeat(2,minmax(0,384px)); gap:24px; }
+.hn-job-masonry > div { display:grid; gap:24px; }
+.hn-job-masonry__offset { padding-top:56px; }
+.hn-holland-callout { padding:24px; border-radius:var(--hn-radius-lg); background:var(--hn-bg-peach); color:var(--hn-text-secondary); }
+
+.hn-journey-section { padding:112px 0 0; }
+.hn-journey-head { display:flex; justify-content:space-between; align-items:flex-end; }
+.hn-journey-head h2 { margin:8px 0 0; }
+.hn-journey-head p { margin:8px 0 0; color:var(--hn-text-secondary); }
+.hn-stair { height:520px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; align-items:end; margin-top:48px; }
+.hn-stair article { position:relative; height:var(--step-h); padding:40px 24px 24px; overflow:hidden; color:#fff; background:var(--hn-brand-primary); clip-path:polygon(0 7%,100% 0,100% 100%,0 100%); }
+.hn-stair article:nth-child(2) { opacity:.92; }
+.hn-stair article:nth-child(3) { opacity:.96; }
+.hn-stair article:nth-child(4) { background:var(--hn-text-primary); }
+.hn-stair strong { font:700 20px/1.4 var(--hn-font-mono); }
+.hn-stair h3 { margin:6px 0 0; font:700 24px/1.25 var(--hn-font-ui); }
+.hn-stair p { max-width:234px; margin:10px 0 0; font:400 14px/1.55 var(--hn-font-ui); color:rgba(255,255,255,.86); }
+.hn-stair__spark { position:absolute; top:22px; right:18px; width:68px; height:48px; background:var(--hn-brand-spark); clip-path:polygon(0 34%,100% 0,78% 100%,0 74%); }
+
+.hn-pricing-section { padding:120px 0; }
+.hn-pricing-layout { display:grid; grid-template-columns:380px 1fr; gap:64px; align-items:center; }
+.hn-pricing-copy h2 { margin:8px 0 0; }
+.hn-pricing-copy > p { color:var(--hn-text-secondary); }
+.hn-pricing-faq { list-style:none; padding:0; margin:28px 0 0; display:grid; gap:16px; color:var(--hn-text-secondary); font:400 14px/1.55 var(--hn-font-ui); }
+.hn-pricing-faq li { display:flex; align-items:flex-start; gap:10px; }.hn-pricing-faq__icon { margin-top:2px; color:var(--hn-brand-primary); }
+.hn-pricing-cards { display:grid; grid-template-columns:repeat(2,420px); gap:24px; align-items:center; }
+.hn-pricing-cards > div:last-child { transform:translateY(-36px); }
+
+.hn-contact-section { position:relative; height:340px; overflow:hidden; background:var(--hn-bg-sky); }
+.hn-contact-content { position:relative; z-index:2; padding-top:72px; }
+.hn-contact-content h2 { margin:0; max-width:760px; }
+.hn-contact-content p { margin:10px 0 0; color:var(--hn-text-secondary); }
+.hn-contact-phone { display:block; margin-top:12px; font:700 28px/1.2 var(--hn-font-mono); }
+.hn-contact-actions { display:flex; gap:12px; align-items:center; margin-top:18px; }
+.hn-contact-door { position:absolute; right:60px; top:-10px; width:300px; height:420px; }
+.hn-contact-door .hn-door-panel { width:100%; height:100%; }
+
+.hn-mobile-tabbar { display:none; }
+
+@media (max-width:1023px) and (min-width:600px) {
+  .hn-home-hero { height:auto; min-height:860px; }
+  .hn-home-hero__content { grid-template-columns:1fr; padding-top:80px; padding-bottom:120px; }
+  .hn-home-hero__story { min-height:340px; }
+  .hn-home-hero__door { left:auto; right:-40px; width:360px; height:620px; opacity:.9; }
+  .hn-story-card { left:auto; right:40px; top:50px; }
+  .hn-home-hero__deadline { left:0; top:80px; }
+  .hn-story-note,.hn-deadline-note { display:none; }
+  .hn-path-grid { grid-template-columns:repeat(2,1fr); }
+  .hn-path-card:last-child { grid-column:1/-1; }
+  .hn-scholarship-grid { grid-template-columns:repeat(2,1fr); }
+  .hn-scholarship-grid > :last-child { grid-column:1/-1; max-width:50%; }
+  .hn-country-grid { grid-template-columns:repeat(2,1fr); }
+  .hn-career-layout,.hn-pricing-layout { grid-template-columns:1fr; }
+  .hn-job-masonry { justify-content:start; }
+  .hn-pricing-cards { grid-template-columns:repeat(2,minmax(0,420px)); }
+}
+
+@media (max-width:599px) {
+  body { padding-bottom:72px; }
+  .hn-home-hero { height:770px; }
+  .hn-home-hero__content { width:100%; display:block; padding:28px 20px 0; }
+  .hn-home-hero__copy { width:350px; max-width:calc(100vw - 40px); }
+  .hn-home-hero h1 { margin-top:18px; font-size:44px; line-height:1.09; }
+  .hn-home-hero h1 em { font-size:44px; }
+  .hn-home-hero__copy > .hn-body-l { width:330px; max-width:100%; margin-top:14px; font-size:16px; line-height:1.6; }
+  .hn-home-hero__search { margin-top:18px; }
+  .hn-search { min-height:56px; height:56px; }
+  .hn-home-hero__chips { flex-wrap:nowrap; overflow:hidden; margin-top:18px; }
+  .hn-home-hero__chips .hn-chip:nth-child(n+4) { display:none; }
+  .hn-home-stats,.hn-home-hero__story .hn-story-card,.hn-story-note,.hn-deadline-note { display:none; }
+  .hn-home-hero__door { left:auto; right:-30px; top:410px; width:190px; height:300px; }
+  .hn-home-hero__step { display:none; }
+  .hn-home-hero__spark { left:auto; right:-4px; top:392px; width:64px; height:44px; }
+  .hn-home-hero__story { position:static; }
+  .hn-home-hero__deadline { top:520px; left:20px; width:300px; }
+  .hn-home-hero__deadline .hn-deadline-ticket { width:300px; min-height:165px; grid-template-columns:86px 1fr; }
+  .hn-home-hero__deadline .hn-deadline-ticket::before,.hn-home-hero__deadline .hn-deadline-ticket::after { left:76px; }
+
+  .hn-entry-section { padding:24px 0 48px; }
+  .hn-entry-section .hn-container { width:calc(100% - 40px); }
+  .hn-entry-section h2 { font-size:28px; }
+  .hn-entry-section h2 .hn-marker { display:none; }
+  .hn-path-grid { display:flex; overflow:auto; gap:12px; margin-top:20px; scroll-snap-type:x mandatory; scrollbar-width:none; }
+  .hn-path-grid::-webkit-scrollbar { display:none; }
+  .hn-path-card { flex:0 0 280px; min-height:199px; padding:22px; scroll-snap-align:start; }
+  .hn-path-card__marker { width:56px; height:40px; margin-bottom:12px; }
+  .hn-path-card__marker .hn-rising-panel { width:56px; height:40px; }
+  .hn-path-card h3 { font-size:20px; line-height:1.35; }
+  .hn-path-card > p,.hn-path-card__list { display:none; }
+  .hn-path-card > .hn-button { margin-top:14px; }
+
+  .hn-deadlines-section,.hn-featured-section,.hn-country-section,.hn-pricing-section { padding:40px 0; }
+  .hn-section-title-row { display:block; }
+  .hn-section-title-row h2 { font-size:28px; }
+  .hn-section-title-row p,.hn-section-title-row > a { display:none; }
+  .hn-deadline-row { display:grid; gap:16px; margin-top:16px; overflow:visible; }
+  .hn-deadline-row .hn-deadline-ticket { width:100%; flex:auto; }
+  .hn-deadline-row .hn-deadline-ticket:nth-child(n+3) { display:none; }
+  .hn-reminder-row p { display:none; }
+  .hn-lock-note { display:none; }
+  .hn-scholarship-grid { grid-template-columns:1fr; margin-top:16px; }
+  .hn-scholarship-grid > :nth-child(n+2) { display:none; }
+  .hn-country-grid { display:flex; overflow:auto; gap:12px; margin-top:16px; scrollbar-width:none; }
+  .hn-country-grid::-webkit-scrollbar { display:none; }
+  .hn-country-grid > div { flex:0 0 260px; padding-top:0!important; }
+  .hn-country-grid > div:nth-child(n+3) { display:none; }
+  .hn-country-actions { display:none; }
+
+  .hn-career-section,.hn-journey-section { display:none; }
+
+  .hn-pricing-layout { grid-template-columns:1fr; gap:16px; }
+  .hn-pricing-copy h2 { font-size:28px; }
+  .hn-pricing-copy > p,.hn-pricing-faq { display:none; }
+  .hn-pricing-cards { display:block; }
+  .hn-pricing-cards > div:first-child { display:none; }
+  .hn-pricing-cards > div:last-child { transform:none; }
+  .hn-pricing { padding:24px; }
+
+  .hn-contact-section { height:268px; }
+  .hn-contact-content { padding-top:36px; }
+  .hn-contact-content h2 { font-size:28px; max-width:350px; }
+  .hn-contact-content p { font-size:14px; }
+  .hn-contact-phone { font-size:24px; }
+  .hn-contact-actions a { display:none; }
+  .hn-contact-door { display:none; }
+
+  .hn-footer { min-height:244px; padding:32px 20px 28px; }
+  .hn-footer .hn-container { width:100%; }
+  .hn-footer strong { display:block; max-width:180px; }
+  .hn-footer p { max-width:350px; }
+
+  .hn-mobile-tabbar { position:fixed; z-index:70; left:0; right:0; bottom:0; height:72px; display:grid; grid-template-columns:repeat(5,1fr); padding:8px 8px calc(7px + env(safe-area-inset-bottom)); border-top:1px solid var(--hn-border-default); background:color-mix(in srgb,var(--hn-bg-surface) 96%,transparent); backdrop-filter:blur(14px); }
+  .hn-mobile-tabbar a { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; min-height:44px; color:var(--hn-text-secondary); text-decoration:none; }
+  .hn-mobile-tabbar a[aria-current="page"] { color:var(--hn-text-primary); }
+  .hn-mobile-tabbar a[aria-current="page"]::after { content:''; position:absolute; bottom:0; width:16px; height:4px; border-radius:4px; background:var(--hn-brand-spark); }
+  .hn-mobile-tabbar span { font-size:19px; line-height:1; }
+  .hn-mobile-tabbar small { font:500 12px/1.4 var(--hn-font-ui); }
+}
+.hn-static-icon{display:inline-block;flex:0 0 auto;vertical-align:middle;color:currentColor}.hn-mobile-tabbar__icon{display:block;margin-inline:auto}.hn-path__check{pointer-events:none}</style></head><body><div id="app">
+    <div id="top" class="hn-home">
+      <header class="hn-nav-desktop"><a href="#" aria-label="Hướng Nghiệp">HƯỚNG NGHIỆP</a><nav><a class="hn-nav-link" href="#">Học bổng</a> &nbsp;&nbsp; <a class="hn-nav-link" href="#">Du học</a> &nbsp;&nbsp; <a class="hn-nav-link" href="#">Nghề nghiệp</a> &nbsp;&nbsp; <a class="hn-nav-link" href="#">Tuyển sinh 2026</a> &nbsp;&nbsp; <a class="hn-nav-link" href="#">Trắc nghiệm</a></nav><div><button class="hn-button hn-button--ghost hn-button--s" >Đăng nhập</button><button class="hn-button hn-button--spark hn-button--s" >Gói năm 199k</button></div></header>
+      <header class="hn-nav-mobile"><a href="#" aria-label="Hướng Nghiệp">HƯỚNG NGHIỆP</a><button class="hn-touch44" type="button" aria-label="Mở menu">☰</button></header>
+
+      <main>
+        <section class="hn-home-hero">
+          <div class="hn-home-hero__door" aria-hidden="true"><span class="hn-door-panel"></span></div>
+          <div class="hn-home-hero__step" aria-hidden="true"><span class="hn-rising-panel"></span></div>
+          <span class="hn-home-hero__spark" aria-hidden="true"></span>
+          <div class="hn-home-hero__content hn-container">
+            <div class="hn-home-hero__copy">
+              <div class="hn-home-eyebrow"><svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><polygon points="0,4.42 18,0 14.040000000000001,13 0,9.62" fill="var(--hn-brand-spark)"/></svg><span class="hn-eyebrow">HƯỚNG NGHIỆP · HỌC BỔNG · DU HỌC</span></div>
+              <h1 class="hn-display-xl">Mở cửa, thấy lối đi<br><em>của riêng bạn.</em></h1>
+              <p class="hn-body-l">172 học bổng, 32 nước du học, 299 nghề kèm dải lương. Xem lướt miễn phí. Khi cần đi sâu: tiêu chí, hồ sơ mẫu, lộ trình 12 tháng, chỉ 199k một năm.</p>
+              <div class="hn-home-hero__search"><form class="hn-search" role="search"><span aria-hidden="true">⌕</span><input name="q" autocomplete="off" placeholder="Tìm học bổng, nước, ngành, trường…"/><button class="hn-button hn-button--primary hn-button--s" type="submit">Tìm</button></form></div>
+              <div class="hn-home-hero__chips">
+                <button class="hn-chip hn-chip--m" type="button" aria-pressed="false"><span>Học bổng toàn phần</span><span class="hn-chip__count">24</span></button>
+                <button class="hn-chip hn-chip--m" type="button" aria-pressed="false"><span>Du học</span><span class="hn-chip__count">32</span></button>
+                <button class="hn-chip hn-chip--m" type="button" aria-pressed="false"><span>Nghề &amp; mức lương</span><span class="hn-chip__count">299</span></button>
+                <button class="hn-chip hn-chip--m" type="button" aria-pressed="false"><span>Trắc nghiệm 8 phút</span></button>
+              </div>
+              <div class="hn-home-stats" aria-label="Dữ liệu hiện có">
+                <div><strong>172</strong><span>học bổng</span></div>
+                <div><strong>218</strong><span>trường đại học</span></div>
+                <div><strong>32</strong><span>nước du học</span></div>
+                <div><strong>299</strong><span>nghề có lương</span></div>
+              </div>
+            </div>
+            <div class="hn-home-hero__story">
+              <article class="hn-story-card">
+                <span class="hn-eyebrow">MINH · LỚP 12 · ĐÀ NẴNG</span>
+                <p class="hn-body-s">Mã Holland của Minh</p>
+                <strong class="hn-story-card__code">I · A · S</strong>
+                <hr>
+                <p class="hn-body-s">Hợp với: Thiết kế UI/UX, Kiến trúc sư, Tâm lý học</p>
+                <a href="#journey">Xem 3 ngành, 5 học bổng <svg class="hn-static-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+              </article>
+              <span class="hn-note-hand hn-story-note">8 phút là biết mình hợp nghề gì</span>
+              <div class="hn-home-hero__deadline"><article class="hn-deadline-ticket"><div class="hn-deadline-ticket__stub"><strong class="hn-deadline-ticket__date">06/10</strong><span class="hn-deadline-ticket__year">2026</span></div><div class="hn-deadline-ticket__body"><strong class="hn-title-m">Chevening 2027–2028</strong><span class="hn-body-s">Anh · Thạc sĩ · Toàn phần</span><span class="hn-status hn-status--soon">Còn 6 ngày</span></div></article></div>
+              <span class="hn-note-hand hn-deadline-note">hạn gần nhất, đừng để lỡ</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="hn-entry-section hn-section--surface">
+          <div class="hn-container">
+            <div class="hn-home-eyebrow"><svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><polygon points="0,4.42 18,0 14.040000000000001,13 0,9.62" fill="var(--hn-brand-spark)"/></svg><span class="hn-eyebrow">BẠN ĐANG Ở ĐÂU?</span></div>
+            <h2 class="hn-h1">Ba lối vào, chọn cái <span class="hn-marker">giống bạn</span> nhất</h2>
+            <div class="hn-path-grid">
+              <article class="hn-path-card">
+    <div class="hn-path-card__marker"><span class="hn-rising-panel" aria-hidden="true"></span><strong>01</strong></div>
+    <h3 class="hn-h3">Chưa biết mình hợp ngành gì</h3>
+    <p class="hn-body-m">Trả lời 36 câu, nhận mã Holland và danh sách nghề hợp tính cách, kèm dải lương thật.</p>
+    <ul class="hn-path-card__list"><li><span class="hn-path__check" aria-hidden="true"><svg class="hn-static-icon hn-path__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>36 câu, khoảng 8 phút</span></li><li><span class="hn-path__check" aria-hidden="true"><svg class="hn-static-icon hn-path__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Gợi ý 12 nghề và ngành học</span></li><li><span class="hn-path__check" aria-hidden="true"><svg class="hn-static-icon hn-path__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Lưu kết quả vào lộ trình</span></li></ul>
+    <button class="hn-button hn-button--primary hn-button--m" >Làm trắc nghiệm</button>
+  </article>
+              <article class="hn-path-card">
+    <div class="hn-path-card__marker"><span class="hn-rising-panel" aria-hidden="true"></span><strong>02</strong></div>
+    <h3 class="hn-h3">Đã có ngành, cần học bổng</h3>
+    <p class="hn-body-m">Lọc 172 học bổng theo bậc học, mức tài trợ, khu vực. Nhắc hạn trước 14 ngày.</p>
+    <ul class="hn-path-card__list"><li><span class="hn-path__check" aria-hidden="true"><svg class="hn-static-icon hn-path__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Hạn nộp cập nhật 09/2026</span></li><li><span class="hn-path__check" aria-hidden="true"><svg class="hn-static-icon hn-path__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Tiêu chí, hồ sơ cần chuẩn bị</span></li><li><span class="hn-path__check" aria-hidden="true"><svg class="hn-static-icon hn-path__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Nhắc hạn qua email</span></li></ul>
+    <button class="hn-button hn-button--secondary hn-button--m" >Tìm học bổng</button>
+  </article>
+              <article class="hn-path-card">
+    <div class="hn-path-card__marker"><span class="hn-rising-panel" aria-hidden="true"></span><strong>03</strong></div>
+    <h3 class="hn-h3">Muốn du học, lo chi phí</h3>
+    <p class="hn-body-m">Đặt 3 nước cạnh nhau: học phí, sinh hoạt phí, giờ làm thêm, visa ở lại làm việc.</p>
+    <ul class="hn-path-card__list"><li><span class="hn-path__check" aria-hidden="true"><svg class="hn-static-icon hn-path__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>32 nước, 6 khu vực</span></li><li><span class="hn-path__check" aria-hidden="true"><svg class="hn-static-icon hn-path__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Chi phí quy ra USD mỗi năm</span></li><li><span class="hn-path__check" aria-hidden="true"><svg class="hn-static-icon hn-path__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Thay đổi chính sách 2025–2026</span></li></ul>
+    <button class="hn-button hn-button--secondary hn-button--m" >So sánh chi phí</button>
+  </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="hn-deadlines-section hn-section--canvas" id="scholarships">
+          <div class="hn-container">
+            <div class="hn-home-eyebrow"><svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><polygon points="0,4.42 18,0 14.040000000000001,13 0,9.62" fill="var(--hn-brand-spark)"/></svg><span class="hn-eyebrow">SẮP HẾT HẠN</span></div>
+            <div class="hn-section-title-row"><div><h2 class="hn-h1">4 học bổng đóng trong <span class="hn-marker">70 ngày</span></h2><p class="hn-body-m">Xếp theo ngày đóng. Bấm vào vé để xem điều kiện và hồ sơ cần chuẩn bị.</p></div><a class="hn-text-link" href="#">Xem tất cả <svg class="hn-static-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+            <div class="hn-deadline-row"><article class="hn-deadline-ticket"><div class="hn-deadline-ticket__stub"><strong class="hn-deadline-ticket__date">06/10</strong><span class="hn-deadline-ticket__year">2026</span></div><div class="hn-deadline-ticket__body"><strong class="hn-title-m">Chevening 2027–2028</strong><span class="hn-body-s">Anh · Thạc sĩ · Toàn phần</span><span class="hn-status hn-status--soon">Còn 6 ngày</span></div></article><article class="hn-deadline-ticket"><div class="hn-deadline-ticket__stub"><strong class="hn-deadline-ticket__date">15/10</strong><span class="hn-deadline-ticket__year">2026</span></div><div class="hn-deadline-ticket__body"><strong class="hn-title-m">Australia Awards</strong><span class="hn-body-s">Úc · Thạc sĩ · Toàn phần</span><span class="hn-status hn-status--soon">Còn 15 ngày</span></div></article><article class="hn-deadline-ticket"><div class="hn-deadline-ticket__stub"><strong class="hn-deadline-ticket__date">31/10</strong><span class="hn-deadline-ticket__year">2026</span></div><div class="hn-deadline-ticket__body"><strong class="hn-title-m">MEXT Nhật Bản</strong><span class="hn-body-s">Nhật Bản · Đại học · Toàn phần</span><span class="hn-status hn-status--soon">Còn 31 ngày</span></div></article><article class="hn-deadline-ticket"><div class="hn-deadline-ticket__stub"><strong class="hn-deadline-ticket__date">09/12</strong><span class="hn-deadline-ticket__year">2026</span></div><div class="hn-deadline-ticket__body"><strong class="hn-title-m">Erasmus Mundus</strong><span class="hn-body-s">Châu Âu · Thạc sĩ · Toàn phần</span><span class="hn-status hn-status--soon">Còn 70 ngày</span></div></article></div>
+            <div class="hn-reminder-row"><p class="hn-body-m">Bật nhắc hạn: email trước 14 ngày và 3 ngày.</p><button class="hn-button hn-button--primary hn-button--s" >Bật nhắc hạn</button></div>
+          </div>
+        </section>
+
+        <section class="hn-featured-section hn-section--sunken">
+          <div class="hn-container">
+            <div class="hn-home-eyebrow"><svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><polygon points="0,4.42 18,0 14.040000000000001,13 0,9.62" fill="var(--hn-brand-spark)"/></svg><span class="hn-eyebrow">HỌC BỔNG TOÀN PHẦN</span></div>
+            <div class="hn-section-title-row"><div><h2 class="hn-h1">Được trả gần như <span class="hn-marker">mọi thứ</span></h2><p class="hn-body-m">Một số suất nổi bật đang mở. Thẻ khoá vẫn cho xem tên, giá trị và hạn nộp.</p></div><a class="hn-text-link" href="#">Xem tất cả <svg class="hn-static-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+            <div class="hn-scholarship-grid"><article class="hn-card hn-card--interactive hn-scholarship-card" data-access="free">
+    <div class="hn-scholarship-card__top"><span class="hn-stamp">UK</span><span class="hn-eyebrow">THẠC SĨ · TOÀN PHẦN</span></div>
+    <h3 class="hn-title-l">Học bổng Chevening 2027–2028</h3>
+    <p class="hn-scholarship-card__provider">Chính phủ Anh (FCDO) · 1 năm thạc sĩ tại Vương quốc Anh</p>
+    <p class="hn-scholarship-card__value">Học phí + sinh hoạt phí + vé máy bay</p>
+    <div><span class="hn-status hn-status--soon">Còn 6 ngày</span></div>
+    <a href="#" class="hn-button hn-button--ghost hn-button--s">Xem chi tiết <svg class="hn-static-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </article><article class="hn-card hn-card--interactive hn-scholarship-card" data-access="free">
+    <div class="hn-scholarship-card__top"><span class="hn-stamp">AU</span><span class="hn-eyebrow">THẠC SĨ · TOÀN PHẦN</span></div>
+    <h3 class="hn-title-l">Australia Awards Scholarships</h3>
+    <p class="hn-scholarship-card__provider">Chính phủ Úc · Chương trình sau đại học</p>
+    <p class="hn-scholarship-card__value">Học phí + sinh hoạt + vé máy bay + bảo hiểm</p>
+    <div><span class="hn-status hn-status--open">Còn 15 ngày</span></div>
+    <a href="#" class="hn-button hn-button--ghost hn-button--s">Xem chi tiết <svg class="hn-static-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </article><article class="hn-card hn-card--interactive hn-scholarship-card" data-access="locked">
+    <div class="hn-scholarship-card__top"><span class="hn-stamp">EU</span><span class="hn-eyebrow">THẠC SĨ · TOÀN PHẦN</span></div>
+    <h3 class="hn-title-l">Erasmus Mundus Joint Masters</h3>
+    <p class="hn-scholarship-card__provider">Liên minh Châu Âu · Chương trình thạc sĩ liên quốc gia</p>
+    <p class="hn-scholarship-card__value">Học phí + trợ cấp sinh hoạt + di chuyển</p>
+    <div><span class="hn-status hn-status--open">Đang mở</span></div>
+    <div class="hn-scholarship-card__locked" aria-label="Nội dung dành cho gói năm"><span class="hn-skeleton"></span><br><span class="hn-skeleton" style="width:72%"></span></div>
+  </article></div>
+            <div class="hn-lock-note"><span>Thẻ có ổ khoá vẫn cho xem tên, giá trị, hạn nộp.</span><span>Tiêu chí chi tiết và hồ sơ mẫu nằm trong gói năm.</span></div>
+          </div>
+        </section>
+
+        <section class="hn-country-section hn-section--sky" id="study-abroad">
+          <div class="hn-container">
+            <div class="hn-home-eyebrow"><svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><polygon points="0,4.42 18,0 14.040000000000001,13 0,9.62" fill="var(--hn-brand-spark)"/></svg><span class="hn-eyebrow">DU HỌC · 32 NƯỚC</span></div>
+            <div class="hn-section-title-row"><div><h2 class="hn-h1">Bưu thiếp được mở <span class="hn-marker">nhiều nhất</span></h2><p class="hn-body-m">Đặt cạnh nhau học phí, sinh hoạt phí, giờ làm thêm và cơ hội ở lại sau tốt nghiệp.</p></div><a class="hn-text-link" href="#">Xem 32 nước <svg class="hn-static-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+            <div class="hn-country-grid"><div class=""><article class="hn-card hn-card--interactive hn-country-card" aria-selected="false"><div class="hn-country-card__cover" aria-hidden="true"><span class="hn-door-panel" style="position:absolute;width:120px;height:170px;right:18px;top:14px"></span></div><div class="hn-country-card__body"><div style="display:flex;justify-content:space-between;align-items:center"><span class="hn-stamp">JP</span><span class="hn-caption">Chính sách mới</span></div><h3 class="hn-h3">Nhật Bản</h3><p class="hn-data-bold">15.000–25.000 USD/năm</p><p class="hn-body-s">Ngôn ngữ · Nhật, Anh<br>Làm thêm · 28 giờ/tuần<br>14 chương trình</p><button class="hn-button hn-button--ghost hn-button--s" type="button" aria-pressed="false">Thêm vào so sánh</button></div></article></div><div class="is-lower"><article class="hn-card hn-card--interactive hn-country-card" aria-selected="true"><div class="hn-country-card__cover" aria-hidden="true"><span class="hn-door-panel" style="position:absolute;width:120px;height:170px;right:18px;top:14px"></span></div><div class="hn-country-card__body"><div style="display:flex;justify-content:space-between;align-items:center"><span class="hn-stamp">KR</span></div><h3 class="hn-h3">Hàn Quốc</h3><p class="hn-data-bold">12.000–22.000 USD/năm</p><p class="hn-body-s">Ngôn ngữ · Hàn, Anh<br>Làm thêm · 25 giờ/tuần<br>11 chương trình</p><button class="hn-button hn-button--ghost hn-button--s" type="button" aria-pressed="true">Đã chọn so sánh</button></div></article></div><div class=""><article class="hn-card hn-card--interactive hn-country-card" aria-selected="true"><div class="hn-country-card__cover" aria-hidden="true"><span class="hn-door-panel" style="position:absolute;width:120px;height:170px;right:18px;top:14px"></span></div><div class="hn-country-card__body"><div style="display:flex;justify-content:space-between;align-items:center"><span class="hn-stamp">DE</span><span class="hn-caption">Chính sách mới</span></div><h3 class="hn-h3">Đức</h3><p class="hn-data-bold">11.000–18.000 USD/năm</p><p class="hn-body-s">Ngôn ngữ · Đức, Anh<br>Làm thêm · 20 giờ/tuần<br>9 chương trình</p><button class="hn-button hn-button--ghost hn-button--s" type="button" aria-pressed="true">Đã chọn so sánh</button></div></article></div><div class="is-lower"><article class="hn-card hn-card--interactive hn-country-card" aria-selected="false"><div class="hn-country-card__cover" aria-hidden="true"><span class="hn-door-panel" style="position:absolute;width:120px;height:170px;right:18px;top:14px"></span></div><div class="hn-country-card__body"><div style="display:flex;justify-content:space-between;align-items:center"><span class="hn-stamp">AU</span></div><h3 class="hn-h3">Úc</h3><p class="hn-data-bold">28.000–46.000 USD/năm</p><p class="hn-body-s">Ngôn ngữ · Anh<br>Làm thêm · 48 giờ/2 tuần<br>18 chương trình</p><button class="hn-button hn-button--ghost hn-button--s" type="button" aria-pressed="false">Thêm vào so sánh</button></div></article></div></div>
+            <div class="hn-country-actions"><button class="hn-button hn-button--primary hn-button--m" >So sánh 2 nước</button><span class="hn-body-s">Đang so: Hàn Quốc, Đức</span></div>
+          </div>
+        </section>
+
+        <section class="hn-career-section hn-section--surface" id="careers">
+          <div class="hn-container hn-career-layout">
+            <div class="hn-career-copy">
+              <div class="hn-home-eyebrow"><svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><polygon points="0,4.42 18,0 14.040000000000001,13 0,9.62" fill="var(--hn-brand-spark)"/></svg><span class="hn-eyebrow">NGHỀ NGHIỆP · 299 NGHỀ</span></div>
+              <h2 class="hn-h1">Làm nghề đó, một ngày trôi qua thế nào?</h2>
+              <p class="hn-body-m">Mỗi nghề có 6 nhiệm vụ chính, một ngày làm việc mẫu và dải lương thị trường. Lương là khoảng ước tính, không phải con số chính xác.</p>
+              <div class="hn-career-chips">
+                <button class="hn-chip hn-chip--s" type="button" aria-pressed="false"><span>Công nghệ thông tin</span></button><button class="hn-chip hn-chip--s" type="button" aria-pressed="false"><span>Kinh tế</span></button><button class="hn-chip hn-chip--s" type="button" aria-pressed="false"><span>Thiết kế</span></button><button class="hn-chip hn-chip--s" type="button" aria-pressed="false"><span>Y tế</span></button><button class="hn-chip hn-chip--s" type="button" aria-pressed="false"><span>Giáo dục</span></button><button class="hn-chip hn-chip--s" type="button" aria-pressed="false"><span>Kỹ thuật</span></button>
+              </div>
+              <button class="hn-button hn-button--secondary hn-button--m" >Xem 299 nghề</button>
+              <span class="hn-note-hand hn-salary-note">lương khởi điểm là chấm cam nhé</span>
+            </div>
+            <div class="hn-job-masonry">
+              <div><article class="hn-card hn-card--interactive hn-job-card"><div class="hn-job-card__meta"><span class="hn-job-card__group">Công nghệ thông tin</span><span class="hn-job-card__holland">I · C · R</span></div><h3 class="hn-title-l">Kỹ sư phần mềm</h3><p class="hn-body-s">Thiết kế, viết và kiểm thử phần mềm. Làm việc cùng nhóm sản phẩm để biến yêu cầu thành tính năng chạy được.</p><div class="hn-salary"><div style="display:flex;justify-content:space-between"><span class="hn-caption">Lương thị trường</span><strong class="hn-data">18 – 45 tr/tháng</strong></div><div class="hn-salary__track"><span class="hn-salary__base"></span><span class="hn-salary__range" style="left:22.5%;width:33.75%"><i class="hn-salary__entry" style="left:0%"></i></span></div><div class="hn-salary__ticks"><span>0</span><span>20</span><span>40</span><span>60</span><span>80+ tr</span></div><span class="hn-body-s">● Mới ra trường 12–18 tr · 5 năm+ 35–60 tr</span></div><button class="hn-button hn-button--ghost hn-button--s" type="button">Xem nhiệm vụ chính <svg class="hn-static-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></article><article class="hn-card hn-card--interactive hn-job-card"><div class="hn-job-card__meta"><span class="hn-job-card__group">Thiết kế &amp; sản phẩm</span><span class="hn-job-card__holland">A · I · S</span></div><h3 class="hn-title-l">Thiết kế UI/UX</h3><p class="hn-body-s">Nghiên cứu người dùng, tổ chức luồng và tạo giao diện dễ hiểu cho sản phẩm số.</p><div class="hn-salary"><div style="display:flex;justify-content:space-between"><span class="hn-caption">Lương thị trường</span><strong class="hn-data">15 – 38 tr/tháng</strong></div><div class="hn-salary__track"><span class="hn-salary__base"></span><span class="hn-salary__range" style="left:18.75%;width:28.749999999999996%"><i class="hn-salary__entry" style="left:0%"></i></span></div><div class="hn-salary__ticks"><span>0</span><span>20</span><span>40</span><span>60</span><span>80+ tr</span></div><span class="hn-body-s">● Mới ra trường 10–15 tr · 5 năm+ 30–50 tr</span></div><button class="hn-button hn-button--ghost hn-button--s" type="button">Xem nhiệm vụ chính <svg class="hn-static-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></article></div>
+              <div class="hn-job-masonry__offset"><article class="hn-card hn-card--interactive hn-job-card"><div class="hn-job-card__meta"><span class="hn-job-card__group">Kinh doanh &amp; truyền thông</span><span class="hn-job-card__holland">E · A · S</span></div><h3 class="hn-title-l">Chuyên viên Marketing</h3><p class="hn-body-s">Lập kế hoạch chiến dịch, nghiên cứu khách hàng và đo hiệu quả tăng trưởng thương hiệu.</p><div class="hn-salary"><div style="display:flex;justify-content:space-between"><span class="hn-caption">Lương thị trường</span><strong class="hn-data">12 – 32 tr/tháng</strong></div><div class="hn-salary__track"><span class="hn-salary__base"></span><span class="hn-salary__range" style="left:15%;width:25%"><i class="hn-salary__entry" style="left:0%"></i></span></div><div class="hn-salary__ticks"><span>0</span><span>20</span><span>40</span><span>60</span><span>80+ tr</span></div><span class="hn-body-s">● Mới ra trường 8–12 tr · 5 năm+ 25–40 tr</span></div><button class="hn-button hn-button--ghost hn-button--s" type="button">Xem nhiệm vụ chính <svg class="hn-static-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></article><aside class="hn-holland-callout hn-body-s">Kết quả trắc nghiệm của bạn sẽ đánh dấu nghề hợp mã Holland bằng tia cam.</aside></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="hn-journey-section hn-section--canvas" id="journey">
+          <div class="hn-container">
+            <div class="hn-journey-head">
+              <div><div class="hn-home-eyebrow"><svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><polygon points="0,4.42 18,0 14.040000000000001,13 0,9.62" fill="var(--hn-brand-spark)"/></svg><span class="hn-eyebrow">LỘ TRÌNH CỦA TÔI</span></div><h2 class="hn-h1">Bốn bậc, đi từng bậc một</h2><p class="hn-body-m">Hướng Nghiệp lưu tiến độ của bạn. Mỗi bậc mở ra khi bậc trước xong.</p></div>
+              <span class="hn-note-hand">không cần vội</span>
+            </div>
+            <div class="hn-stair">
+              <article style="--step-h:260px"><strong>01</strong><h3>Hiểu mình</h3><p>Trắc nghiệm Holland 36 câu. Biết mình hợp nhóm nghề nào.</p></article>
+              <article style="--step-h:330px"><strong>02</strong><h3>Chọn ngành</h3><p>Đọc nhiệm vụ, lương, ngày làm việc của 12 nghề gợi ý.</p></article>
+              <article style="--step-h:400px"><strong>03</strong><h3>Chọn nước, chọn trường</h3><p>So chi phí, visa, làm thêm. Chốt 3 nước hợp túi tiền.</p></article>
+              <article style="--step-h:470px"><strong>04</strong><h3>Săn học bổng</h3><p>Lọc học bổng khớp hồ sơ, nhận nhắc hạn, chuẩn bị giấy tờ.</p><span class="hn-stair__spark" aria-hidden="true"></span></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="hn-pricing-section hn-section--sunken">
+          <div class="hn-container hn-pricing-layout">
+            <div class="hn-pricing-copy">
+              <div class="hn-home-eyebrow"><svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><polygon points="0,4.42 18,0 14.040000000000001,13 0,9.62" fill="var(--hn-brand-spark)"/></svg><span class="hn-eyebrow">GÓI NĂM</span></div>
+              <h2 class="hn-h1">Xem lướt miễn phí. Đi sâu với 199k một năm.</h2>
+              <p class="hn-body-m">Không tự gia hạn. Không quảng cáo. Nếu chưa dùng tới phần trả phí, hoàn tiền trong 7 ngày.</p>
+              <ul class="hn-pricing-faq">
+                <li><svg class="hn-static-icon hn-pricing-faq__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Thanh toán bằng gì?</strong> VNPay, MoMo, thẻ nội địa và quốc tế.</span></li>
+                <li><svg class="hn-static-icon hn-pricing-faq__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Tài khoản gửi về đâu?</strong> Email bạn đăng ký, trong 1 phút.</span></li>
+                <li><svg class="hn-static-icon hn-pricing-faq__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Dùng chung được không?</strong> Một tài khoản, tối đa 2 thiết bị.</span></li>
+              </ul>
+            </div>
+            <div class="hn-pricing-cards"><div><article class="hn-pricing" data-plan="free"><p class="hn-eyebrow">MIỄN PHÍ</p><h3 class="hn-h2">0đ</h3><p class="hn-body-m">Tra cứu cơ bản và nội dung miễn phí.</p><button class="hn-button hn-button--secondary hn-button--m" >Dùng miễn phí</button></article></div><div><article class="hn-pricing" data-plan="year"><span class="hn-pricing__badge">NÊN CHỌN</span><p class="hn-eyebrow">GÓI NĂM</p><h3 class="hn-h2">199.000đ / năm</h3><p class="hn-body-m">Mở tiêu chí chi tiết, hồ sơ mẫu, lộ trình và nhắc hạn.</p><button class="hn-button hn-button--spark hn-button--m" >Mở khoá gói năm</button></article></div></div>
+          </div>
+        </section>
+
+        <section class="hn-contact-section">
+          <div class="hn-contact-door" aria-hidden="true"><span class="hn-door-panel"></span></div>
+          <div class="hn-container hn-contact-content">
+            <h2 class="hn-h1">Còn băn khoăn? Hỏi anh chị tư vấn.</h2>
+            <p class="hn-body-m">Hotline · Zalo · WhatsApp · LINE · WeChat</p>
+            <strong class="hn-contact-phone">0905 247 365</strong>
+            <div class="hn-contact-actions"><button class="hn-button hn-button--primary hn-button--m" >Nhắn Zalo</button><a href="mailto:baika.vn@gmail.com">baika.vn@gmail.com</a></div>
+          </div>
+        </section>
+      </main>
+      <footer class="hn-footer"><div class="hn-container"><strong>Hướng Nghiệp · Một sản phẩm của BAIKA</strong><p class="hn-body-s">© 2026 Công ty Cổ phần Công nghệ BAIKA · MST 0319512450</p><p class="hn-caption">Dữ liệu cập nhật: <span id="hnUpd">09/2026</span></p></div></footer>
+      <nav class="hn-mobile-tabbar" aria-label="Điều hướng chính trên mobile">
+    <a aria-current="page" href="#top"><span><svg class="hn-static-icon hn-mobile-tabbar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-9 9 9"/><path d="M5 10v11h14V10"/><path d="M9 21v-6h6v6"/></svg></span><small>Trang chủ</small></a>
+    <a href="#scholarships"><span><svg class="hn-static-icon hn-mobile-tabbar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 2 2 10l10 12 10-12Z"/></svg></span><small>Học bổng</small></a>
+    <a href="#study-abroad"><span><svg class="hn-static-icon hn-mobile-tabbar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.18 9"/><path d="M21 12A9 9 0 1 1 3 12"/><path d="M21 3 12 12"/></svg></span><small>Du học</small></a>
+    <a href="#careers"><span><svg class="hn-static-icon hn-mobile-tabbar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M4 8h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Z"/></svg></span><small>Nghề</small></a>
+    <a href="#journey"><span><svg class="hn-static-icon hn-mobile-tabbar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/><path d="M4 22a8 8 0 0 1 16 0"/></svg></span><small>Của tôi</small></a>
+  </nav>
+    </div></div><script>document.querySelectorAll('.hn-chip').forEach(btn=>btn.addEventListener('click',()=>btn.setAttribute('aria-pressed',btn.getAttribute('aria-pressed')!=='true')));document.querySelector('.hn-search')?.addEventListener('submit',e=>{e.preventDefault();document.querySelector('#scholarships')?.scrollIntoView({behavior:'smooth'});});document.querySelectorAll('.hn-country-card button[aria-pressed]').forEach(btn=>btn.addEventListener('click',()=>{const c=btn.closest('.hn-country-card');const s=c.getAttribute('aria-selected')==='true';c.setAttribute('aria-selected',String(!s));btn.setAttribute('aria-pressed',String(!s));btn.textContent=!s?'Đã chọn so sánh':'Thêm vào so sánh';}));</script></body></html>

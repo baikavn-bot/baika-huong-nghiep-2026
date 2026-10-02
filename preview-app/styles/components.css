@@ -1,0 +1,139 @@
+/* Component layer generated from Figma page 04 · Components.
+   Screen-specific composition remains in page CSS; do not add visual variants here unless Figma has them. */
+
+.hn-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--hn-space-8);
+  border: 0; cursor: pointer; text-decoration: none; white-space: nowrap;
+  border-radius: var(--hn-radius-md); transition: background var(--hn-motion-duration-base), border-color var(--hn-motion-duration-base), transform var(--hn-motion-duration-base);
+}
+.hn-button--m { min-height: 44px; padding: 12px 24px; font: 600 16px/1.2 var(--hn-font-ui); }
+.hn-button--s { min-height: 33px; padding: 8px 16px; font: 600 14px/1.2 var(--hn-font-ui); }
+.hn-button--primary { background: var(--hn-brand-primary); color: var(--hn-text-on-brand); }
+.hn-button--primary:hover { background: var(--hn-brand-primary-hover); }
+.hn-button--secondary { background: var(--hn-bg-surface); color: var(--hn-text-primary); border: 1.5px solid var(--hn-border-strong); }
+.hn-button--ghost { background: transparent; color: var(--hn-text-link); }
+.hn-button--spark { background: var(--hn-brand-spark); color: var(--hn-text-primary); }
+.hn-button:disabled, .hn-button[aria-disabled="true"] { background: var(--hn-bg-sunken); color: var(--hn-text-muted); cursor: not-allowed; border-color: transparent; }
+
+.hn-chip {
+  display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--hn-border-default); background: var(--hn-bg-surface);
+  color: var(--hn-text-secondary); border-radius: var(--hn-radius-full); cursor: pointer; white-space: nowrap;
+  font: 600 14px/1.2 var(--hn-font-ui);
+}
+.hn-chip--m { padding: 8px 16px; }
+.hn-chip--s { padding: 5px 12px; font-size: 12px; }
+.hn-chip[aria-pressed="true"] { background: var(--hn-brand-primary-soft); border-color: var(--hn-brand-primary); color: var(--hn-text-link); }
+.hn-chip__count { color: var(--hn-text-muted); font: 500 12px/1.45 var(--hn-font-ui); }
+
+.hn-status { display:inline-flex; gap:6px; align-items:center; padding:4px 12px; border-radius:var(--hn-radius-full); font:600 14px/1.2 var(--hn-font-ui); }
+.hn-status::before { content:""; width:8px; height:8px; border-radius:50%; background:currentColor; }
+.hn-status--open { background:var(--hn-status-open-bg); color:var(--hn-status-open-fg); }
+.hn-status--soon { background:var(--hn-status-soon-bg); color:var(--hn-status-soon-fg); }
+.hn-status--closed { background:var(--hn-status-closed-bg); color:var(--hn-status-closed-fg); }
+.hn-status--rolling { background:var(--hn-bg-sky); color:var(--hn-text-link); }
+
+.hn-search { display:flex; align-items:center; gap:12px; width:min(600px,100%); min-height:60px; padding:8px 8px 8px 20px; border:1.5px solid var(--hn-border-strong); border-radius:var(--hn-radius-md); background:var(--hn-bg-surface); }
+.hn-search:focus-within { border:2px solid var(--hn-brand-primary); box-shadow:0 0 0 3px color-mix(in srgb, var(--hn-focus-ring) 45%, transparent); }
+.hn-search input { flex:1; min-width:0; border:0; outline:0; background:transparent; color:var(--hn-text-primary); font:400 16px/1.6 var(--hn-font-ui); }
+.hn-search input::placeholder { color:var(--hn-text-muted); }
+
+.hn-select { min-height:45px; padding:10px 40px 10px 14px; border:1.5px solid var(--hn-border-strong); border-radius:var(--hn-radius-md); background:var(--hn-bg-surface); color:var(--hn-text-primary); }
+.hn-checkbox { display:inline-flex; align-items:center; gap:10px; min-height:26px; font:400 14px/1.55 var(--hn-font-ui); }
+.hn-checkbox input { width:20px; height:20px; accent-color:var(--hn-brand-primary); }
+
+.hn-nav-desktop { position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; min-height:76px; padding:0 max(64px,calc((100vw - 1200px)/2)); border-bottom:1px solid var(--hn-border-default); background:color-mix(in srgb,var(--hn-bg-canvas) 92%,transparent); backdrop-filter:blur(10px); }
+.hn-nav-link { position:relative; color:var(--hn-text-primary); text-decoration:none; font:600 14px/1.2 var(--hn-font-ui); }
+.hn-nav-link[aria-current="page"]::after { content:""; position:absolute; left:50%; bottom:-8px; width:18px; height:4px; border-radius:4px; background:var(--hn-brand-spark); transform:translateX(-50%); }
+.hn-nav-mobile { min-height:60px; display:flex; align-items:center; justify-content:space-between; padding-inline:20px; border-bottom:1px solid var(--hn-border-default); background:var(--hn-bg-canvas); }
+.hn-touch44 { min-width:44px; min-height:44px; display:inline-grid; place-items:center; }
+
+.hn-card { background:var(--hn-bg-surface); border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-lg); box-shadow:var(--hn-shadow-soft); }
+.hn-card--interactive { transition:transform var(--hn-motion-duration-base), box-shadow var(--hn-motion-duration-base), border-color var(--hn-motion-duration-base); }
+.hn-card--interactive:hover { transform:translateY(-2px); border-color:var(--hn-brand-primary); box-shadow:var(--hn-shadow-lift); }
+
+.hn-scholarship-card { width:100%; padding:24px; display:flex; flex-direction:column; gap:14px; }
+.hn-scholarship-card__top { display:flex; align-items:center; gap:8px; }
+.hn-scholarship-card__provider, .hn-scholarship-card__value { color:var(--hn-text-secondary); font:400 14px/1.55 var(--hn-font-ui); }
+.hn-scholarship-card__locked { padding:16px; border-radius:var(--hn-radius-md); background:var(--hn-bg-sunken); color:var(--hn-text-muted); }
+
+.hn-deadline-ticket { position:relative; display:grid; grid-template-columns:112px 1fr; min-height:119px; overflow:hidden; border-radius:16px; background:var(--hn-bg-surface); box-shadow:var(--hn-shadow-soft); }
+.hn-deadline-ticket__stub { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:2px; background:var(--hn-bg-peach); }
+.hn-deadline-ticket__date { font:700 28px/1.2 var(--hn-font-mono); }
+.hn-deadline-ticket__year { color:var(--hn-brand-spark-text); font:500 14px/1.4 var(--hn-font-mono); }
+.hn-deadline-ticket__body { display:flex; flex-direction:column; gap:6px; padding:18px 20px; }
+.hn-deadline-ticket::before,.hn-deadline-ticket::after { content:""; position:absolute; left:102px; width:20px; height:20px; border-radius:50%; background:var(--hn-bg-canvas); }
+.hn-deadline-ticket::before { top:-10px; } .hn-deadline-ticket::after { bottom:-10px; }
+
+.hn-country-card { overflow:hidden; }
+.hn-country-card__cover { position:relative; min-height:124px; background:var(--hn-bg-peach); }
+.hn-country-card__body { padding:20px; display:flex; flex-direction:column; gap:12px; }
+.hn-country-card[aria-selected="true"] { border-color:var(--hn-brand-primary); box-shadow:var(--hn-shadow-lift); }
+
+.hn-salary { display:flex; flex-direction:column; gap:8px; }
+.hn-salary__track { position:relative; height:26px; }
+.hn-salary__base { position:absolute; left:0; right:0; top:10px; height:6px; border-radius:99px; background:var(--hn-bg-sunken); }
+.hn-salary__range { position:absolute; top:1px; height:24px; border-radius:99px; background:var(--hn-brand-primary-soft); }
+.hn-salary__entry { position:absolute; top:6px; width:12px; height:12px; border-radius:50%; background:var(--hn-brand-spark); transform:translateX(-50%); }
+.hn-salary__ticks { display:flex; justify-content:space-between; color:var(--hn-text-muted); font:500 12px/1.45 var(--hn-font-ui); }
+
+.hn-job-card { padding:24px; display:flex; flex-direction:column; gap:14px; }
+.hn-job-card__meta { display:flex; gap:8px; align-items:center; }
+.hn-job-card__group { padding:4px 10px; border-radius:var(--hn-radius-full); background:var(--hn-bg-sunken); font:500 12px/1.45 var(--hn-font-ui); }
+.hn-job-card__holland { margin-left:auto; color:var(--hn-text-link); font:500 14px/1.4 var(--hn-font-mono); }
+
+.hn-journey-step { position:relative; padding:20px; border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-lg); background:var(--hn-bg-surface); }
+.hn-journey-step[data-state="current"] { border-color:var(--hn-brand-primary); }
+.hn-journey-step[data-state="current"]::before { content:""; position:absolute; top:14px; right:14px; width:18px; height:13px; background:var(--hn-brand-spark); clip-path:polygon(0 35%,100% 0,78% 100%,0 75%); }
+.hn-journey-step[data-state="done"] { background:var(--hn-bg-sky); }
+
+.hn-paywall { padding:32px; text-align:center; border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-xl); background:var(--hn-bg-sunken); }
+.hn-skeleton { display:block; height:14px; border-radius:7px; background:var(--hn-border-default); }
+
+.hn-section-heading { display:flex; gap:24px; align-items:flex-end; justify-content:space-between; }
+.hn-section-heading__lead { max-width:900px; }
+.hn-section-heading__eyebrow { display:flex; gap:10px; align-items:center; color:var(--hn-brand-spark-text); }
+.hn-section-heading__desc { max-width:640px; color:var(--hn-text-secondary); }
+
+.hn-quiz-option { width:100%; display:flex; align-items:center; gap:14px; padding:16px; border:1.5px solid var(--hn-border-strong); border-radius:var(--hn-radius-md); background:var(--hn-bg-surface); cursor:pointer; text-align:left; }
+.hn-quiz-option[aria-checked="true"] { border-color:var(--hn-brand-primary); background:var(--hn-brand-primary-soft); }
+.hn-quiz-option__letter { width:32px; height:32px; display:grid; place-items:center; border-radius:50%; border:1px solid var(--hn-border-strong); font:700 14px/1 var(--hn-font-mono); }
+
+.hn-pricing { padding:28px; border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-xl); background:var(--hn-bg-surface); }
+.hn-pricing[data-plan="year"] { border:2px solid var(--hn-brand-primary); }
+.hn-pricing__price { font:700 28px/1.2 var(--hn-font-mono); }
+.hn-pricing__badge { display:inline-flex; padding:4px 10px; border-radius:var(--hn-radius-full); background:var(--hn-brand-spark); color:var(--hn-text-primary); font:600 12px/1.3 var(--hn-font-ui); }
+
+.hn-compare-bar { position:fixed; z-index:60; left:50%; bottom:max(20px,env(safe-area-inset-bottom)); transform:translateX(-50%); width:min(760px,calc(100% - 40px)); min-height:61px; padding:8px 12px; display:flex; align-items:center; gap:12px; border:1px solid var(--hn-border-default); border-radius:var(--hn-radius-lg); background:var(--hn-bg-surface); box-shadow:var(--hn-shadow-lift); }
+.hn-toast { position:fixed; z-index:80; right:24px; bottom:24px; max-width:428px; min-height:52px; padding:14px 18px; border-radius:var(--hn-radius-md); background:var(--hn-bg-inverse); color:var(--hn-text-inverse); box-shadow:var(--hn-shadow-soft); }
+
+.hn-auth-button { width:100%; min-height:48px; display:flex; align-items:center; justify-content:center; gap:10px; border:1.5px solid var(--hn-border-strong); border-radius:var(--hn-radius-md); background:var(--hn-bg-surface); color:var(--hn-text-primary); cursor:pointer; }
+
+.hn-bottom-sheet { position:fixed; z-index:90; left:0; right:0; bottom:0; max-height:min(84vh,700px); overflow:auto; padding:12px 20px calc(20px + env(safe-area-inset-bottom)); border-radius:28px 28px 0 0; background:var(--hn-bg-surface); box-shadow:0 -14px 40px rgba(35,40,46,.14); }
+.hn-bottom-sheet__handle { width:48px; height:5px; margin:0 auto 20px; border-radius:99px; background:var(--hn-border-strong); }
+
+.hn-footer { padding:80px max(40px,calc((100vw - 1200px)/2)) 40px; background:var(--hn-bg-sunken); color:var(--hn-text-secondary); }
+
+.hn-door-panel, .hn-rising-panel { display:block; background:var(--hn-brand-primary); }
+.hn-door-panel { clip-path:polygon(0 13%,100% 0,100% 100%,0 100%); border-radius:0 0 var(--hn-radius-xl) var(--hn-radius-xl); }
+.hn-rising-panel { clip-path:polygon(0 26%,100% 0,86% 100%,0 100%); }
+.hn-spark-shape { display:inline-block; width:18px; height:13px; background:var(--hn-brand-spark); clip-path:polygon(0 34%,100% 0,78% 100%,0 74%); }
+
+@media (max-width: 599px) {
+  .hn-nav-desktop { display:none; }
+  .hn-section-heading { align-items:flex-start; flex-direction:column; }
+  .hn-deadline-ticket { grid-template-columns:92px 1fr; }
+  .hn-deadline-ticket::before,.hn-deadline-ticket::after { left:82px; }
+  .hn-toast { left:20px; right:20px; bottom:calc(20px + env(safe-area-inset-bottom)); }
+}
+@media (min-width:600px) { .hn-nav-mobile { display:none; } }
+
+
+/* Icon system — source of truth: Figma 04 · Components / Icons (67:2168) */
+.hn-icon{display:inline-block;flex:0 0 auto;vertical-align:middle;color:currentColor;stroke:currentColor}
+.hn-button__icon,.hn-search__icon,.hn-path__check,.hn-mobile-tabbar__icon{pointer-events:none}
+.hn-text-link{display:inline-flex;align-items:center;gap:8px}
+.hn-story-card a{display:inline-flex;align-items:center;gap:6px}
+.hn-salary__note{display:inline-flex;align-items:center;gap:8px}
+.hn-salary__entry-dot{width:8px;height:8px;border-radius:999px;background:var(--hn-brand-spark);display:inline-block;flex:0 0 auto}
+.hn-mobile-tabbar__icon{display:block}
+.hn-nav-mobile>div{display:flex;align-items:center}.hn-nav-mobile .hn-touch44{border:0;background:transparent;color:var(--hn-text-primary);text-decoration:none}
