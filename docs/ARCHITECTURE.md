@@ -71,3 +71,6 @@ hydrateIcons() sau mỗi render root
 ```
 
 Icon runtime hiện được đóng local trong `src/icons/index.ts`, không cần package icon bên ngoài ở production. API `IconName` và tên semantic trong screen giữ đúng tên Figma. Không dùng emoji/unicode/icon font/ad-hoc SVG cho functional icons.
+
+## Runtime clarification — 2026-10-02
+The HN_DATA preference above is the target contract. Current main.ts imports styles/runtime; screen lists remain embedded in home.ts/pages.ts and footer reads HN_DATA.upd. A complete live data adapter has not been established by this audit. Icon runtime emits inline SVG immediately; hydrateIcons is a no-op compatibility API, not a required hydration step.

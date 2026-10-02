@@ -88,3 +88,9 @@ Screen/component **không được biết** alias nội bộ này.
 - Icons render as inline SVG at component render time; no hydration dependency for standalone HTML.
 - Brand shapes DoorPanel/RisingPanel/Spark use rounded vector geometry from Figma Foundations.
 - Scholarship Card, Footer, D2 Page header/Filter sidebar, D3 Detail hero, D4 Controls, D6 Header/Filter/result banner aligned to current Figma nodes.
+
+## Live registry reconciliation — 2026-10-02
+Icons frame contains 1,694 entries. All 38 source registry names exist in that frame at 24×24 (100% name membership). Source uses a selected subset, not a missing requirement to ship the whole catalog. Exact matched node IDs are in figma/spec-snapshot.json. SVG vector-path equality was not tested; do not report 100% glyph parity from names alone. Runtime emits SVG directly and hydrateIcons is a compatibility no-op.
+
+## ICON-001 implementation update
+The 38 registry glyphs now use unchanged local Figma SVG exports as CSS masks with currentColor. Shared and screen-specific slots were updated; see ICON-UPDATE-REPORT.md and figma/icon-assets.json. iconSVG remains a compatibility name but returns mask markup. Overall pixel parity is not certified.

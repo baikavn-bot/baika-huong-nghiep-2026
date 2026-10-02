@@ -217,3 +217,6 @@
   .hn-mobile-tabbar span { font-size:19px; line-height:1; }
   .hn-mobile-tabbar small { font:500 12px/1.4 var(--hn-font-ui); }
 }
+
+.hn-contact-phone{display:flex;align-items:center;gap:12px}.hn-contact-phone__icon{color:var(--hn-brand-primary)}
+@media(max-width:599px){.hn-contact-phone__icon{width:20px;height:20px}}

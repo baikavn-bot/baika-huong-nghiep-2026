@@ -1,0 +1,1581 @@
+# Content Spec — Hướng Nghiệp V1
+
+Source: live Figma RxVjl3wcnyUyfms6o5DDzB inspected 2026-10-02, pages Creative Brief, Desktop, Mobile, Prototype & Motion, Dev Handoff. Exact design copy is preserved in `docs/figma/spec-snapshot.json` and screen reference below. This is design reference copy, not verification of scholarship dates, immigration rules, salary estimates or product/legal promises.
+
+## Editorial and data contract
+- Audience: students grades 10–12, final-year university students, people planning master's studies, and parents. Tone: calm, practical, clear next step; numbers show sources and update dates.
+- Four-step story: Hiểu mình → Chọn ngành → Chọn nước, chọn trường → Săn học bổng. D11 currently uses different step labels in source; that is a known gap, not an approved change to the design.
+- Minh is a prototype persona. Production identity, email, saved scholarships and subscription dates must come from the authenticated account, not the prototype.
+- Design sample reference date: 30/09/2026. Relative deadlines must be calculated from current authoritative data and timezone, not frozen copy.
+- Intended catalog: 172 scholarships, 32 countries, 299 careers, 218 schools. Counts describe the Figma/prototype baseline; do not claim production inventory without dataset validation.
+- Every data item must expose `upd` and `src`. UI renders source and update information. Keep public facts separate from paid fields; server must not return locked content to free accounts; render skeleton.
+- CMS-managed hand notes may be disabled. No more than one hand note per screen.
+- Price 199.000đ/year, about 16.600đ/month, no auto renewal, seven-day refund: Figma assumption A2 requires BAIKA/legal confirmation before production claims are accepted.
+- Payment methods VNPay QR, MoMo, card; success depends on confirmed server webhook. Account email within one minute and invoice within three working days are design promises requiring real service validation.
+- Never place actual credentials, temporary passwords, keys or tokens in specs/state. Prototype strings are UI examples only.
+- BAIKA legal identity, contact and address in Figma must be owner-approved; legal/refund/privacy pages require actual published content.
+
+## Required user flows
+- F1: Home → Quiz → Result → Login → Journey.
+- F2: Scholarships → Chevening detail → Unlock → Checkout → Success; retain the original reading context for return after payment.
+- F3: Study abroad → select Germany/Japan/Canada → Compare, maximum three.
+- F4: Careers → UI/UX drawer → Unlock.
+- Mobile: Home → Scholarships → Filter sheet → Scholarship detail; Home → Japan postcard → Country detail.
+- Save while logged out opens login; authenticated save offers undo for four seconds.
+- Reminder email schedule: 14 and 3 days before deadline. A toast alone is not an implemented reminder service.
+- Quiz: complete 36-question Holland assessment, persist every answer/progress. Current source only demonstrates question 14 and static result; expert validation and trial with ten grade 11–12 students remain required.
+
+## Known source/content discrepancies
+- Home Japan postcard uses 15.000–25.000 USD/year and 14 programs; current M1 design uses 12.000–22.000 and 8. Screen reference is authoritative for demo parity; real data still requires independent validation.
+- Source scholarship samples include different names/deadlines than the current design (e.g. Knight-Hennessy source 08/10 vs design 06/10); do not silently treat either as verified real-world dates.
+- main.ts only imports CSS/runtime. Current page data remains embedded; reading HN_DATA.upd for footer does not implement the full published-data adapter.
+- Filter/search, authentication, payment, reminders and quiz have prototype or missing behavior; present UI must not be reported as production completion.
+- Figma includes admissions/legal links without complete corresponding routes in current source. Register as product scope to resolve, not as routes added by this spec task.
+
+## Production sign-off still needed
+Approved official vector logos/provider marks; refund/privacy/terms approval; validated datasets with src/upd; real auth/paywall/payment/reminder services; expert quiz validation; responsive screenshots and visual comparison; measured accessibility/performance. Figma memo also requests genuine student photography, while V1 art direction prohibits heavy/stock images; treat photography as asset preparation, not permission to alter V1 layouts.
+
+## Exact screen reference copy
+The following strings were read live from Figma. Ordering follows the node tree, including nested component text; line breaks are preserved. Repetition is intentional. Hidden layers and component instances may contribute text; compare rendered visible content before changing UI. These strings are references, not legal or factual approval.
+
+### D1 · Trang chủ — 15:2
+
+- Học bổng
+- Du học
+- Nghề nghiệp
+- Tuyển sinh 2026
+- Trắc nghiệm
+- 0905 247 365
+- Đăng nhập
+- Gói năm 199k
+- HƯỚNG NGHIỆP · HỌC BỔNG · DU HỌC
+- Mở cửa,<br>thấy lối đi
+- của riêng bạn.
+- 172 học bổng, 32 nước du học, 299 nghề kèm dải lương. Xem lướt miễn phí. Khi cần đi sâu: tiêu chí, hồ sơ mẫu, lộ trình 12 tháng, chỉ 199k một năm.
+- Tìm học bổng, nước, ngành, trường…
+- Tìm
+- Học bổng toàn phần
+- Du học Nhật
+- Ngành IT lương bao nhiêu?
+- Chevening 2027
+- 172
+- học bổng
+- 218
+- trường đại học
+- 32
+- nước du học
+- 299
+- nghề có lương
+- MINH · LỚP 12 · ĐÀ NẴNG
+- Mã Holland của Minh
+- I · A · S
+- Hợp với: Thiết kế UI/UX, Kiến trúc sư, Tâm lý học
+- Xem 3 ngành, 5 học bổng
+- 8 phút là biết<br>mình hợp nghề gì
+- 06/10
+- 2026
+- Chevening 2027–2028
+- Anh · Thạc sĩ · Toàn phần
+- Còn 6 ngày
+- hạn gần nhất,<br>đừng để lỡ
+- BẠN ĐANG Ở ĐÂU?
+- Ba lối vào, chọn cái giống bạn nhất
+- 01
+- Chưa biết mình hợp ngành gì
+- Trả lời 36 câu, nhận mã Holland và danh sách nghề hợp tính cách, kèm dải lương thật.
+- 36 câu, khoảng 8 phút
+- Gợi ý 12 nghề và ngành học
+- Lưu kết quả vào lộ trình
+- Làm trắc nghiệm
+- 02
+- Đã có ngành, cần học bổng
+- Lọc 172 học bổng theo bậc học, mức tài trợ, khu vực. Nhắc hạn trước 14 ngày.
+- Hạn nộp cập nhật 09/2026
+- Tiêu chí, hồ sơ cần chuẩn bị
+- Nhắc hạn qua email
+- Tìm học bổng
+- 03
+- Muốn du học, lo chi phí
+- Đặt 3 nước cạnh nhau: học phí, sinh hoạt phí, giờ làm thêm, visa ở lại làm việc.
+- 32 nước, 6 khu vực
+- Chi phí quy ra USD mỗi năm
+- Thay đổi chính sách 2025–2026
+- So sánh các nước
+- SẮP HẾT HẠN
+- 4 học bổng lớn đóng trong 70 ngày tới
+- Xếp theo ngày đóng. Hôm nay 30/09/2026.
+- Xem tất cả
+- 30/09
+- 2026
+- Chính phủ Hàn Quốc (GKS)
+- Hàn Quốc · Đại học · Toàn phần
+- Đóng hôm nay
+- 06/10
+- 2026
+- Chevening 2027–2028
+- Anh · Thạc sĩ · Toàn phần
+- Còn 6 ngày
+- 06/10
+- 2026
+- Knight-Hennessy (Stanford)
+- Hoa Kỳ · Thạc sĩ, Tiến sĩ
+- Còn 6 ngày
+- 08/12
+- 2026
+- Gates Cambridge
+- Anh · Thạc sĩ, Tiến sĩ
+- Còn 69 ngày
+- Bật nhắc hạn: email trước 14 ngày và 3 ngày.
+- Bật nhắc hạn
+- HỌC BỔNG TOÀN PHẦN
+- Được trả gần như mọi thứ, nếu bạn chuẩn bị sớm
+- Chọn lọc từ 172 học bổng. Mỗi thẻ ghi rõ nguồn và ngày cập nhật.
+- Xem tất cả
+- UK
+- Còn 6 ngày
+- THẠC SĨ · TOÀN PHẦN
+- Học bổng Chevening 2027–2028
+- Bộ Ngoại giao Anh (FCDO) · 1 năm thạc sĩ tại Vương quốc Anh
+- Học phí + sinh hoạt phí + vé máy bay
+- Hạn 06/10/2026
+- Chi tiết
+- UK
+- Còn 69 ngày
+- THẠC SĨ, TIẾN SĨ · TOÀN PHẦN
+- Gates Cambridge
+- Quỹ Gates Cambridge · học toàn khoá tại Đại học Cambridge
+- Học phí + sinh hoạt phí toàn khoá
+- Hạn 08/12/2026
+- Chi tiết
+- EU
+- Nhiều đợt
+- THẠC SĨ · TOÀN PHẦN
+- Erasmus Mundus Joint Masters
+- Liên minh châu Âu · học ở 2–3 nước trong 1 chương trình
+- Học phí + 1.400 euro/tháng + đi lại
+- Tiêu chí & hồ sơ mẫu trong gói năm
+- Thẻ có ổ khoá vẫn cho xem tên, giá trị, hạn nộp.
+- Tiêu chí chi tiết và hồ sơ mẫu nằm trong gói năm.
+- DU HỌC · 32 NƯỚC
+- Bốn tấm bưu thiếp được mở nhiều nhất tuần này
+- Chi phí là tổng học phí và sinh hoạt phí một năm, quy ra USD. Bấm “So sánh” để đặt tối đa 3 nước cạnh nhau.
+- Xem tất cả
+- JP
+- Chính sách mới
+- Nhật Bản
+- $$
+- $$
+- 12.000–22.000 USD/năm
+- Ngôn ngữ
+- Nhật, Anh
+- Làm thêm
+- 28 giờ/tuần
+- Học bổng
+- 8 chương trình
+- Chi phí, visa
+- So sánh
+- KR
+- Chính sách mới
+- Hàn Quốc
+- $$
+- $$
+- 10.000–20.000 USD/năm
+- Ngôn ngữ
+- Hàn, Anh
+- Làm thêm
+- 30 giờ/tuần (TOPIK)
+- Học bổng
+- 5 chương trình
+- Chi phí, visa
+- Đang so
+- DE
+- Đức
+- $$
+- $$
+- 12.000–18.000 USD/năm
+- Ngôn ngữ
+- Đức, Anh
+- Làm thêm
+- 140 ngày/năm
+- Học bổng
+- 9 chương trình
+- Chi phí, visa
+- Đang so
+- AU
+- Chính sách mới
+- Úc
+- $$$
+- $
+- 32.000–55.000 USD/năm
+- Ngôn ngữ
+- Anh
+- Làm thêm
+- 48 giờ/2 tuần
+- Học bổng
+- 11 chương trình
+- Chi phí, visa
+- So sánh
+- Xem đủ 32 nước
+- Đang so: Hàn Quốc, Đức
+- NGHỀ NGHIỆP · 299 NGHỀ
+- Làm nghề đó, một ngày trôi qua thế nào?
+- Mỗi nghề có 6 nhiệm vụ chính, một ngày làm việc mẫu và dải lương thị trường. Lương là khoảng ước tính, không phải con số chính xác.
+- Công nghệ thông tin
+- 46
+- Y tế
+- 31
+- Kinh doanh
+- 38
+- Kỹ thuật
+- 35
+- Sáng tạo
+- 22
+- Giáo dục
+- 17
+- Xem 299 nghề
+- lương khởi điểm<br>là chấm cam nhé
+- Công nghệ thông tin
+- I · C
+- Lập trình viên back-end
+- Viết phần chạy ngầm phía sau ứng dụng: xử lý dữ liệu, tính tiền, lưu đơn hàng.
+- Lương thị trường
+- 10 – 45 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 10–18 tr · 5 năm+ 25–45 tr
+- Xem 8 nhiệm vụ chính
+- Y tế
+- S · R
+- Điều dưỡng
+- Chăm sóc người bệnh hằng ngày và thực hiện y lệnh của bác sĩ.
+- Lương thị trường
+- 7 – 15 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 7–10 tr · 5 năm+ 10–15 tr
+- Xem 8 nhiệm vụ chính
+- Công nghệ thông tin
+- A · I
+- Thiết kế UI/UX
+- Thiết kế cách app, web trông ra sao và dùng có dễ không.
+- Lương thị trường
+- 8 – 35 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 8–14 tr · 5 năm+ 18–35 tr
+- Xem 8 nhiệm vụ chính
+- Kết quả trắc nghiệm của bạn sẽ đánh dấu nghề hợp mã Holland bằng tia cam.
+- LỘ TRÌNH CỦA TÔI
+- Bốn bậc, đi từng bậc một
+- Hướng Nghiệp lưu tiến độ của bạn. Mỗi bậc mở ra khi bậc trước xong.
+- không cần vội
+- 01
+- Hiểu mình
+- Trắc nghiệm Holland 36 câu. Biết mình hợp nhóm nghề nào.
+- 02
+- Chọn ngành
+- Đọc nhiệm vụ, lương, ngày làm việc của 12 nghề gợi ý.
+- 03
+- Chọn nước, chọn trường
+- So chi phí, visa, làm thêm. Chốt 3 nước hợp túi tiền.
+- 04
+- Săn học bổng
+- Lọc học bổng khớp hồ sơ, nhận nhắc hạn, chuẩn bị giấy tờ.
+- GÓI NĂM
+- Xem lướt miễn phí. Đi sâu với 199k một năm.
+- Không tự gia hạn. Không quảng cáo. Nếu chưa dùng tới phần trả phí, hoàn tiền trong 7 ngày.
+- Thanh toán bằng gì?  VNPay, MoMo, thẻ nội địa và quốc tế.
+- Tài khoản gửi về đâu?  Email bạn đăng ký, trong 1 phút.
+- Dùng chung được không?  Một tài khoản, tối đa 2 thiết bị.
+- XEM LƯỚT
+- 0đ
+- / mãi mãi
+- Tên, giá trị, hạn nộp mọi học bổng
+- Chi phí ước tính 32 nước
+- Dải lương 299 nghề
+- Trắc nghiệm hướng nghiệp
+- Dùng miễn phí
+- Không cần thẻ. Đăng nhập để lưu học bổng.
+- GÓI NĂM
+- Phổ biến nhất
+- 199.000đ
+- / năm
+- bằng một ly trà sữa mỗi tháng
+- Mọi thứ ở gói xem lướt
+- Tiêu chí, hồ sơ mẫu của 172 học bổng
+- Thị thực, chứng minh tài chính 32 nước
+- Mô tả nhiệm vụ đủ 299 nghề
+- Lộ trình 12 tháng và nhắc hạn qua email
+- So sánh 3 nước, lưu không giới hạn
+- Mua gói năm
+- Thanh toán qua VNPay, MoMo, thẻ. Tài khoản gửi về email trong 1 phút.
+- Còn băn khoăn? Hỏi anh chị tư vấn.
+- Hotline · Zalo · WhatsApp · LINE · WeChat
+- 0905 247 365
+- Đặt lịch tư vấn
+- baika.vn@gmail.com
+- KHÁM PHÁ
+- Học bổng
+- Du học 32 nước
+- Nghề nghiệp & mức lương
+- Tuyển sinh 2026
+- Trắc nghiệm hướng nghiệp
+- HỖ TRỢ
+- Câu hỏi thường gặp
+- Gói năm 199k
+- Chính sách hoàn tiền
+- Điều khoản sử dụng
+- Chính sách bảo mật
+- LIÊN HỆ
+- Hotline · Zalo · WhatsApp
+- LINE · WeChat: 0905 247 365
+- baika.vn@gmail.com
+- Tầng 15, 72 Lê Thánh Tôn,
+- Phường Sài Gòn, TP. Hồ Chí Minh
+- Hỏi gì cũng được,<br>anh chị trả lời trong ngày.
+- © 2026 Công ty Cổ phần Công nghệ BAIKA · MST 0319512450
+- Số liệu học bổng, học phí, lương là ước tính và có ngày cập nhật trên từng mục.
+
+### D2 · Học bổng — 20:629
+
+- Học bổng
+- Du học
+- Nghề nghiệp
+- Tuyển sinh 2026
+- Trắc nghiệm
+- 0905 247 365
+- Đăng nhập
+- Gói năm 199k
+- Trang chủ  /  Học bổng
+- 172 học bổng,
+- lọc đúng hồ sơ bạn
+- Việt Nam và 30 nước. Mỗi học bổng ghi ngày cập nhật và nguồn chính thức.
+- thạc sĩ toàn phần
+- Tìm
+- Bộ lọc
+- Xoá lọc
+- Bậc học
+- THPT
+- 10
+- Đại học
+- 101
+- Thạc sĩ
+- 96
+- Tiến sĩ
+- 60
+- Học nghề
+- 6
+- Mức tài trợ
+- Toàn phần
+- 95
+- Bán phần
+- 59
+- Hỗ trợ khác
+- 18
+- Khu vực
+- Việt Nam
+- 44
+- Châu Âu
+- 43
+- Châu Á
+- 27
+- Châu Mỹ
+- 24
+- Úc, New Zealand
+- 17
+- Đông Nam Á
+- 15
+- Hạn nộp
+- Còn mở
+- ≤ 30 ngày
+- Xét liên tục
+- Lưu bộ lọc này
+- Có học bổng mới khớp, bạn nhận email ngay.
+- 58
+- học bổng khớp
+- Thạc sĩ
+- Toàn phần
+- Còn mở
+- Sắp xếp:
+- Hạn gần nhất
+- UK
+- Còn 6 ngày
+- THẠC SĨ · TOÀN PHẦN
+- Học bổng Chevening 2027–2028
+- Bộ Ngoại giao Anh (FCDO) · 1 năm thạc sĩ tại Anh
+- Học phí + sinh hoạt phí + vé máy bay
+- Hạn 06/10/2026
+- Chi tiết
+- US
+- Còn 6 ngày
+- THẠC SĨ, TIẾN SĨ · TOÀN PHẦN
+- Knight-Hennessy Scholars
+- Đại học Stanford · tối đa 3 năm
+- Toàn bộ học phí + sinh hoạt phí + đi lại
+- Hạn 06/10/2026
+- Chi tiết
+- Chưa chắc học ngành gì mới săn học bổng?
+- Làm trắc nghiệm 8 phút. Kết quả tự lọc học bổng theo nhóm ngành hợp bạn.
+- thử đi, nhanh lắm
+- Làm trắc nghiệm
+- UK
+- Còn 69 ngày
+- THẠC SĨ, TIẾN SĨ · TOÀN PHẦN
+- Gates Cambridge
+- Quỹ Gates Cambridge · Đại học Cambridge
+- Học phí + sinh hoạt phí toàn khoá
+- Hạn 08/12/2026
+- Chi tiết
+- DE
+- Nhiều đợt
+- THẠC SĨ, TIẾN SĨ · TOÀN PHẦN
+- DAAD cho thạc sĩ, tiến sĩ
+- Cơ quan Trao đổi Hàn lâm Đức (DAAD)
+- 992–1.400 euro/tháng + bảo hiểm
+- Tiêu chí & hồ sơ mẫu trong gói năm
+- EU
+- Nhiều đợt
+- THẠC SĨ · TOÀN PHẦN
+- Erasmus Mundus Joint Masters
+- Liên minh châu Âu · học ở 2–3 nước
+- Học phí + 1.400 euro/tháng + đi lại
+- Tiêu chí & hồ sơ mẫu trong gói năm
+- AU
+- Đã đóng
+- THẠC SĨ · TOÀN PHẦN
+- Australia Awards
+- Chính phủ Úc (DFAT) · khoá 2028
+- Học phí + vé máy bay + sinh hoạt phí
+- Đợt sau mở 02/2027
+- Chi tiết
+- Xem thêm 52 học bổng
+- Đang xem 6 / 58
+- KHÁM PHÁ
+- Học bổng
+- Du học 32 nước
+- Nghề nghiệp & mức lương
+- Tuyển sinh 2026
+- Trắc nghiệm hướng nghiệp
+- HỖ TRỢ
+- Câu hỏi thường gặp
+- Gói năm 199k
+- Chính sách hoàn tiền
+- Điều khoản sử dụng
+- Chính sách bảo mật
+- LIÊN HỆ
+- Hotline · Zalo · WhatsApp
+- LINE · WeChat: 0905 247 365
+- baika.vn@gmail.com
+- Tầng 15, 72 Lê Thánh Tôn,
+- Phường Sài Gòn, TP. Hồ Chí Minh
+- Hỏi gì cũng được,<br>anh chị trả lời trong ngày.
+- © 2026 Công ty Cổ phần Công nghệ BAIKA · MST 0319512450
+- Số liệu học bổng, học phí, lương là ước tính và có ngày cập nhật trên từng mục.
+
+### D3 · Chi tiết học bổng — 22:897
+
+- Học bổng
+- Du học
+- Nghề nghiệp
+- Tuyển sinh 2026
+- Trắc nghiệm
+- 0905 247 365
+- Đăng nhập
+- Gói năm 199k
+- Trang chủ  /  Học bổng  /  Anh
+- UK
+- Còn 6 ngày
+- Mọi ngành
+- THẠC SĨ 1 NĂM · TOÀN PHẦN · VƯƠNG QUỐC ANH
+- Học bổng Chevening 2027–2028
+- Bộ Ngoại giao Anh (FCDO) tài trợ cho người có tố chất lãnh đạo, đã đi làm ít nhất 2 năm, muốn học thạc sĩ 1 năm tại Anh rồi về Việt Nam đóng góp.
+- Mở trang nộp đơn
+- Lưu
+- Gửi cho bạn bè
+- Cập nhật 09/2026 · Nguồn: chevening.org (lịch chu kỳ 2027/28, điều kiện ứng tuyển)
+- HẠN NỘP
+- 06/10/2026 · 18:00
+- GIÁ TRỊ
+- Học phí, sinh hoạt phí, vé máy bay, phí visa
+- THỜI GIAN HỌC
+- 1 năm thạc sĩ, nhập học 09/2027
+- CAM KẾT
+- Về Việt Nam ít nhất 2 năm sau khi học
+- hạn tính theo giờ VN,<br>đừng chờ phút chót
+- ĐIỀU KIỆN CHÍNH
+- Ai nộp được?
+- Có bằng đại học đủ điều kiện học thạc sĩ ở Anh
+- Ít nhất 2 năm kinh nghiệm làm việc (2.800 giờ)
+- Nộp vào 3 khoá thạc sĩ khác nhau tại Anh
+- Có thư mời vô điều kiện trước 08/07/2027
+- Về Việt Nam ít nhất 2 năm sau khi học
+- Tự kiểm tra nhanh: bạn đạt mấy / 5 điều kiện?
+- Bắt đầu
+- HỒ SƠ · 4 NHÓM GIẤY TỜ
+- Hồ sơ cần chuẩn bị
+- Danh sách hồ sơ, bài luận mẫu, lịch 8 tuần
+- Gồm 4 bài luận, 2 thư giới thiệu, bằng, bảng điểm, hộ chiếu. Kèm bài luận mẫu đã đỗ và lịch chuẩn bị 8 tuần.
+- Mở khoá 199k/năm
+- ≈ 16.600đ/tháng · hoàn tiền trong 7 ngày
+- LỊCH
+- Mốc thời gian chu kỳ 2027/28
+- Mở đơn trực tuyến
+- 04/08/2026
+- 02
+- Hạn nộp đơn
+- 06/10/2026, 18:00 giờ Việt Nam
+- 03
+- Phỏng vấn và xét chọn
+- Theo lịch chevening.org, thường đầu năm sau
+- 04
+- Nhập học tại Anh
+- 09/2027
+- 06/10
+- 2026
+- Chevening 2027–2028
+- Còn 6 ngày · 18:00 giờ VN
+- Còn 6 ngày
+- Nhắc tôi trước hạn
+- Email lúc còn 14 ngày và 3 ngày. Tắt bất cứ lúc nào.
+- Bật nhắc hạn
+- Học bổng tương tự
+- Gates Cambridge
+- Anh · Thạc sĩ, Tiến sĩ
+- Còn 69 ngày
+- Knight-Hennessy
+- Hoa Kỳ · Stanford
+- Còn 6 ngày
+- Erasmus Mundus
+- Châu Âu · 2–3 nước
+- Nhiều đợt
+- chevening.org/scholarships
+- KHÁM PHÁ
+- Học bổng
+- Du học 32 nước
+- Nghề nghiệp & mức lương
+- Tuyển sinh 2026
+- Trắc nghiệm hướng nghiệp
+- HỖ TRỢ
+- Câu hỏi thường gặp
+- Gói năm 199k
+- Chính sách hoàn tiền
+- Điều khoản sử dụng
+- Chính sách bảo mật
+- LIÊN HỆ
+- Hotline · Zalo · WhatsApp
+- LINE · WeChat: 0905 247 365
+- baika.vn@gmail.com
+- Tầng 15, 72 Lê Thánh Tôn,
+- Phường Sài Gòn, TP. Hồ Chí Minh
+- Hỏi gì cũng được,<br>anh chị trả lời trong ngày.
+- © 2026 Công ty Cổ phần Công nghệ BAIKA · MST 0319512450
+- Số liệu học bổng, học phí, lương là ước tính và có ngày cập nhật trên từng mục.
+
+### D4 · Du học — 23:1039
+
+- Học bổng
+- Du học
+- Nghề nghiệp
+- Tuyển sinh 2026
+- Trắc nghiệm
+- 0905 247 365
+- Đăng nhập
+- Gói năm 199k
+- Trang chủ  /  Du học
+- DU HỌC · 32 NƯỚC · CẬP NHẬT 09/2026
+- 32 nước,<br>đặt cạnh nhau
+- rồi hãy chọn.
+- Chi phí là tổng học phí và sinh hoạt phí một năm, quy ra USD. Mỗi nước ghi rõ giờ làm thêm, visa ở lại làm việc và thay đổi chính sách 2025–2026.
+- $
+- Dưới 15.000 USD
+- PH · RU · HU · MY · TH
+- $$
+- 15.000–30.000 USD
+- JP · KR · DE · FR · IT
+- $$$
+- 25.000–55.000 USD
+- AU · CA · NL · SG · NZ
+- $$$$
+- 35.000–85.000 USD
+- US · UK · CH
+- Đức gần như miễn học phí,<br>nhưng cần tài khoản phong toả
+- Tất cả
+- 32
+- Đông Nam Á
+- 4
+- Châu Á
+- 5
+- Châu Âu
+- 18
+- Châu Mỹ
+- 2
+- Úc, New Zealand
+- 2
+- Trung Đông
+- 1
+- Chi phí:
+- $ Dưới 15.000
+- $$ 15–30.000
+- $$$ 30–45.000
+- $$$$ Trên 45.000
+- Học bằng tiếng Anh
+- Sắp xếp:
+- Nhiều học bổng nhất
+- 32
+- nước · xếp theo số học bổng
+- US
+- Chính sách mới
+- Hoa Kỳ
+- $$$$
+- 40.000–85.000 USD/năm
+- Ngôn ngữ
+- Anh
+- Làm thêm
+- 20 giờ/tuần
+- Học bổng
+- 13 chương trình
+- Chi phí, visa
+- So sánh
+- AU
+- Chính sách mới
+- Úc
+- $$$
+- $
+- 32.000–55.000 USD/năm
+- Ngôn ngữ
+- Anh
+- Làm thêm
+- 48 giờ/2 tuần
+- Học bổng
+- 11 chương trình
+- Chi phí, visa
+- So sánh
+- DE
+- Đức
+- $$
+- $$
+- 12.000–18.000 USD/năm
+- Ngôn ngữ
+- Đức, Anh
+- Làm thêm
+- 140 ngày/năm
+- Học bổng
+- 9 chương trình
+- Chi phí, visa
+- Đang so
+- JP
+- Chính sách mới
+- Nhật Bản
+- $$
+- $$
+- 12.000–22.000 USD/năm
+- Ngôn ngữ
+- Nhật, Anh
+- Làm thêm
+- 28 giờ/tuần
+- Học bổng
+- 8 chương trình
+- Chi phí, visa
+- Đang so
+- NL
+- Hà Lan
+- $$$
+- $
+- 22.000–35.000 USD/năm
+- Ngôn ngữ
+- Anh, Hà Lan
+- Làm thêm
+- 16 giờ/tuần
+- Học bổng
+- 8 chương trình
+- Chi phí, visa
+- So sánh
+- CA
+- Chính sách mới
+- Canada
+- $$$
+- $
+- 25.000–45.000 USD/năm
+- Ngôn ngữ
+- Anh, Pháp
+- Làm thêm
+- 24 giờ/tuần
+- Học bổng
+- 7 chương trình
+- Chi phí, visa
+- Đang so
+- UK
+- Chính sách mới
+- Anh
+- $$$$
+- 35.000–65.000 USD/năm
+- Ngôn ngữ
+- Anh
+- Làm thêm
+- 20 giờ/tuần
+- Học bổng
+- 6 chương trình
+- Chi phí, visa
+- So sánh
+- SG
+- Singapore
+- $$$
+- $
+- 25.000–45.000 USD/năm
+- Ngôn ngữ
+- Anh
+- Làm thêm
+- 16 giờ/tuần
+- Học bổng
+- 6 chương trình
+- Chi phí, visa
+- So sánh
+- So sánh:
+- Đức
+- Nhật Bản
+- Canada
+- Bỏ chọn
+- So sánh 3 nước
+- thanh này dính ở đáy màn hình khi đã chọn ≥ 1 nước
+- KHÁM PHÁ
+- Học bổng
+- Du học 32 nước
+- Nghề nghiệp & mức lương
+- Tuyển sinh 2026
+- Trắc nghiệm hướng nghiệp
+- HỖ TRỢ
+- Câu hỏi thường gặp
+- Gói năm 199k
+- Chính sách hoàn tiền
+- Điều khoản sử dụng
+- Chính sách bảo mật
+- LIÊN HỆ
+- Hotline · Zalo · WhatsApp
+- LINE · WeChat: 0905 247 365
+- baika.vn@gmail.com
+- Tầng 15, 72 Lê Thánh Tôn,
+- Phường Sài Gòn, TP. Hồ Chí Minh
+- Hỏi gì cũng được,<br>anh chị trả lời trong ngày.
+- © 2026 Công ty Cổ phần Công nghệ BAIKA · MST 0319512450
+- Số liệu học bổng, học phí, lương là ước tính và có ngày cập nhật trên từng mục.
+
+### D5 · So sánh 3 nước (modal) — 24:1438
+
+- So sánh 3 nước
+- Cập nhật 09/2026
+- Tổng chi phí 1 năm
+- DE
+- Đức
+- $$  12.000 – 18.000 USD/năm
+- JP
+- Nhật Bản
+- $$  12.000 – 22.000 USD/năm
+- CA
+- Canada
+- $$$  25.000 – 45.000 USD/năm
+- Học phí
+- Rẻ nhất
+- Trường công gần như miễn phí; phí học kỳ 150–400 EUR
+- Quốc lập khoảng 3.500 USD; tư thục 6.000–10.000 USD
+- Đại học 15.000–30.000 USD
+- Sinh hoạt phí
+- 12.000–15.000 USD
+- Rẻ nhất
+- 7.000–12.000 USD
+- 15.000–20.000 USD
+- Ngôn ngữ đầu vào
+- TestDaF 4x4 hoặc DSH-2; chương trình tiếng Anh IELTS 6.0–6.5
+- JLPT N2–N1 hoặc EJU; chương trình tiếng Anh IELTS 6.0+
+- IELTS 6.0–6.5
+- Làm thêm
+- 140 ngày trọn/năm hoặc 20 giờ/tuần
+- Nhiều giờ nhất
+- Tối đa 28 giờ/tuần
+- Tối đa 24 giờ/tuần ngoài trường
+- Ở lại làm việc
+- Tìm việc tối đa 18 tháng
+- Chuyển visa lao động khi có việc; tìm việc tối đa 1 năm
+- Ở lại lâu nhất
+- PGWP tối đa 3 năm
+- Kỳ nhập học
+- Tháng 4, tháng 10
+- Tháng 4, 10
+- Tháng 9, 1
+- Học bổng trên Hướng Nghiệp
+- Nhiều nhất
+- 9 chương trình
+- 8 chương trình
+- 7 chương trình
+- Thay đổi 2025–2026
+- Tài khoản phong toả 11.904 EUR/năm
+- Từ 01/10/2026 phí gia hạn lưu trú tăng mạnh
+- Mức chứng minh tài chính tăng từ 09/2026
+- Cần cân nhắc
+- Cần tiếng Đức tốt để đi làm; chờ hẹn APS, visa lâu
+- Làm quá 28 giờ/tuần có thể bị từ chối gia hạn
+- Lên thường trú từ PGWP cạnh tranh hơn
+- Số liệu ước tính. Chính sách thị thực đổi thường xuyên, luôn kiểm tra trang cơ quan di trú.
+- Đặt lịch tư vấn
+- Tải PDF (gói năm)
+- ô xanh = điểm mạnh<br>nhất trong 3 nước
+
+### D6 · Nghề nghiệp — 25:1443
+
+- Học bổng
+- Du học
+- Nghề nghiệp
+- Tuyển sinh 2026
+- Trắc nghiệm
+- 0905 247 365
+- Đăng nhập
+- Gói năm 199k
+- Trang chủ  /  Nghề nghiệp
+- 299 nghề,
+- mỗi nghề một ngày thật
+- 6 nhiệm vụ chính, một ngày làm việc mẫu, ngành học nên chọn và dải lương thị trường.
+- Tìm nghề: điều dưỡng, lập trình, kế toán…
+- Tìm
+- Mã Holland
+- Chọn 1–3 chữ. Đã lấy từ kết quả trắc nghiệm của bạn.
+- R · Kỹ thuật
+- I · Nghiên cứu
+- A · Nghệ thuật
+- S · Xã hội
+- E · Quản lý
+- C · Nghiệp vụ
+- Nhóm ngành
+- Công nghệ thông tin
+- 46
+- Sáng tạo, thiết kế
+- 22
+- Kiến trúc, xây dựng
+- 19
+- Y tế
+- 31
+- Kinh doanh
+- 38
+- Giáo dục
+- 17
+- Lương khởi điểm từ
+- 8 triệu/tháng trở lên
+- I · A
+- Đang lọc theo mã Holland của bạn
+- Kết quả trắc nghiệm ngày 28/09/2026 · I · A · S
+- Làm lại
+- 24
+- nghề khớp
+- Sắp xếp:
+- Lương cao nhất
+- Công nghệ thông tin
+- I · C
+- Kỹ sư dữ liệu
+- Xây đường ống gom, làm sạch và lưu dữ liệu để người phân tích và AI có cái mà dùng.
+- Lương thị trường
+- 12 – 55 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 12–20 tr · 5 năm+ 30–55 tr
+- Xem 8 nhiệm vụ chính
+- Công nghệ thông tin
+- I · A
+- Lập trình viên front-end, di động
+- Dựng phần người dùng nhìn thấy và bấm vào trên web, trên điện thoại.
+- Lương thị trường
+- 9 – 40 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 9–16 tr · 5 năm+ 22–40 tr
+- Xem 8 nhiệm vụ chính
+- Công nghệ thông tin
+- A · I
+- Thiết kế UI/UX
+- Thiết kế cách app, web trông ra sao và dùng có dễ không.
+- Lương thị trường
+- 8 – 35 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 8–14 tr · 5 năm+ 18–35 tr
+- Xem 8 nhiệm vụ chính
+- Công nghệ thông tin
+- I · C
+- Chuyên viên phân tích dữ liệu
+- Biến số liệu bán hàng, số liệu người dùng thành câu trả lời cho ban lãnh đạo.
+- Lương thị trường
+- 9 – 35 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 9–15 tr · 5 năm+ 20–35 tr
+- Xem 8 nhiệm vụ chính
+- Kiến trúc, xây dựng
+- A · R
+- Kiến trúc sư
+- Thiết kế hình dáng, không gian công trình sao cho đẹp và dùng được.
+- Lương thị trường
+- 8 – 30 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 8–14 tr · 5 năm+ 15–30 tr
+- Xem 8 nhiệm vụ chính
+- Sáng tạo, thiết kế
+- A · R
+- Thiết kế đồ hoạ
+- Thiết kế logo, poster, bao bì, hình ảnh quảng cáo.
+- Lương thị trường
+- 7 – 25 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 7–12 tr · 5 năm+ 15–25 tr
+- Xem 8 nhiệm vụ chính
+- Xem thêm 18 nghề
+- KHÁM PHÁ
+- Học bổng
+- Du học 32 nước
+- Nghề nghiệp & mức lương
+- Tuyển sinh 2026
+- Trắc nghiệm hướng nghiệp
+- HỖ TRỢ
+- Câu hỏi thường gặp
+- Gói năm 199k
+- Chính sách hoàn tiền
+- Điều khoản sử dụng
+- Chính sách bảo mật
+- LIÊN HỆ
+- Hotline · Zalo · WhatsApp
+- LINE · WeChat: 0905 247 365
+- baika.vn@gmail.com
+- Tầng 15, 72 Lê Thánh Tôn,
+- Phường Sài Gòn, TP. Hồ Chí Minh
+- Hỏi gì cũng được,<br>anh chị trả lời trong ngày.
+- © 2026 Công ty Cổ phần Công nghệ BAIKA · MST 0319512450
+- Số liệu học bổng, học phí, lương là ước tính và có ngày cập nhật trên từng mục.
+
+### D6b · Chi tiết nghề (drawer) — 26:1742
+
+- Công nghệ thông tin
+- A · I
+- Thiết kế UI/UX
+- UI/UX Designer
+- Thiết kế cách app, web trông ra sao và dùng có dễ không.
+- Lương thị trường
+- 8 – 35 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 8–14 tr · 5 năm+ 18–35 tr
+- 6 việc chính
+- 01
+- Phỏng vấn người dùng để hiểu họ cần gì
+- 02
+- Vẽ luồng thao tác, khung trang (wireframe)
+- 03
+- Thiết kế giao diện chi tiết trên Figma
+- 04
+- Làm bản mẫu bấm thử được (prototype)
+- 05
+- Cho người dùng thử, ghi lại chỗ họ lúng túng
+- 06
+- Bàn giao thiết kế cho lập trình viên, theo đến khi xong
+- Một ngày làm việc
+- 9:00
+- Xem lại ghi chú 5 buổi thử nghiệm người dùng
+- 10:00
+- Vẽ lại luồng đặt hàng cho bớt 2 bước
+- 14:00
+- Trình bày phương án với quản lý sản phẩm
+- 16:00
+- Bàn giao file Figma, giải thích cho lập trình viên
+- Kỹ năng cần có
+- Figma thành thạo
+- Hiểu tâm lý người dùng
+- Trình bày, bảo vệ ý tưởng
+- Hiểu cơ bản cách lập trình vận hành
+- Lời thật
+- Thiết kế đẹp chưa đủ, phải chứng minh được người dùng thao tác dễ hơn. Bị sửa nhiều vòng là bình thường.
+- Ngành học, khối thi, lộ trình thăng tiến
+- 3 ngành nên học (Thiết kế đồ hoạ, Công nghệ đa phương tiện, Tâm lý học) kèm khối xét tuyển, nơi làm việc và lộ trình từ thực tập đến trưởng nhóm.
+- Mở khoá 199k/năm
+- ≈ 16.600đ/tháng · hoàn tiền trong 7 ngày
+- Xem học bổng ngành Thiết kế
+- Lưu nghề
+
+### D7 · Trắc nghiệm — 28:1786
+
+- Trắc nghiệm Holland
+- Câu 14 / 36 · còn khoảng 4 phút
+- Lưu và thoát
+- 14
+- / 36
+- không có đáp án đúng sai,<br>chọn theo cảm giác đầu tiên
+- BẠN THẤY VIỆC NÀY THẾ NÀO?
+- Vẽ lại bố cục một trang web cho dễ nhìn, dễ bấm hơn
+- A
+- Rất muốn thử ngay
+- B
+- Cũng được, nếu có người hướng dẫn
+- C
+- Không hứng thú lắm
+- D
+- Không thích
+- Câu trước
+- Phím A–D để chọn, Enter để tiếp
+- Câu tiếp
+
+### D8 · Kết quả trắc nghiệm — 29:1807
+
+- Học bổng
+- Du học
+- Nghề nghiệp
+- Tuyển sinh 2026
+- Trắc nghiệm
+- 0905 247 365
+- Đăng nhập
+- Gói năm 199k
+- KẾT QUẢ CỦA MINH · 28/09/2026
+- I · A · S
+- Bạn là người
+- tò mò và giàu tưởng tượng.
+- Nghiên cứu (I) và Nghệ thuật (A) nổi trội, kèm Xã hội (S). Bạn hợp việc cần tìm hiểu sâu rồi làm ra thứ mới, có người dùng thật.
+- R
+- 8/30
+- Kỹ thuật
+- I
+- 27/30
+- Nghiên cứu
+- A
+- 25/30
+- Nghệ thuật
+- S
+- 19/30
+- Xã hội
+- E
+- 11/30
+- Quản lý
+- C
+- 9/30
+- Nghiệp vụ
+- 3 cột xanh = mã của bạn
+- BƯỚC 2 · CHỌN NGÀNH
+- 12 nghề hợp mã I · A · S
+- Xem cả 12 nghề
+- Công nghệ thông tin
+- A · I
+- Thiết kế UI/UX
+- Thiết kế cách app, web trông ra sao và dùng có dễ không.
+- Lương thị trường
+- 8 – 35 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 8–14 tr · 5 năm+ 18–35 tr
+- Xem 8 nhiệm vụ chính
+- Công nghệ thông tin
+- I · A
+- Lập trình viên front-end, di động
+- Dựng phần người dùng nhìn thấy và bấm vào trên web, trên điện thoại.
+- Lương thị trường
+- 9 – 40 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 9–16 tr · 5 năm+ 22–40 tr
+- Xem 8 nhiệm vụ chính
+- Kiến trúc, xây dựng
+- A · R
+- Kiến trúc sư
+- Thiết kế hình dáng, không gian công trình sao cho đẹp và dùng được.
+- Lương thị trường
+- 8 – 30 tr/tháng
+- 0
+- 20
+- 40
+- 60
+- 80+ tr
+- Mới ra trường 8–14 tr · 5 năm+ 15–30 tr
+- Xem 8 nhiệm vụ chính
+- NGÀNH HỌC NÊN XEM
+- Ngành và khối xét tuyển gợi ý
+- Thiết kế đồ hoạ
+- Khối H00, V00
+- Công nghệ đa phương tiện
+- Khối A00, A01, D01
+- Tâm lý học
+- Khối B00, C00, D01
+- Kiến trúc
+- Khối V00, V01
+- Khoa học máy tính
+- Khối A00, A01
+- Lưu vào Lộ trình của tôi
+- Gửi kết quả cho bố mẹ
+- Xem học bổng nhóm ngành này
+- bước 1/4 xong rồi!
+- KHÁM PHÁ
+- Học bổng
+- Du học 32 nước
+- Nghề nghiệp & mức lương
+- Tuyển sinh 2026
+- Trắc nghiệm hướng nghiệp
+- HỖ TRỢ
+- Câu hỏi thường gặp
+- Gói năm 199k
+- Chính sách hoàn tiền
+- Điều khoản sử dụng
+- Chính sách bảo mật
+- LIÊN HỆ
+- Hotline · Zalo · WhatsApp
+- LINE · WeChat: 0905 247 365
+- baika.vn@gmail.com
+- Tầng 15, 72 Lê Thánh Tôn,
+- Phường Sài Gòn, TP. Hồ Chí Minh
+- Hỏi gì cũng được,<br>anh chị trả lời trong ngày.
+- © 2026 Công ty Cổ phần Công nghệ BAIKA · MST 0319512450
+- Số liệu học bổng, học phí, lương là ước tính và có ngày cập nhật trên từng mục.
+
+### D9 · Thanh toán gói năm — 30:1974
+
+- Thanh toán an toàn
+- 0905 247 365
+- Mở khoá gói năm
+- Tài khoản
+- minh.hs2008@gmail.com
+- Đổi email
+- Mật khẩu và hướng dẫn đăng nhập gửi về email này sau khi thanh toán.
+- 02
+- Phương thức thanh toán
+- VNPay QR
+- Quét mã bằng app ngân hàng
+- Ví MoMo
+- Mở app MoMo để xác nhận
+- Thẻ ATM nội địa
+- Napas, có Internet Banking
+- Thẻ quốc tế
+- Visa, Mastercard, JCB
+- Quét mã để trả 199.000đ
+- Nội dung chuyển khoản tự điền: HN 2026 MINH. Mã hết hạn sau 14:59.
+- Chưa thấy xác nhận sau 5 phút? Gọi 0905 247 365.
+- Hoá đơn (không bắt buộc)
+- Cần hoá đơn cho công ty? Điền mã số thuế và tên đơn vị, hoá đơn gửi qua email trong 3 ngày làm việc.
+- GÓI NĂM HƯỚNG NGHIỆP
+- 199.000đ
+- / năm
+- Hiệu lực 30/09/2026 – 30/09/2027. Không tự gia hạn.
+- Tiêu chí, hồ sơ mẫu 172 học bổng
+- Visa, chứng minh tài chính 32 nước
+- Nhiệm vụ đủ 299 nghề
+- Lộ trình 12 tháng, nhắc hạn qua email
+- Mã giảm giá
+- Áp dụng
+- Tổng thanh toán
+- 199.000đ
+- Tôi đã chuyển khoản
+- Chưa dùng tới phần trả phí, hoàn tiền trong 7 ngày. Thanh toán nghĩa là bạn đồng ý Điều khoản sử dụng của Công ty CP Công nghệ BAIKA.
+- tài khoản về email<br>trong 1 phút
+
+### D9b · Thanh toán thành công — 30:2151
+
+- Xong rồi, cửa đã mở!
+- Tài khoản gói năm đã gửi về minh.hs2008@gmail.com. Hạn dùng đến 30/09/2027.
+- Mật khẩu tạm
+- Đổi ngay ở lần đăng nhập đầu
+- Nhắc hạn học bổng
+- Đã bật cho 3 học bổng bạn lưu
+- Lộ trình của tôi
+- Bước 1/4 đã xong: trắc nghiệm
+- Mở Lộ trình của tôi
+
+### D10 · Đăng nhập (modal) — 31:1982
+
+- Đăng nhập để lưu lộ trình
+- Lần đầu đăng nhập sẽ tự tạo tài khoản miễn phí. Không cần mật khẩu.
+- G
+- Tiếp tục với Google
+- f
+- Tiếp tục với Facebook
+- Nhận mã qua số điện thoại
+- Đăng nhập bằng email
+- Tiếp tục nghĩa là bạn đồng ý Điều khoản sử dụng và Chính sách bảo mật của BAIKA.
+- Đổi số điện thoại
+- Nhập mã 6 số
+- Đã gửi tin nhắn tới 0905 ••• 365. Mã có hiệu lực 5 phút.
+- 4
+- 8
+- 1
+- 2
+- Gửi lại mã sau
+- 00:42
+- Xác nhận
+- mã tự điền trên điện thoại<br>nếu trình duyệt hỗ trợ
+
+### D11 · Lộ trình của tôi — 32:2002
+
+- Học bổng
+- Du học
+- Nghề nghiệp
+- Tuyển sinh 2026
+- Trắc nghiệm
+- 0905 247 365
+- Minh
+- Gói năm · còn 365 ngày
+- LỘ TRÌNH CỦA TÔI · CẬP NHẬT 30/09/2026
+- Chào Minh,
+- bậc 2 đang chờ bạn.
+- Bạn đã biết mình hợp nhóm I · A · S. Tuần này đọc kỹ 3 nghề gợi ý rồi chọn 1 ngành để đi tiếp.
+- 1/4
+- 4 bậc của bạn
+- Hiểu mình
+- Xong 28/09 · mã I · A · S
+- 02
+- Chọn ngành
+- Đang làm · còn 2 việc
+- 03
+- Chọn nước, chọn trường
+- Mở sau bậc 2
+- 04
+- Săn học bổng
+- Đã lưu sẵn 3 học bổng
+- Việc tuần này
+- 2 / 4 xong
+- Làm trắc nghiệm Holland
+- hạn 28/09
+- Đọc nghề Thiết kế UI/UX
+- hạn 29/09
+- Đọc nghề Lập trình viên front-end
+- hạn 02/10
+- Chọn 1 ngành, lưu vào lộ trình
+- hạn 04/10
+- Học bổng đã lưu · nhắc hạn đang bật
+- Tìm thêm
+- 06/10
+- 2026
+- Chevening 2027–2028
+- Anh · Thạc sĩ
+- Còn 6 ngày
+- 08/12
+- 2026
+- Gates Cambridge
+- Anh · Thạc sĩ, Tiến sĩ
+- Còn 69 ngày
+- 01/27
+- đợt cuối
+- Erasmus Mundus
+- Châu Âu · Thạc sĩ
+- Nhiều đợt
+- Chevening cần 2 năm đi làm,<br>ghi chú lại cho kế hoạch sau nhé
+- KHÁM PHÁ
+- Học bổng
+- Du học 32 nước
+- Nghề nghiệp & mức lương
+- Tuyển sinh 2026
+- Trắc nghiệm hướng nghiệp
+- HỖ TRỢ
+- Câu hỏi thường gặp
+- Gói năm 199k
+- Chính sách hoàn tiền
+- Điều khoản sử dụng
+- Chính sách bảo mật
+- LIÊN HỆ
+- Hotline · Zalo · WhatsApp
+- LINE · WeChat: 0905 247 365
+- baika.vn@gmail.com
+- Tầng 15, 72 Lê Thánh Tôn,
+- Phường Sài Gòn, TP. Hồ Chí Minh
+- Hỏi gì cũng được,<br>anh chị trả lời trong ngày.
+- © 2026 Công ty Cổ phần Công nghệ BAIKA · MST 0319512450
+- Số liệu học bổng, học phí, lương là ước tính và có ngày cập nhật trên từng mục.
+
+### Mobile M1–M6 — page 2:7
+
+- [34:29] HƯỚNG NGHIỆP · HỌC BỔNG · DU HỌC
+- [34:31] Mở cửa,<br>thấy lối đi
+- [34:32] của riêng bạn.
+- [34:33] 172 học bổng, 32 nước, 299 nghề kèm dải lương. Xem lướt miễn phí.
+- [I34:34;9:6] Tìm học bổng, nước, ngành…
+- [I34:34;9:7;8:19] Tìm
+- [I34:47;8:136] Toàn phần
+- [I34:50;8:136] Du học Nhật
+- [I34:53;8:136] IT lương bao nhiêu?
+- [I34:56;10:122] 06/10
+- [I34:56;10:123] 2026
+- [I34:56;10:126] Chevening 2027–2028
+- [I34:56;10:127] Anh · Thạc sĩ · Toàn phần
+- [I34:56;10:128;8:154] Còn 6 ngày
+- [34:75] BẠN ĐANG Ở ĐÂU?
+- [34:76] Ba lối vào
+- [34:82] 01
+- [34:83] Chưa biết mình hợp ngành gì
+- [I34:84;8:19] Làm trắc nghiệm
+- [34:92] 02
+- [34:93] Đã có ngành, cần học bổng
+- [I34:94;8:51] Tìm học bổng
+- [34:102] 03
+- [34:103] Muốn du học, lo chi phí
+- [I34:104;8:51] So sánh các nước
+- [34:117] SẮP HẾT HẠN
+- [34:118] 4 học bổng đóng trong 70 ngày
+- [I34:119;10:122] 30/09
+- [I34:119;10:123] 2026
+- [I34:119;10:126] Chính phủ Hàn Quốc (GKS)
+- [I34:119;10:127] Hàn Quốc · Đại học
+- [I34:119;10:128;8:154] Đóng hôm nay
+- [I34:131;10:122] 06/10
+- [I34:131;10:123] 2026
+- [I34:131;10:126] Chevening 2027–2028
+- [I34:131;10:127] Anh · Thạc sĩ
+- [I34:131;10:128;8:154] Còn 6 ngày
+- [I34:143;8:83] Xem cả 4 học bổng
+- [34:152] HỌC BỔNG TOÀN PHẦN
+- [34:153] Được trả gần như mọi thứ
+- [I34:154;10:22] UK
+- [I34:154;10:23;8:151] Còn 69 ngày
+- [I34:154;10:30] THẠC SĨ, TIẾN SĨ · TOÀN PHẦN
+- [I34:154;10:31] Gates Cambridge
+- [I34:154;10:32] Quỹ Gates Cambridge · Đại học Cambridge
+- [I34:154;10:34] Học phí + sinh hoạt phí toàn khoá
+- [I34:154;10:40] Hạn 08/12/2026
+- [I34:154;10:43] Chi tiết
+- [34:190] DU HỌC · 32 NƯỚC
+- [34:191] Bưu thiếp được mở nhiều nhất
+- [I34:193;12:36] JP
+- [I34:193;12:38] Chính sách mới
+- [I34:193;12:40] Nhật Bản
+- [I34:193;12:43] $$
+- [I34:193;12:44] $$
+- [I34:193;12:45] 12.000–22.000 USD/năm
+- [I34:193;12:48] Ngôn ngữ
+- [I34:193;12:49] Nhật, Anh
+- [I34:193;12:51] Làm thêm
+- [I34:193;12:52] 28 giờ/tuần
+- [I34:193;12:54] Học bổng
+- [I34:193;12:55] 8 chương trình
+- [I34:193;12:58] Chi phí, visa
+- [I34:193;12:65] So sánh
+- [I34:230;12:36] DE
+- [I34:230;12:40] Đức
+- [I34:230;12:43] $$
+- [I34:230;12:44] $$
+- [I34:230;12:45] 12.000–18.000 USD/năm
+- [I34:230;12:48] Ngôn ngữ
+- [I34:230;12:49] Đức, Anh
+- [I34:230;12:51] Làm thêm
+- [I34:230;12:52] 140 ngày/năm
+- [I34:230;12:54] Học bổng
+- [I34:230;12:55] 9 chương trình
+- [I34:230;12:58] Chi phí, visa
+- [I34:230;12:65] So sánh
+- [34:272] GÓI NĂM
+- [34:273] Đi sâu với 199k một năm
+- [I34:274;13:124] GÓI NĂM
+- [I34:274;13:127] Phổ biến nhất
+- [I34:274;13:129] 199.000đ
+- [I34:274;13:130] / năm
+- [I34:274;13:131] bằng một ly trà sữa mỗi tháng
+- [I34:274;13:136] Mọi thứ ở gói xem lướt
+- [I34:274;13:140] Tiêu chí, hồ sơ mẫu của 172 học bổng
+- [I34:274;13:144] Thị thực, chứng minh tài chính 32 nước
+- [I34:274;13:148] Mô tả nhiệm vụ đủ 299 nghề
+- [I34:274;13:152] Lộ trình 12 tháng và nhắc hạn qua email
+- [I34:274;13:156] So sánh 3 nước, lưu không giới hạn
+- [I34:274;13:157;8:3] Mua gói năm
+- [I34:274;13:161] Thanh toán qua VNPay, MoMo, thẻ. Tài khoản gửi về email trong 1 phút.
+- [34:318] Còn băn khoăn? Hỏi anh chị tư vấn.
+- [34:322] 0905 247 365
+- [34:323] Hotline · Zalo · WhatsApp · LINE · WeChat
+- [I34:324;8:99] Đặt lịch tư vấn
+- [34:333] © 2026 Công ty Cổ phần Công nghệ BAIKA · MST 0319512450<br>Tầng 15, 72 Lê Thánh Tôn, Phường Sài Gòn, TP.HCM
+- [34:338] Trang chủ
+- [34:343] Học bổng
+- [34:348] Du học
+- [34:353] Nghề
+- [34:358] Của tôi
+- [35:244] 172 học bổng,
+- [35:245] lọc đúng hồ sơ bạn
+- [I35:246;9:24] thạc sĩ toàn phần
+- [I35:246;9:25;8:19] Tìm
+- [35:260] Lọc · 3
+- [35:262] Thạc sĩ
+- [35:266] Toàn phần
+- [35:270] 58
+- [35:271] học bổng · hạn gần nhất
+- [I35:273;10:22] UK
+- [I35:273;10:23;8:154] Còn 6 ngày
+- [I35:273;10:30] THẠC SĨ · TOÀN PHẦN
+- [I35:273;10:31] Học bổng Chevening 2027–2028
+- [I35:273;10:32] Bộ Ngoại giao Anh (FCDO)
+- [I35:273;10:34] Học phí + sinh hoạt phí + vé máy bay
+- [I35:273;10:40] Hạn 06/10/2026
+- [I35:273;10:43] Chi tiết
+- [35:302] Chưa chắc chọn ngành?
+- [35:303] Trắc nghiệm 8 phút, kết quả tự lọc học bổng.
+- [I35:304;8:19] Làm thử
+- [I35:308;10:22] US
+- [I35:308;10:23;8:154] Còn 6 ngày
+- [I35:308;10:30] THẠC SĨ, TIẾN SĨ
+- [I35:308;10:31] Knight-Hennessy Scholars
+- [I35:308;10:32] Đại học Stanford · tối đa 3 năm
+- [I35:308;10:34] Toàn bộ học phí + sinh hoạt phí
+- [I35:308;10:40] Hạn 06/10/2026
+- [I35:308;10:43] Chi tiết
+- [I35:335;10:76] DE
+- [I35:335;10:77;8:160] Nhiều đợt
+- [I35:335;10:84] THẠC SĨ, TIẾN SĨ
+- [I35:335;10:85] DAAD cho thạc sĩ, tiến sĩ
+- [I35:335;10:86] Cơ quan Trao đổi Hàn lâm Đức
+- [I35:335;10:88] 992–1.400 euro/tháng + bảo hiểm
+- [I35:335;10:95] Tiêu chí & hồ sơ mẫu trong gói năm
+- [35:366] Trang chủ
+- [35:370] Học bổng
+- [35:376] Du học
+- [35:381] Nghề
+- [35:386] Của tôi
+- [35:404] 172 học bổng,
+- [I35:406;13:212] Lọc học bổng
+- [I35:406;13:214] Xoá lọc
+- [I35:406;13:216] Bậc học
+- [I35:406;13:218;8:136] Đại học
+- [I35:406;13:221;8:146] Thạc sĩ
+- [I35:406;13:226;8:136] Tiến sĩ
+- [I35:406;13:229;8:136] Ngắn hạn
+- [I35:406;13:233] Mức tài trợ
+- [I35:406;13:235;8:146] Toàn phần
+- [I35:406;13:240;8:136] Bán phần
+- [I35:406;13:243;8:136] Học phí
+- [I35:406;13:247] Khu vực
+- [I35:406;13:249;8:136] Đông Nam Á
+- [I35:406;13:252;8:136] Châu Á
+- [I35:406;13:255;8:136] Châu Âu
+- [I35:406;13:258;8:136] Châu Mỹ
+- [I35:406;13:261;8:136] Úc, NZ
+- [I35:406;13:264;8:3] Xem 38 học bổng
+- [35:494] kéo xuống để đóng
+- [36:434] Học bổng
+- [36:445] UK
+- [I36:446;8:154] Còn 6 ngày
+- [36:452] THẠC SĨ 1 NĂM · TOÀN PHẦN
+- [36:453] Học bổng Chevening 2027–2028
+- [36:454] Bộ Ngoại giao Anh (FCDO) tài trợ người đã đi làm ít nhất 2 năm, muốn học thạc sĩ 1 năm tại Anh rồi về Việt Nam đóng góp.
+- [36:462] HẠN NỘP
+- [36:463] 06/10/2026 · 18:00
+- [36:465] GIÁ TRỊ
+- [36:466] Học phí, sinh hoạt phí, vé máy bay, phí visa
+- [36:468] CAM KẾT
+- [36:469] Về Việt Nam ít nhất 2 năm
+- [36:474] ĐIỀU KIỆN CHÍNH
+- [36:475] Ai nộp được?
+- [36:480] Có bằng đại học đủ điều kiện học thạc sĩ ở Anh
+- [36:485] Ít nhất 2 năm kinh nghiệm làm việc (2.800 giờ)
+- [36:490] Nộp vào 3 khoá thạc sĩ khác nhau tại Anh
+- [36:495] Có thư mời vô điều kiện trước 08/07/2027
+- [36:500] Về Việt Nam ít nhất 2 năm sau khi học
+- [36:505] HỒ SƠ
+- [I36:506;13:59] Hồ sơ, bài luận mẫu, lịch 8 tuần
+- [I36:506;13:60] 4 bài luận, 2 thư giới thiệu, bằng, bảng điểm, hộ chiếu. Kèm bài luận mẫu đã đỗ.
+- [I36:506;13:62;8:99] Mở khoá 199k/năm
+- [I36:506;13:66] ≈ 16.600đ/tháng · hoàn tiền trong 7 ngày
+- [36:533] LỊCH CHU KỲ 2027/28
+- [I36:534;12:161] Mở đơn trực tuyến
+- [I36:534;12:162] 04/08/2026
+- [I36:543;12:167] 02
+- [I36:543;12:171] Hạn nộp đơn
+- [I36:543;12:172] 06/10/2026, 18:00 giờ VN
+- [I36:553;12:177] 03
+- [I36:553;12:179] Phỏng vấn, xét chọn
+- [I36:553;12:180] Theo lịch chevening.org
+- [I36:561;12:177] 04
+- [I36:561;12:179] Nhập học tại Anh
+- [I36:561;12:180] 09/2027
+- [36:571] 06/10 · 18:00
+- [36:572] Còn 6 ngày
+- [I36:573;8:3] Nộp đơn
+- [36:582] Du học
+- [36:596] JP
+- [36:597]   NHẬT BẢN
+- [36:598] Nhật Bản
+- [36:600] $$
+- [36:601] $$
+- [36:602] 12.000–22.000 USD/năm
+- [36:605] CHÍNH SÁCH MỚI · 01/10/2026
+- [36:606] Phí gia hạn, đổi tư cách lưu trú tăng mạnh: 33.000 yên cho thời hạn 1 năm, cao hơn với thời hạn dài.
+- [36:609] Học phí
+- [36:610] Quốc lập khoảng 3.500 USD; tư thục 6.000–10.000 USD
+- [36:612] Sinh hoạt phí
+- [36:613] 7.000–12.000 USD
+- [36:615] Ngôn ngữ
+- [36:616] JLPT N2–N1 hoặc EJU; tiếng Anh IELTS 6.0+
+- [36:618] Làm thêm
+- [36:619] Tối đa 28 giờ/tuần khi có giấy phép
+- [36:621] Ở lại làm việc
+- [36:622] Chuyển visa lao động khi có việc; tìm việc tối đa 1 năm
+- [36:624] Nhập học
+- [36:625] Tháng 4, 10 (trường tiếng: 1, 4, 7, 10)
+- [36:628] Cần cân nhắc
+- [36:629] Làm thêm quá 28 giờ/tuần có thể bị từ chối gia hạn. Nên học tiếng trước khi đi.
+- [36:631] Học bổng tại Nhật (8)
+- [36:634] MEXT diện Đại sứ quán
+- [36:635] Đại học, thạc sĩ, tiến sĩ
+- [I36:636;8:157] Mở lại 04/2027
+- [36:641] MEXT diện trường đề cử
+- [36:642] Đại học, thạc sĩ, tiến sĩ
+- [I36:643;8:160] Theo trường
+- [36:648] Ajinomoto cho sinh viên ASEAN
+- [36:649] Thạc sĩ
+- [I36:650;8:160] Theo đợt
+- [I36:654;13:59] Visa, chứng minh tài chính, lộ trình 12 tháng
+- [I36:654;13:60] Hồ sơ thị thực du học Nhật, mức chứng minh tài chính và lịch chuẩn bị từng tháng.
+- [I36:654;13:62;8:99] Mở khoá 199k/năm
+- [I36:654;13:66] ≈ 16.600đ/tháng · hoàn tiền trong 7 ngày
+- [36:676] $$ · 12–22k USD
+- [36:677] 8 học bổng đang theo dõi
+- [I36:678;8:3] Tư vấn về Nhật
+- [37:525] 14/36
+- [37:529] 14
+- [37:532] không có đáp án đúng sai,<br>chọn theo cảm giác đầu tiên
+- [37:534] BẠN THẤY VIỆC NÀY THẾ NÀO?
+- [37:535] Vẽ lại bố cục một trang web cho dễ nhìn, dễ bấm hơn
+- [I37:536;13:88] A
+- [I37:536;13:89] Rất muốn thử ngay
+- [I37:542;13:84] B
+- [I37:542;13:85] Cũng được, nếu có người hướng dẫn
+- [I37:546;13:84] C
+- [I37:546;13:85] Không hứng thú lắm
+- [I37:550;13:84] D
+- [I37:550;13:85] Không thích
+- [I37:555;8:67] Trước
+- [I37:560;8:3] Câu tiếp
+- [42:2732] M1 · Trang chủ
+- [42:2733] M2 · Học bổng
+- [42:2734] M3 · Bộ lọc
+- [42:2735] M4 · Chi tiết học bổng
+- [42:2736] M5 · Chi tiết nước
+- [42:2737] M6 · Trắc nghiệm

@@ -21,11 +21,11 @@ export function StatusBadge(label:string,status:StatusKind='open'):string {
 }
 
 export function SearchField(placeholder='Tìm học bổng, nước, ngành, trường…'):string {
-  return `<form class="hn-search" role="search">${Icon('search',{size:22,className:'hn-search__icon'})}<input name="q" autocomplete="off" placeholder="${escapeHTML(placeholder)}"/>${Button({label:'Tìm',size:'s',icon:false,attrs:'type="submit"'})}</form>`;
+  return `<form class="hn-search" role="search">${Icon('search',{size:22,className:'hn-search__icon'})}<input name="q" autocomplete="off" placeholder="${escapeHTML(placeholder)}"/>${Button({label:'Tìm',size:'s',attrs:'type="submit"'})}</form>`;
 }
 
 export function Select(value:string, options:string[]):string {
-  return `<select class="hn-select" aria-label="Sắp xếp">${options.map(o=>`<option${o===value?' selected':''}>${escapeHTML(o)}</option>`).join('')}</select>`;
+  return `<span class="hn-select-wrap"><select class="hn-select" aria-label="Sắp xếp">${options.map(o=>`<option${o===value?' selected':''}>${escapeHTML(o)}</option>`).join('')}</select>${Icon('chevron-down',{size:18,className:'hn-select__icon'})}</span>`;
 }
 export function Checkbox(label:string,checked=false):string {
   return `<label class="hn-checkbox"><input type="checkbox"${checked?' checked':''}/><span class="hn-checkbox__box">${Icon('check',{size:16})}</span><span>${escapeHTML(label)}</span></label>`;
@@ -66,7 +66,7 @@ export function DeadlineTicket(p:DeadlineTicketProps):string {
 
 export interface CountryPostcardProps { country:string; code:string; cost:string; lang:string; work:string; count:string; newPolicy?:boolean; compare?:boolean; }
 export function CountryPostcard(p:CountryPostcardProps):string {
-  return `<article class="hn-card hn-card--interactive hn-country-card" aria-selected="${!!p.compare}"><div class="hn-country-card__cover" aria-hidden="true"><span class="hn-country-card__door">${DoorPanel({width:120,height:170,tone:'primary'})}</span>${Spark(42)}</div><div class="hn-country-card__body"><div style="display:flex;justify-content:space-between;align-items:center"><span class="hn-stamp">${escapeHTML(p.code)}</span>${p.newPolicy?'<span class="hn-caption">Chính sách mới</span>':''}</div><h3 class="hn-h3">${escapeHTML(p.country)}</h3><p class="hn-data-bold">${escapeHTML(p.cost)}</p><p class="hn-body-s">Ngôn ngữ · ${escapeHTML(p.lang)}<br>Làm thêm · ${escapeHTML(p.work)}<br>${escapeHTML(p.count)}</p><button class="hn-button hn-button--ghost hn-button--s" type="button" aria-pressed="${!!p.compare}">${p.compare?Icon('check',{size:14,className:'hn-button__icon'}):Icon('plus',{size:14,className:'hn-button__icon'})}<span>${p.compare?'Đã chọn so sánh':'Thêm vào so sánh'}</span></button></div></article>`;
+  return `<article class="hn-card hn-card--interactive hn-country-card" aria-selected="${!!p.compare}"><div class="hn-country-card__cover" aria-hidden="true"><span class="hn-country-card__door">${DoorPanel({width:120,height:170,tone:'primary'})}</span>${Spark(42)}</div><div class="hn-country-card__body"><div style="display:flex;justify-content:space-between;align-items:center"><span class="hn-stamp">${escapeHTML(p.code)}</span>${p.newPolicy?'<span class="hn-caption">Chính sách mới</span>':''}</div><h3 class="hn-h3">${escapeHTML(p.country)}</h3><p class="hn-data-bold">${escapeHTML(p.cost)}</p><p class="hn-body-s">Ngôn ngữ · ${escapeHTML(p.lang)}<br>Làm thêm · ${escapeHTML(p.work)}<br>${escapeHTML(p.count)}</p><div class="hn-country-card__actions"><a class="hn-country-card__cost" href="#/du-hoc">${Icon('wallet-cards',{size:16})}<span>Chi phí, visa</span></a><button class="hn-button hn-button--ghost hn-button--s" type="button" aria-pressed="${!!p.compare}">${p.compare?Icon('check',{size:14,className:'hn-button__icon'}):Icon('plus',{size:14,className:'hn-button__icon'})}<span>${p.compare?'Đã chọn so sánh':'Thêm vào so sánh'}</span></button></div></div></article>`;
 }
 
 export interface SalaryRangeProps { min:number; max:number; entryMin:number; entryMax:number; rangeText:string; note:string; }
@@ -85,7 +85,7 @@ export function JobCard(p:JobCardProps):string {
 
 export type JourneyState='done'|'current'|'next';
 export function JourneyStep(title:string,meta:string,state:JourneyState):string {
-  return `<article class="hn-journey-step" data-state="${state}">${state==='current'?`<span class="hn-journey-step__marker" aria-hidden="true">${RisingPanel(34,18)}</span>`:''}<h3 class="hn-title-m">${escapeHTML(title)}</h3><p class="hn-body-s">${escapeHTML(meta)}</p></article>`;
+  return `<article class="hn-journey-step" data-state="${state}">${state==='done'?`<span class="hn-journey-step__done" aria-hidden="true">${RisingPanel(52,44)}${Icon('check',{size:20})}</span>`:''}${state==='current'?`<span class="hn-journey-step__marker" aria-hidden="true">${RisingPanel(34,18)}</span>`:''}<h3 class="hn-title-m">${escapeHTML(title)}</h3><p class="hn-body-s">${escapeHTML(meta)}</p></article>`;
 }
 
 export function PaywallLock(title:string,body:string):string {
@@ -98,26 +98,27 @@ export function SectionHeading(p:SectionHeadingProps):string {
 }
 
 export function QuizOption(answer:string,letter:string,selected=false,name='holland'):string {
-  return `<label class="hn-quiz-option" role="radio" aria-checked="${selected}" tabindex="0"><input type="radio" name="${escapeHTML(name)}" value="${escapeHTML(letter)}"${selected?' checked':''} hidden/><span class="hn-quiz-option__letter">${escapeHTML(letter)}</span><span class="hn-body-m">${escapeHTML(answer)}</span></label>`;
+  return `<label class="hn-quiz-option" role="radio" aria-checked="${selected}" tabindex="0"><input type="radio" name="${escapeHTML(name)}" value="${escapeHTML(letter)}"${selected?' checked':''} hidden/><span class="hn-quiz-option__letter">${escapeHTML(letter)}</span><span class="hn-body-m">${escapeHTML(answer)}</span>${Icon('check',{size:22,className:'hn-quiz-option__check'})}</label>`;
 }
 
 export function PricingTicket(plan:'free'|'year'):string {
   const yearly=plan==='year';
-  return `<article class="hn-pricing" data-plan="${plan}">${yearly?'<span class="hn-pricing__badge">NÊN CHỌN</span>':''}<p class="hn-eyebrow">${yearly?'GÓI NĂM':'MIỄN PHÍ'}</p><h3 class="hn-h2">${yearly?'199.000đ / năm':'0đ'}</h3><p class="hn-body-m">${yearly?'Mở tiêu chí chi tiết, hồ sơ mẫu, lộ trình và nhắc hạn.':'Tra cứu cơ bản và nội dung miễn phí.'}</p>${Button({label:yearly?'Mở khoá gói năm':'Dùng miễn phí',type:yearly?'spark':'secondary',icon:yearly?'arrow-right':false})}</article>`;
+  const features=yearly?['Mọi thứ ở gói xem lướt','Tiêu chí, hồ sơ mẫu của 172 học bổng','Thị thực, chứng minh tài chính 32 nước','Mô tả nhiệm vụ đủ 299 nghề','Lộ trình 12 tháng và nhắc hạn qua email','So sánh 3 nước, lưu không giới hạn']:['Tên, giá trị, hạn nộp mọi học bổng','Chi phí ước tính 32 nước','Dải lương 299 nghề','Trắc nghiệm hướng nghiệp'];
+  return `<article class="hn-pricing" data-plan="${plan}">${yearly?'<span class="hn-pricing__badge">NÊN CHỌN</span>':''}<p class="hn-eyebrow">${yearly?'GÓI NĂM':'MIỄN PHÍ'}</p><h3 class="hn-h2">${yearly?'199.000đ / năm':'0đ'}</h3><p class="hn-body-m">${yearly?'Mở tiêu chí chi tiết, hồ sơ mẫu, lộ trình và nhắc hạn.':'Tra cứu cơ bản và nội dung miễn phí.'}</p><ul class="hn-pricing__features">${features.map(x=>`<li>${Icon('check',{size:18})}<span>${escapeHTML(x)}</span></li>`).join('')}</ul>${Button({label:yearly?'Mở khoá gói năm':'Dùng miễn phí',type:yearly?'spark':'secondary',icon:'arrow-right'})}</article>`;
 }
 
-export function CompareBar(selected:number):string {
+export function CompareBar(selected:number, countries:Array<{id:number;name:string}>=[]):string {
   const enabled=selected>=2;
-  return `<aside class="hn-compare-bar" aria-label="So sánh nước"><strong class="hn-body-m">Đã chọn ${selected}/3 nước</strong><span style="flex:1"></span>${Button({label:'So sánh',size:'s',disabled:!enabled})}</aside>`;
+  return `<aside class="hn-compare-bar" aria-label="So sánh nước"><strong class="hn-body-m">Đã chọn ${selected}/3 nước</strong><div class="hn-compare-bar__chips">${countries.map(c=>`<button type="button" class="hn-compare-chip" data-remove-country="${c.id}" aria-label="Bỏ ${escapeHTML(c.name)} khỏi so sánh"><span>${escapeHTML(c.name)}</span>${Icon('x',{size:14})}</button>`).join('')}</div><span style="flex:1"></span>${Button({label:'So sánh',size:'s',disabled:!enabled})}</aside>`;
 }
 
 export function Toast(message:string,undoLabel?:string):string {
-  return `<div class="hn-toast" role="status" aria-live="polite">${escapeHTML(message)}${undoLabel?` <button class="hn-button hn-button--ghost hn-button--s" type="button">${escapeHTML(undoLabel)}</button>`:''}</div>`;
+  return `<div class="hn-toast" role="status" aria-live="polite"><span class="hn-toast__icon">${Icon('circle-check-big',{size:14})}</span><span>${escapeHTML(message)}</span>${undoLabel?` <button class="hn-button hn-button--ghost hn-button--s" type="button">${escapeHTML(undoLabel)}</button>`:''}</div>`;
 }
 
 export type AuthProvider='google'|'facebook'|'phone'|'email';
 export function AuthButton(provider:AuthProvider,label:string):string {
-  return `<button class="hn-auth-button" type="button" data-provider="${provider}"><span aria-hidden="true" data-provider-mark></span><span>${escapeHTML(label)}</span></button>`;
+  return `<button class="hn-auth-button" type="button" data-provider="${provider}"><span aria-hidden="true" data-provider-mark>${provider==='phone'?Icon('phone',{size:16}):provider==='email'?Icon('mail',{size:16}):''}</span><span>${escapeHTML(label)}</span></button>`;
 }
 
 export function BottomSheetFilter(content:string,resultCount:number):string {
@@ -128,7 +129,7 @@ export function NavDesktop(active:string):string {
   const links=[
     ['Học bổng','#/hoc-bong'],['Du học','#/du-hoc'],['Nghề nghiệp','#/nghe-nghiep'],['Tuyển sinh 2026','#/hoc-bong'],['Trắc nghiệm','#/trac-nghiem']
   ];
-  return `<header class="hn-nav-desktop"><a href="#/" aria-label="Hướng Nghiệp">HƯỚNG NGHIỆP</a><nav>${links.map(([label,href])=>`<a class="hn-nav-link" href="${href}"${label===active?' aria-current="page"':''}>${escapeHTML(label)}</a>`).join(' &nbsp;&nbsp; ')}</nav><div>${Button({label:'Đăng nhập',type:'ghost',size:'s',attrs:'data-route="#/dang-nhap"'})}${Button({label:'Gói năm 199k',type:'spark',size:'s',attrs:'data-route="#/thanh-toan"'})}</div></header>`;
+  return `<header class="hn-nav-desktop"><a href="#/" aria-label="Hướng Nghiệp">HƯỚNG NGHIỆP</a><nav>${links.map(([label,href])=>`<a class="hn-nav-link" href="${href}"${label===active?' aria-current="page"':''}>${escapeHTML(label)}</a>`).join(' &nbsp;&nbsp; ')}</nav><div class="hn-nav-actions"><a class="hn-nav-hotline" href="tel:0905247365">${Icon('phone',{size:16})}<span>0905 247 365</span></a>${Button({label:'Đăng nhập',type:'ghost',size:'s',attrs:'data-route="#/dang-nhap"'})}${Button({label:'Gói năm 199k',type:'spark',size:'s',attrs:'data-route="#/thanh-toan"'})}</div></header>`;
 }
 export function NavMobile():string {
   return `<header class="hn-nav-mobile"><a href="#/" aria-label="Hướng Nghiệp">HƯỚNG NGHIỆP</a><div><a class="hn-touch44" href="#/hoc-bong" aria-label="Tìm kiếm">${Icon('search',{size:22})}</a><a class="hn-touch44" href="#/lo-trinh" aria-label="Đã lưu">${Icon('heart',{size:22})}</a><button class="hn-touch44" type="button" aria-label="Mở menu">${Icon('menu',{size:22})}</button></div></header>`;

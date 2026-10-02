@@ -14,9 +14,9 @@ import {
   DoorPanel,
   RisingPanel,
 } from './components/index.js';
-import { hydrateIcons, Icon } from './icons/index.js';
+import { hydrateIcons, Icon, type IconName } from './icons/index.js';
 
-const iconCheck = Icon('check',{size:18,className:'hn-path__check'});
+const pathIcons:Record<string,IconName[]>={'01':['timer','sparkles','save'],'02':['calendar-clock','file-text','bell-ring'],'03':['globe','badge-dollar-sign','refresh-cw']};
 const stairPaths: Record<string,{viewW:number;viewH:number;path:string;fill:string}> = {
   '01': { viewW:282, viewH:260, fill:'var(--hn-brand-primary-soft)', path:'M0 48C0 33.33 7.3 25.33 21.9 24L260.1 2C274.7 .67 282 7.33 282 22V212C282 226.67 274.7 234.67 260.1 236L21.9 258C7.3 259.33 0 252.67 0 238V48Z' },
   '02': { viewW:282, viewH:330, fill:'var(--hn-brand-primary-soft)', path:'M0 55C0 40.33 7.3 32.13 21.9 30.4L260.1 2.6C274.7 .87 282 7.33 282 22V275C282 289.67 274.7 297.87 260.1 299.6L21.9 327.4C7.3 329.13 0 322.67 0 308V55Z' },
@@ -72,7 +72,7 @@ function pathCard(index:string,title:string,desc:string,bullets:string[],buttonL
     <div class="hn-path-card__marker">${RisingPanel(72,52)}<strong>${index}</strong></div>
     <h3 class="hn-h3">${title}</h3>
     <p class="hn-body-m">${desc}</p>
-    <ul class="hn-path-card__list">${bullets.map(x=>`<li>${iconCheck}<span>${x}</span></li>`).join('')}</ul>
+    <ul class="hn-path-card__list">${bullets.map((x,i)=>`<li>${Icon(pathIcons[index][i],{size:18,className:'hn-path__check'})}<span>${x}</span></li>`).join('')}</ul>
     ${Button({label:buttonLabel,type:buttonType})}
   </article>`;
 }
@@ -218,9 +218,9 @@ export function HomePage(): string {
               <h2 class="hn-h1">Xem lướt miễn phí. Đi sâu với 199k một năm.</h2>
               <p class="hn-body-m">Không tự gia hạn. Không quảng cáo. Nếu chưa dùng tới phần trả phí, hoàn tiền trong 7 ngày.</p>
               <ul class="hn-pricing-faq">
-                <li>${Icon('check',{size:18,className:'hn-pricing-faq__icon'})}<span><strong>Thanh toán bằng gì?</strong> VNPay, MoMo, thẻ nội địa và quốc tế.</span></li>
-                <li>${Icon('check',{size:18,className:'hn-pricing-faq__icon'})}<span><strong>Tài khoản gửi về đâu?</strong> Email bạn đăng ký, trong 1 phút.</span></li>
-                <li>${Icon('check',{size:18,className:'hn-pricing-faq__icon'})}<span><strong>Dùng chung được không?</strong> Một tài khoản, tối đa 2 thiết bị.</span></li>
+                <li>${Icon('credit-card',{size:18,className:'hn-pricing-faq__icon'})}<span><strong>Thanh toán bằng gì?</strong> VNPay, MoMo, thẻ nội địa và quốc tế.</span></li>
+                <li>${Icon('mail',{size:18,className:'hn-pricing-faq__icon'})}<span><strong>Tài khoản gửi về đâu?</strong> Email bạn đăng ký, trong 1 phút.</span></li>
+                <li>${Icon('smartphone',{size:18,className:'hn-pricing-faq__icon'})}<span><strong>Dùng chung được không?</strong> Một tài khoản, tối đa 2 thiết bị.</span></li>
               </ul>
             </div>
             <div class="hn-pricing-cards"><div>${PricingTicket('free')}</div><div>${PricingTicket('year')}</div></div>
@@ -232,7 +232,7 @@ export function HomePage(): string {
           <div class="hn-container hn-contact-content">
             <h2 class="hn-h1">Còn băn khoăn? Hỏi anh chị tư vấn.</h2>
             <p class="hn-body-m">Hotline · Zalo · WhatsApp · LINE · WeChat</p>
-            <strong class="hn-contact-phone">0905 247 365</strong>
+            <strong class="hn-contact-phone">${Icon('phone',{size:26,className:'hn-contact-phone__icon'})}0905 247 365</strong>
             <div class="hn-contact-actions">${Button({label:'Nhắn Zalo'})}<a href="mailto:baika.vn@gmail.com">baika.vn@gmail.com</a></div>
           </div>
         </section>

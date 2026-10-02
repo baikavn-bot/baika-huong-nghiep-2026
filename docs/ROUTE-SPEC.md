@@ -61,3 +61,13 @@ Nguồn: Figma `RxVjl3wcnyUyfms6o5DDzB`, page `05 · Desktop 1440`, `06 · Mobil
 - Modal/drawer focus trap + Esc.
 - Quiz option role radio, keyboard A–D/Enter.
 - Decorative Door/Rising/Spark aria-hidden.
+
+## Required behavior vs current prototype — 2026-10-02
+The earlier “implemented” list describes prototype behavior and is not production acceptance. Live Figma requires:
+- Back restores the original list filter and scroll (43:41); runtime currently scrolls to top after render.
+- Logged-out save opens login; authenticated save offers actual undo for four seconds (43:61); current save handler only emits toast.
+- Unlock/payment returns to the original content after confirmed payment (43:67); current checkout routes directly to success/journey.
+- Deadline reminders send email at 14/3 days (43:73); current handler only emits toast.
+- Quiz persists each of 36 questions (43:70, Creative Brief A5); current source demonstrates q14/static result.
+- F1–F4 and mobile flow targets are in CONTENT-SPEC.md. M3 is a filter state, not a new route. Admissions/legal links lack full routes and require separate product scope.
+No routes or handlers changed in this spec task. See FIGMA-SYNC-AUDIT.md for measured coverage and gaps.

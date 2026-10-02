@@ -168,3 +168,10 @@ Rules:
 - Icons render as inline SVG at component render time; no hydration dependency for standalone HTML.
 - Brand shapes DoorPanel/RisingPanel/Spark use rounded vector geometry from Figma Foundations.
 - Scholarship Card, Footer, D2 Page header/Filter sidebar, D3 Detail hero, D4 Controls, D6 Header/Filter/result banner aligned to current Figma nodes.
+
+## Live Figma reconciliation — 2026-10-02
+- Collections inspected: Primitives 51, Color 27 (Light/Dark), Spacing & Radius 18, Motion 7. All 130 mode values match src/styles/tokens.css; effect/text styles were captured in figma/spec-snapshot.json.
+- Figma primitive WEB syntax uses --hn-p-* while source uses --hn-primitive-*. Keep explicit mapping; no token rename in this task.
+- Motion signature: Door rotates 8–10° to zero, rises 24px and fades over 480ms; Spark enters after 160ms. Reduced motion removes rotation/translation and fades 120ms.
+- See SCREEN-SPEC.md for live frame bounds/composition and CONTENT-SPEC.md for exact copy/data requirements. Visual acceptance remains unverified by screenshots.
+- Focus source conflict resolved by existing 3px handoff/effect policy. Spark count conflict and extra Bỏ giá frame remain explicitly unresolved in SCREEN-SPEC.md.

@@ -19,26 +19,30 @@
   "validation": {
     "typecheck": "pass",
     "build": "pass",
-    "visual_regression": "not_established"
+    "visual_regression": "not_established",
+    "icon_smoke": "pass_14_routes_at_1440_and_390",
+    "icon_assets": "38_of_38_load_and_byte_exact"
   },
-  "latest_commit": "a296ee0a3ea58c6210f29179a0b8711838130826",
+  "latest_commit": "608a2191f711e9f1a92120c2728a342a673a8a75",
   "updated_by": "codex",
-  "updated_at": "2026-10-02T15:21:45+07:00",
+  "updated_at": "2026-10-02T09:16:17.4753612Z",
   "notes": [
     "Repository state overrides stale conversational assumptions.",
     "latest_commit records the inspected base; resolve the enclosing snapshot commit through Git.",
     "Typecheck and build exit 0; external /data/hn-data.js bundling warning retained.",
     "Historical local QA build-unavailable statement is superseded by current successful build.",
     "Vercel deployment and deployed revision were not verified.",
-    "State files synchronize versioned context; chats do not automatically synchronize checkouts."
+    "State files synchronize versioned context; chats do not automatically synchronize checkouts.",
+    "SPEC-001 synchronized documentation only; implementation/content/visual gaps remain.",
+    "User authorized committing and pushing SPEC-001 and ICON-001; this snapshot precedes that operation. Verify completion through Git."
   ],
   "git": {
-    "snapshot_scope": "observed_before_governance_commit",
+    "snapshot_scope": "observed_after_icon_update_before_commit",
     "snapshot_commit_resolution": "git log -1 --format=%H -- .ai/state.json",
-    "working_tree": "clean_before_governance_edits",
+    "working_tree": "dirty_spec_and_icon_edits",
     "origin_url": "https://github.com/baikavn-bot/baika-huong-nghiep-2026.git",
-    "origin_main": "a296ee0a3ea58c6210f29179a0b8711838130826",
-    "remote_main_verified": "a296ee0a3ea58c6210f29179a0b8711838130826",
+    "origin_main": "608a2191f711e9f1a92120c2728a342a673a8a75",
+    "remote_main_verified": "608a2191f711e9f1a92120c2728a342a673a8a75",
     "ahead": 0,
     "behind": 0,
     "push_performed": false
@@ -46,7 +50,8 @@
   "tasks": {
     "completed": [
       "GOV-001",
-      "VP-001"
+      "VP-001",
+      "SPEC-001"
     ],
     "next_task": "VP-002",
     "next_task_started": false
@@ -61,5 +66,40 @@
       "visual audit 1440/1024/768/390",
       "repeatable screenshot comparison"
     ]
+  },
+  "figma_sync": {
+    "access": "connector_read_verified",
+    "desktop_dev_mode": "not_tested",
+    "token_values": {
+      "total": 130,
+      "matched": 130
+    },
+    "icon_names": {
+      "total": 38,
+      "matched": 38
+    },
+    "component_presence": {
+      "total": 23,
+      "matched": 23
+    },
+    "desktop_screen_presence": {
+      "total": 13,
+      "matched": 13
+    },
+    "overall_visual_parity_percent": null,
+    "screenshot_diff": "not_run",
+    "report": "docs/FIGMA-SYNC-AUDIT.md",
+    "snapshot": "docs/figma/spec-snapshot.json",
+    "icon_implementation": {
+      "status": "implemented_targeted_checks_pass",
+      "assets": 38,
+      "report": "docs/ICON-UPDATE-REPORT.md",
+      "remaining_context_review": [
+        "35:387",
+        "36:429",
+        "37:515"
+      ],
+      "overall_pixel_acceptance": "unmeasured"
+    }
   }
 }

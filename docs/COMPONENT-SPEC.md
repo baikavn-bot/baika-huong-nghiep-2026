@@ -140,7 +140,7 @@ Các primitive này dùng semantic tokens và `aria-hidden=true` khi chỉ trang
 
 ## Component implementation status trong source pack
 
-Đã tạo baseline render function cho toàn bộ 23 component concept + 3 brand primitives. Nav/Footer/logo asset vẫn cần thay bằng SVG BAIKA chính thức trước production. Screen-level composition chưa dựng ở bước này; khi dựng từng D1–D11/M1–M6 phải inspect node cụ thể và visual-compare với Figma.
+Đã tạo baseline render function cho toàn bộ 23 component concept + 3 brand primitives. Nav/Footer/logo asset vẫn cần thay bằng SVG BAIKA chính thức trước production. Screen-level composition hiện đã có trong home.ts/pages.ts (R3); chưa thể đánh PASS pixel parity trước khi so ảnh browser với Figma.
 
 
 ## Icon contract áp dụng cho component
@@ -167,3 +167,6 @@ Không dùng ký tự `→`, `✓`, `⌂`, `◇`, `◎`, `▤`, `☆` để gi�
 - Icons render as inline SVG at component render time; no hydration dependency for standalone HTML.
 - Brand shapes DoorPanel/RisingPanel/Spark use rounded vector geometry from Figma Foundations.
 - Scholarship Card, Footer, D2 Page header/Filter sidebar, D3 Detail hero, D4 Controls, D6 Header/Filter/result banner aligned to current Figma nodes.
+
+## Live component reconciliation — 2026-10-02
+All 23 main component definitions and their properties/variants were read live and preserved in figma/spec-snapshot.json. All 23 have source render functions, but this is structural coverage only. Native button/checkbox/select states must still be browser-verified. Save authentication/undo, swipe-dismiss sheet, reminder delivery and payment context preservation are required behavior, not implied by a rendered component. Brand logo/provider marks remain separate production asset requirements.

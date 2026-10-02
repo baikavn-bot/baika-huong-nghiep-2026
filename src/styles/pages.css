@@ -192,3 +192,10 @@
 
   .hn-page--journey .hn-journey-dashboard{display:block;height:auto;padding:28px 20px 100px}.hn-roadmap-card{padding:20px;border:1px solid var(--hn-border-default);border-radius:20px;background:var(--hn-bg-surface)}.hn-journey-right{margin-top:24px}.hn-saved-deadlines{margin-top:24px;padding:20px;border:1px solid var(--hn-border-default);border-radius:20px;background:var(--hn-bg-surface)}
 }
+
+.hn-journey-step[data-state="done"]{padding-left:84px;min-height:68px}.hn-journey-step__done{position:absolute;left:16px;top:12px;width:52px;height:44px}.hn-journey-step__done>.hn-brand-shape{position:absolute;inset:0}.hn-journey-step__done>.hn-icon{position:absolute;left:16px;top:12px;color:var(--hn-text-on-brand)}
+.hn-checkout-mail{display:flex;align-items:flex-start;gap:8px}.hn-field__with-icon{position:relative;display:flex;align-items:center}.hn-field__with-icon>.hn-icon{position:absolute;left:14px}.hn-field__with-icon>input{width:100%;padding-left:42px}
+@media(max-width:599px){.hn-list-toolbar>.hn-select-wrap,.hn-study-controls .hn-select-wrap{display:none}.hn-check-list .hn-icon{width:14px;height:14px}.hn-compare-bar{flex-wrap:wrap}.hn-compare-bar__chips{order:3;width:100%}.hn-roadmap-card .hn-journey-step[data-state="done"]{padding-left:58px;min-height:50px}.hn-roadmap-card .hn-journey-step__done{left:8px;top:3px;width:42px;height:36px}.hn-roadmap-card .hn-journey-step__done>.hn-brand-shape{width:42px;height:36px}.hn-roadmap-card .hn-journey-step__done>.hn-icon{left:11px;top:8px}}
+
+.hn-quiz-mobile-header{display:none}
+@media(max-width:599px){.hn-quiz-mobile-header{height:56px;display:flex;align-items:center;gap:8px;padding:0 12px;background:var(--hn-bg-surface);border-bottom:1px solid var(--hn-border-default)}.hn-quiz-mobile-header>span{margin-left:auto;font-size:12px;color:var(--hn-text-secondary)}}

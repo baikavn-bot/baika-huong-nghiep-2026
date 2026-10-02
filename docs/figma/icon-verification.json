@@ -1,0 +1,182 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "width": 1440,
+      "icons": 68,
+      "bad": 0
+    },
+    {
+      "route": "/hoc-bong",
+      "width": 1440,
+      "icons": 40,
+      "bad": 0
+    },
+    {
+      "route": "/hoc-bong/chevening",
+      "width": 1440,
+      "icons": 20,
+      "bad": 0
+    },
+    {
+      "route": "/du-hoc",
+      "width": 1440,
+      "icons": 32,
+      "bad": 0
+    },
+    {
+      "route": "/du-hoc/nhat-ban",
+      "width": 1440,
+      "icons": 9,
+      "bad": 0
+    },
+    {
+      "route": "/du-hoc/so-sanh",
+      "width": 1440,
+      "icons": 2,
+      "bad": 0
+    },
+    {
+      "route": "/nghe-nghiep",
+      "width": 1440,
+      "icons": 27,
+      "bad": 0
+    },
+    {
+      "route": "/nghe-nghiep/ui-ux",
+      "width": 1440,
+      "icons": 3,
+      "bad": 0
+    },
+    {
+      "route": "/trac-nghiem",
+      "width": 1440,
+      "icons": 7,
+      "bad": 0
+    },
+    {
+      "route": "/ket-qua",
+      "width": 1440,
+      "icons": 17,
+      "bad": 0
+    },
+    {
+      "route": "/thanh-toan",
+      "width": 1440,
+      "icons": 10,
+      "bad": 0
+    },
+    {
+      "route": "/thanh-toan/thanh-cong",
+      "width": 1440,
+      "icons": 2,
+      "bad": 0
+    },
+    {
+      "route": "/dang-nhap",
+      "width": 1440,
+      "icons": 5,
+      "bad": 0
+    },
+    {
+      "route": "/lo-trinh",
+      "width": 1440,
+      "icons": 15,
+      "bad": 0
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "icons": 68,
+      "bad": 0
+    },
+    {
+      "route": "/hoc-bong",
+      "width": 390,
+      "icons": 40,
+      "bad": 0
+    },
+    {
+      "route": "/hoc-bong/chevening",
+      "width": 390,
+      "icons": 20,
+      "bad": 0
+    },
+    {
+      "route": "/du-hoc",
+      "width": 390,
+      "icons": 32,
+      "bad": 0
+    },
+    {
+      "route": "/du-hoc/nhat-ban",
+      "width": 390,
+      "icons": 9,
+      "bad": 0
+    },
+    {
+      "route": "/du-hoc/so-sanh",
+      "width": 390,
+      "icons": 2,
+      "bad": 0
+    },
+    {
+      "route": "/nghe-nghiep",
+      "width": 390,
+      "icons": 27,
+      "bad": 0
+    },
+    {
+      "route": "/nghe-nghiep/ui-ux",
+      "width": 390,
+      "icons": 3,
+      "bad": 0
+    },
+    {
+      "route": "/trac-nghiem",
+      "width": 390,
+      "icons": 7,
+      "bad": 0
+    },
+    {
+      "route": "/ket-qua",
+      "width": 390,
+      "icons": 17,
+      "bad": 0
+    },
+    {
+      "route": "/thanh-toan",
+      "width": 390,
+      "icons": 10,
+      "bad": 0
+    },
+    {
+      "route": "/thanh-toan/thanh-cong",
+      "width": 390,
+      "icons": 2,
+      "bad": 0
+    },
+    {
+      "route": "/dang-nhap",
+      "width": 390,
+      "icons": 5,
+      "bad": 0
+    },
+    {
+      "route": "/lo-trinh",
+      "width": 390,
+      "icons": 15,
+      "bad": 0
+    }
+  ],
+  "quizSelectedCheckVisible": true,
+  "compareRemove": {
+    "before": 3,
+    "after": 2
+  },
+  "gallery": {
+    "count": 38,
+    "loaded": 38
+  },
+  "errors": []
+}

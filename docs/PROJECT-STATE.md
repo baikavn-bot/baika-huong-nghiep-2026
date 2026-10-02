@@ -50,3 +50,19 @@ Updated by: Codex
 - Deployment confidence reduced from asserted deployed_demo to unverified baseline claim.
 
 Repository observations override stale conversational memory. Snapshots do not replace live Git checks.
+
+## Superseding live reconciliation — SPEC-001, 2026-10-02
+- Inspected base HEAD/origin/main: 608a2191f711e9f1a92120c2728a342a673a8a75. Previous governance commit was pushed; observed tree clean, ahead 0/behind 0 before edits.
+- Figma read access verified via connector/Plugin API, all ten pages inventoried; required spec pages/text/components/variables/styles read live. Desktop Dev Mode MCP configuration was not tested.
+- SPEC-001 complete; next VP-002. CONTENT-SPEC/SCREEN-SPEC and live evidence supplement existing docs. No source/UI/route/dependency/config changes.
+- Coverage: 130/130 token values, 38/38 icon-name membership, 23/23 component render functions, 13/13 canonical desktop screen coverage. Overall visual parity percentage remains unknown; see FIGMA-SYNC-AUDIT.
+- Content/behavior gaps are recorded, not fixed. Visual regression still not run; deployment remains unverified. No push for this spec update.
+- Typecheck/build rerun after spec update: PASS, exit 0; same external data-script warning. Snapshot base semantics remain ADR-007.
+
+## ICON-001 — 2026-10-02
+- 38 exact local SVG assets installed; icon slots updated across shared components, Home, quiz, checkout and journey. Typecheck/build/diff checks PASS. Browser smoke PASS for 14 routes at 1440/390, all 38 assets load.
+- No overall pixel parity claim. Figma tool quota prevented additional M3/M4/M6 high-fidelity contexts; official logos remain outstanding. See ICON-UPDATE-REPORT.md.
+- Active task: none; next VP-002. Working tree dirty with prior SPEC-001 and current ICON-001; no commit/push. main/origin/main still observed at 608a219, ahead0/behind0 (local tracking ref).
+
+## Publication authorization
+User authorized commit and push of SPEC-001 and ICON-001. This snapshot is recorded before those operations; resolve the enclosing commit and verify origin/main through Git.

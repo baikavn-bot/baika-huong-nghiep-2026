@@ -75,3 +75,20 @@ Acceptance:
 - Active task: none. Next queued task: VP-002; not started by this governance task.
 - VP-005 remains BLOCKED based on the existing R3 QA report; logo/Figma revalidation is outside this task.
 - No push in GOV-001.
+
+## SPEC-001 — Synchronize specs with live Figma
+Status: DONE
+Owner: Codex
+Scope: content/screen references, component/variable/style evidence, spec gaps and coverage audit. No UI implementation or screenshots. Overall visual parity remains unmeasured.
+
+## IMPL-001 — Close verified design/source gaps
+Status: TODO
+Owner: Codex
+Acceptance: align D11/copy to approved design/data; real filtering/data adapter and context restoration; complete quiz; auth/save/payment/reminder services; official assets; visual audits VP-002/003/004 and QA-001. Separate implementation task required; do not treat SPEC-001 as completion of these services.
+
+## Snapshot after SPEC-001
+Active task: none. Next task: VP-002 (visual audit); implementation gaps tracked in IMPL-001. Governance commit 608a219 was previously pushed successfully; local/origin were equal before this documentation update.
+
+## ICON-001 — Exact Figma icon assets and placement
+Status: IMPLEMENTED; targeted browser checks PASS.
+38/38 SVG assets imported unchanged; shared/screen icon slots updated; typecheck/build PASS. Additional high-fidelity review for M3/M4/M6 is pending Figma tool quota availability; overall visual acceptance remains VP-002/003. No commit/push.
