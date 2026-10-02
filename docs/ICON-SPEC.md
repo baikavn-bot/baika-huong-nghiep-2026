@@ -94,3 +94,6 @@ Icons frame contains 1,694 entries. All 38 source registry names exist in that f
 
 ## ICON-001 implementation update
 The 38 registry glyphs now use unchanged local Figma SVG exports as CSS masks with currentColor. Shared and screen-specific slots were updated; see ICON-UPDATE-REPORT.md and figma/icon-assets.json. iconSVG remains a compatibility name but returns mask markup. Overall pixel parity is not certified.
+
+## ICON-002 — Semantic color
+Default icon foreground uses --hn-text-link (Light #004bd6, Dark #8ab0ff). Primary/spark/disabled buttons, checked checkbox, toast and completed journey marker retain the foreground of their filled control for contrast. SVG assets and geometry unchanged.

@@ -66,3 +66,7 @@ Repository observations override stale conversational memory. Snapshots do not r
 
 ## Publication authorization
 User authorized commit and push of SPEC-001 and ICON-001. This snapshot is recorded before those operations; resolve the enclosing commit and verify origin/main through Git.
+
+## ICON-002 — Icon text/link color
+Updated default icon color and explicit blue glyph overrides to --hn-text-link; filled controls preserve contrast. Base main 7dacb4c, clean before edits; previous SPEC-001/ICON-001 commit/push confirmed. Current color update is uncommitted/unpushed. Typecheck/build verification recorded below.
+- ICON-002 validation: typecheck/build PASS; production browser colors match Light rgb(0,75,214) and Dark rgb(138,176,255); primary CTA icon remains white. Existing external data-script build warning retained.

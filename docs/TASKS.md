@@ -92,3 +92,6 @@ Active task: none. Next task: VP-002 (visual audit); implementation gaps tracked
 ## ICON-001 — Exact Figma icon assets and placement
 Status: IMPLEMENTED; targeted browser checks PASS.
 38/38 SVG assets imported unchanged; shared/screen icon slots updated; typecheck/build PASS. Additional high-fidelity review for M3/M4/M6 is pending Figma tool quota availability; overall visual acceptance remains VP-002/003. No commit/push.
+
+## ICON-002 — Icon text/link color
+Status: IMPLEMENTED. Default glyph colors use semantic text/link, contrast exceptions for filled controls. No icon shape, route or dependency changes.

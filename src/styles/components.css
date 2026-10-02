@@ -180,8 +180,8 @@
 
 /* Figma icon slots; exact exported SVGs inherit each component's color. */
 .hn-select-wrap{display:inline-flex;position:relative;align-items:center}.hn-select-wrap .hn-select{appearance:none;width:100%}.hn-select__icon{position:absolute;right:14px;pointer-events:none}
-.hn-quiz-option__check{display:none;margin-left:auto;color:var(--hn-brand-primary)}.hn-quiz-option[aria-checked="true"] .hn-quiz-option__check{display:block}
-.hn-pricing__features{list-style:none;padding:0;display:grid;gap:12px}.hn-pricing__features li{display:flex;gap:10px;align-items:flex-start}.hn-pricing__features .hn-icon{color:var(--hn-brand-primary)}
+.hn-quiz-option__check{display:none;margin-left:auto;color:var(--hn-text-link)}.hn-quiz-option[aria-checked="true"] .hn-quiz-option__check{display:block}
+.hn-pricing__features{list-style:none;padding:0;display:grid;gap:12px}.hn-pricing__features li{display:flex;gap:10px;align-items:flex-start}.hn-pricing__features .hn-icon{color:var(--hn-text-link)}
 .hn-country-card__actions{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.hn-country-card__cost{display:inline-flex;gap:6px;align-items:center;color:var(--hn-brand-primary);font-size:14px;text-decoration:none}
 .hn-toast{display:flex;align-items:center;gap:10px}.hn-toast__icon{display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:var(--hn-brand-primary);color:var(--hn-text-on-brand)}
 .hn-auth-button [data-provider-mark]:has(.hn-icon){display:grid;place-items:center;background:transparent}
@@ -190,3 +190,8 @@
 @media(max-width:1199px){.hn-nav-hotline span{display:none}}
 
 .hn-icon{width:var(--hn-icon-size,20px);height:var(--hn-icon-size,20px);background-color:currentColor;mask-image:var(--hn-icon-asset);mask-size:100% 100%;mask-position:center;mask-repeat:no-repeat}
+
+/* ICON-002: semantic text/link for glyphs; filled controls retain contrast. */
+.hn-icon{color:var(--hn-text-link)}
+.hn-button--primary .hn-icon,.hn-button--spark .hn-icon,.hn-button:disabled .hn-icon,.hn-checkbox__box .hn-icon,.hn-toast__icon .hn-icon{color:inherit}
+.hn-journey-step__done>.hn-icon{color:var(--hn-text-on-brand)}

@@ -45,7 +45,7 @@
 .hn-path-card > p { margin:12px 0 0; max-width:320px; color:var(--hn-text-secondary); }
 .hn-path-card__list { list-style:none; padding:0; margin:18px 0 26px; display:grid; gap:10px; color:var(--hn-text-secondary); font:400 14px/1.55 var(--hn-font-ui); }
 .hn-path-card__list li { display:flex; gap:10px; align-items:flex-start; }
-.hn-path__check { flex:0 0 18px; width:18px; height:18px; border-radius:50%; display:grid; place-items:center; background:var(--hn-brand-primary-soft); color:var(--hn-text-link); font-size:11px; }
+.hn-path__check { flex:0 0 18px; width:18px; height:18px; border-radius:50%; display:grid; place-items:center; background-color:currentColor; color:var(--hn-text-link); font-size:11px; }
 .hn-path-card > .hn-button { margin-top:auto; align-self:flex-start; }
 
 .hn-deadlines-section { padding:96px 0; }
@@ -103,7 +103,7 @@
 .hn-pricing-copy > p { color:var(--hn-text-secondary); }
 .hn-pricing-faq { list-style:none; padding:0; margin:28px 0 0; display:grid; gap:16px; color:var(--hn-text-secondary); font:400 14px/1.55 var(--hn-font-ui); }
 .hn-pricing-faq li { display:flex; align-items:flex-start; gap:10px; }
-.hn-pricing-faq__icon { margin-top:2px; color:var(--hn-brand-primary); }
+.hn-pricing-faq__icon { margin-top:2px; color:var(--hn-text-link); }
 .hn-pricing-cards { display:grid; grid-template-columns:repeat(2,420px); gap:24px; align-items:center; }
 .hn-pricing-cards > div:last-child { transform:translateY(-36px); }
 
@@ -218,5 +218,5 @@
   .hn-mobile-tabbar small { font:500 12px/1.4 var(--hn-font-ui); }
 }
 
-.hn-contact-phone{display:flex;align-items:center;gap:12px}.hn-contact-phone__icon{color:var(--hn-brand-primary)}
+.hn-contact-phone{display:flex;align-items:center;gap:12px}.hn-contact-phone__icon{color:var(--hn-text-link)}
 @media(max-width:599px){.hn-contact-phone__icon{width:20px;height:20px}}
