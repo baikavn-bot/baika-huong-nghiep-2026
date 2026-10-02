@@ -66,7 +66,7 @@ export function DeadlineTicket(p:DeadlineTicketProps):string {
 
 export interface CountryPostcardProps { country:string; code:string; cost:string; lang:string; work:string; count:string; newPolicy?:boolean; compare?:boolean; }
 export function CountryPostcard(p:CountryPostcardProps):string {
-  return `<article class="hn-card hn-card--interactive hn-country-card" aria-selected="${!!p.compare}"><div class="hn-country-card__cover" aria-hidden="true"><span class="hn-door-panel" style="position:absolute;width:120px;height:170px;right:18px;top:14px"></span></div><div class="hn-country-card__body"><div style="display:flex;justify-content:space-between;align-items:center"><span class="hn-stamp">${escapeHTML(p.code)}</span>${p.newPolicy?'<span class="hn-caption">Chính sách mới</span>':''}</div><h3 class="hn-h3">${escapeHTML(p.country)}</h3><p class="hn-data-bold">${escapeHTML(p.cost)}</p><p class="hn-body-s">Ngôn ngữ · ${escapeHTML(p.lang)}<br>Làm thêm · ${escapeHTML(p.work)}<br>${escapeHTML(p.count)}</p><button class="hn-button hn-button--ghost hn-button--s" type="button" aria-pressed="${!!p.compare}">${p.compare?Icon('check',{size:14,className:'hn-button__icon'}):Icon('plus',{size:14,className:'hn-button__icon'})}<span>${p.compare?'Đã chọn so sánh':'Thêm vào so sánh'}</span></button></div></article>`;
+  return `<article class="hn-card hn-card--interactive hn-country-card" aria-selected="${!!p.compare}"><div class="hn-country-card__cover" aria-hidden="true"><span class="hn-country-card__door">${DoorPanel({width:120,height:170,tone:'primary'})}</span>${Spark(42)}</div><div class="hn-country-card__body"><div style="display:flex;justify-content:space-between;align-items:center"><span class="hn-stamp">${escapeHTML(p.code)}</span>${p.newPolicy?'<span class="hn-caption">Chính sách mới</span>':''}</div><h3 class="hn-h3">${escapeHTML(p.country)}</h3><p class="hn-data-bold">${escapeHTML(p.cost)}</p><p class="hn-body-s">Ngôn ngữ · ${escapeHTML(p.lang)}<br>Làm thêm · ${escapeHTML(p.work)}<br>${escapeHTML(p.count)}</p><button class="hn-button hn-button--ghost hn-button--s" type="button" aria-pressed="${!!p.compare}">${p.compare?Icon('check',{size:14,className:'hn-button__icon'}):Icon('plus',{size:14,className:'hn-button__icon'})}<span>${p.compare?'Đã chọn so sánh':'Thêm vào so sánh'}</span></button></div></article>`;
 }
 
 export interface SalaryRangeProps { min:number; max:number; entryMin:number; entryMax:number; rangeText:string; note:string; }
@@ -85,7 +85,7 @@ export function JobCard(p:JobCardProps):string {
 
 export type JourneyState='done'|'current'|'next';
 export function JourneyStep(title:string,meta:string,state:JourneyState):string {
-  return `<article class="hn-journey-step" data-state="${state}"><h3 class="hn-title-m">${escapeHTML(title)}</h3><p class="hn-body-s">${escapeHTML(meta)}</p></article>`;
+  return `<article class="hn-journey-step" data-state="${state}">${state==='current'?`<span class="hn-journey-step__marker" aria-hidden="true">${RisingPanel(34,18)}</span>`:''}<h3 class="hn-title-m">${escapeHTML(title)}</h3><p class="hn-body-s">${escapeHTML(meta)}</p></article>`;
 }
 
 export function PaywallLock(title:string,body:string):string {
@@ -94,7 +94,7 @@ export function PaywallLock(title:string,body:string):string {
 
 export interface SectionHeadingProps { eyebrow:string; title:string; description:string; linkLabel?:string; linkHref?:string; }
 export function SectionHeading(p:SectionHeadingProps):string {
-  return `<header class="hn-section-heading"><div class="hn-section-heading__lead"><div class="hn-section-heading__eyebrow"><span class="hn-spark-shape" aria-hidden="true"></span><span class="hn-eyebrow">${escapeHTML(p.eyebrow)}</span></div><h2 class="hn-h1">${escapeHTML(p.title)}</h2><p class="hn-body-m hn-section-heading__desc">${escapeHTML(p.description)}</p></div>${p.linkLabel?`<a href="${escapeHTML(p.linkHref||'#')}" class="hn-button hn-button--ghost hn-button--s"><span>${escapeHTML(p.linkLabel)}</span>${Icon('arrow-right',{size:16,className:'hn-button__icon'})}</a>`:''}</header>`;
+  return `<header class="hn-section-heading"><div class="hn-section-heading__lead"><div class="hn-section-heading__eyebrow">${Spark(18)}<span class="hn-eyebrow">${escapeHTML(p.eyebrow)}</span></div><h2 class="hn-h1">${escapeHTML(p.title)}</h2><p class="hn-body-m hn-section-heading__desc">${escapeHTML(p.description)}</p></div>${p.linkLabel?`<a href="${escapeHTML(p.linkHref||'#')}" class="hn-button hn-button--ghost hn-button--s"><span>${escapeHTML(p.linkLabel)}</span>${Icon('arrow-right',{size:16,className:'hn-button__icon'})}</a>`:''}</header>`;
 }
 
 export function QuizOption(answer:string,letter:string,selected=false,name='holland'):string {

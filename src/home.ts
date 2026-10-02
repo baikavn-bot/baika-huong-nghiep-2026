@@ -11,10 +11,23 @@ import {
   ScholarshipCard,
   SearchField,
   Spark,
+  DoorPanel,
+  RisingPanel,
 } from './components/index.js';
 import { hydrateIcons, Icon } from './icons/index.js';
 
 const iconCheck = Icon('check',{size:18,className:'hn-path__check'});
+const stairPaths: Record<string,{viewW:number;viewH:number;path:string;fill:string}> = {
+  '01': { viewW:282, viewH:260, fill:'var(--hn-brand-primary-soft)', path:'M0 48C0 33.33 7.3 25.33 21.9 24L260.1 2C274.7 .67 282 7.33 282 22V212C282 226.67 274.7 234.67 260.1 236L21.9 258C7.3 259.33 0 252.67 0 238V48Z' },
+  '02': { viewW:282, viewH:330, fill:'var(--hn-brand-primary-soft)', path:'M0 55C0 40.33 7.3 32.13 21.9 30.4L260.1 2.6C274.7 .87 282 7.33 282 22V275C282 289.67 274.7 297.87 260.1 299.6L21.9 327.4C7.3 329.13 0 322.67 0 308V55Z' },
+  '03': { viewW:282, viewH:400, fill:'var(--hn-brand-primary-soft)', path:'M0 62C0 47.33 7.27 38.97 21.8 36.9L260.2 3.1C274.73 1.03 282 7.33 282 22V338C282 352.67 274.73 361.03 260.2 363.1L21.8 396.9C7.27 398.97 0 392.67 0 378V62Z' },
+  '04': { viewW:282, viewH:470, fill:'var(--hn-brand-primary)', path:'M0 69C0 54.33 7.23 45.8 21.7 43.4L260.3 3.6C274.77 1.2 282 7.33 282 22V401C282 415.67 274.77 424.2 260.3 426.6L21.7 466.4C7.23 468.8 0 462.67 0 448V69Z' },
+};
+function stairPanel(step:string):string {
+  const p=stairPaths[step];
+  return `<svg class="hn-stair__shape" viewBox="0 0 ${p.viewW} ${p.viewH}" preserveAspectRatio="none" aria-hidden="true"><path d="${p.path}" fill="${p.fill}"/></svg>`;
+}
+
 
 const deadlineTickets = [
   { date:'06/10', name:'Chevening 2027–2028', meta:'Anh · Thạc sĩ · Toàn phần', statusLabel:'Còn 6 ngày' },
@@ -56,7 +69,7 @@ const jobs = [
 
 function pathCard(index:string,title:string,desc:string,bullets:string[],buttonLabel:string,buttonType:'primary'|'secondary'|'ghost'|'spark'='primary'){
   return `<article class="hn-path-card">
-    <div class="hn-path-card__marker"><span class="hn-rising-panel" aria-hidden="true"></span><strong>${index}</strong></div>
+    <div class="hn-path-card__marker">${RisingPanel(72,52)}<strong>${index}</strong></div>
     <h3 class="hn-h3">${title}</h3>
     <p class="hn-body-m">${desc}</p>
     <ul class="hn-path-card__list">${bullets.map(x=>`<li>${iconCheck}<span>${x}</span></li>`).join('')}</ul>
@@ -87,9 +100,9 @@ export function HomePage(): string {
 
       <main>
         <section class="hn-home-hero">
-          <div class="hn-home-hero__door" aria-hidden="true"><span class="hn-door-panel"></span></div>
-          <div class="hn-home-hero__step" aria-hidden="true"><span class="hn-rising-panel"></span></div>
-          <span class="hn-home-hero__spark" aria-hidden="true"></span>
+          <div class="hn-home-hero__door" aria-hidden="true">${DoorPanel({width:520,height:700})}</div>
+          <div class="hn-home-hero__step" aria-hidden="true">${RisingPanel(260,96)}</div>
+          <span class="hn-home-hero__spark" aria-hidden="true">${Spark(120)}</span>
           <div class="hn-home-hero__content hn-container">
             <div class="hn-home-hero__copy">
               ${sectionEyebrow('HƯỚNG NGHIỆP · HỌC BỔNG · DU HỌC')}
@@ -190,10 +203,10 @@ export function HomePage(): string {
               <span class="hn-note-hand">không cần vội</span>
             </div>
             <div class="hn-stair">
-              <article style="--step-h:260px"><strong>01</strong><h3>Hiểu mình</h3><p>Trắc nghiệm Holland 36 câu. Biết mình hợp nhóm nghề nào.</p></article>
-              <article style="--step-h:330px"><strong>02</strong><h3>Chọn ngành</h3><p>Đọc nhiệm vụ, lương, ngày làm việc của 12 nghề gợi ý.</p></article>
-              <article style="--step-h:400px"><strong>03</strong><h3>Chọn nước, chọn trường</h3><p>So chi phí, visa, làm thêm. Chốt 3 nước hợp túi tiền.</p></article>
-              <article style="--step-h:470px"><strong>04</strong><h3>Săn học bổng</h3><p>Lọc học bổng khớp hồ sơ, nhận nhắc hạn, chuẩn bị giấy tờ.</p><span class="hn-stair__spark" aria-hidden="true"></span></article>
+              <article style="--step-h:260px">${stairPanel('01')}<strong>01</strong><h3>Hiểu mình</h3><p>Trắc nghiệm Holland 36 câu. Biết mình hợp nhóm nghề nào.</p></article>
+              <article style="--step-h:330px">${stairPanel('02')}<strong>02</strong><h3>Chọn ngành</h3><p>Đọc nhiệm vụ, lương, ngày làm việc của 12 nghề gợi ý.</p></article>
+              <article style="--step-h:400px">${stairPanel('03')}<strong>03</strong><h3>Chọn nước, chọn trường</h3><p>So chi phí, visa, làm thêm. Chốt 3 nước hợp túi tiền.</p></article>
+              <article style="--step-h:470px">${stairPanel('04')}<strong>04</strong><h3>Săn học bổng</h3><p>Lọc học bổng khớp hồ sơ, nhận nhắc hạn, chuẩn bị giấy tờ.</p><span class="hn-stair__spark" aria-hidden="true">${Spark(96)}</span></article>
             </div>
           </div>
         </section>
@@ -215,7 +228,7 @@ export function HomePage(): string {
         </section>
 
         <section class="hn-contact-section">
-          <div class="hn-contact-door" aria-hidden="true"><span class="hn-door-panel"></span></div>
+          <div class="hn-contact-door" aria-hidden="true">${DoorPanel({width:420,height:520})}</div>
           <div class="hn-container hn-contact-content">
             <h2 class="hn-h1">Còn băn khoăn? Hỏi anh chị tư vấn.</h2>
             <p class="hn-body-m">Hotline · Zalo · WhatsApp · LINE · WeChat</p>
