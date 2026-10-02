@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "project": "huong-nghiep",
+  "repository": "baikavn-bot/baika-huong-nghiep-2026",
+  "branch": "main",
+  "phase": "visual-parity",
+  "revision": "R3",
+  "status": "in_progress",
+  "active_task": null,
+  "visual_source": {
+    "provider": "figma",
+    "file_key": "RxVjl3wcnyUyfms6o5DDzB"
+  },
+  "deployment": {
+    "provider": "vercel",
+    "domain": "huongnghiep.tech",
+    "status": "unverified_baseline_claim"
+  },
+  "validation": {
+    "typecheck": "pass",
+    "build": "pass",
+    "visual_regression": "not_established"
+  },
+  "latest_commit": "a296ee0a3ea58c6210f29179a0b8711838130826",
+  "updated_by": "codex",
+  "updated_at": "2026-10-02T15:21:45+07:00",
+  "notes": [
+    "Repository state overrides stale conversational assumptions.",
+    "latest_commit records the inspected base; resolve the enclosing snapshot commit through Git.",
+    "Typecheck and build exit 0; external /data/hn-data.js bundling warning retained.",
+    "Historical local QA build-unavailable statement is superseded by current successful build.",
+    "Vercel deployment and deployed revision were not verified.",
+    "State files synchronize versioned context; chats do not automatically synchronize checkouts."
+  ],
+  "git": {
+    "snapshot_scope": "observed_before_governance_commit",
+    "snapshot_commit_resolution": "git log -1 --format=%H -- .ai/state.json",
+    "working_tree": "clean_before_governance_edits",
+    "origin_url": "https://github.com/baikavn-bot/baika-huong-nghiep-2026.git",
+    "origin_main": "a296ee0a3ea58c6210f29179a0b8711838130826",
+    "remote_main_verified": "a296ee0a3ea58c6210f29179a0b8711838130826",
+    "ahead": 0,
+    "behind": 0,
+    "push_performed": false
+  },
+  "tasks": {
+    "completed": [
+      "GOV-001",
+      "VP-001"
+    ],
+    "next_task": "VP-002",
+    "next_task_started": false
+  },
+  "r3": {
+    "implementation": "present",
+    "implementation_commit": "a296ee0a3ea58c6210f29179a0b8711838130826",
+    "visual_acceptance": "in_progress",
+    "supporting_local_report": ".website-agent/qa/visual-parity-r3.md (gitignored)",
+    "outstanding": [
+      "exact approved logo assets",
+      "visual audit 1440/1024/768/390",
+      "repeatable screenshot comparison"
+    ]
+  }
+}
