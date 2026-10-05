@@ -1,0 +1,38 @@
+{
+  "file_key": "RxVjl3wcnyUyfms6o5DDzB",
+  "horizontal_node": "4:4",
+  "stacked_node": "4:7",
+  "format": "Original PNG raster assets from Figma, not redrawn SVG",
+  "slots": {
+    "desktop": [
+      187,
+      40
+    ],
+    "mobile": [
+      149.6,
+      32
+    ],
+    "footer": [
+      216,
+      173.7
+    ],
+    "login": [
+      148.8,
+      119.66
+    ]
+  },
+  "assets": [
+    {
+      "name": "mark",
+      "sha256": "de316a076c2b3bdb6315a308000170ff6f5fcbf67510ccd1dcadb7e2390926a9"
+    },
+    {
+      "name": "wordmark",
+      "sha256": "9211e347ea342781681746c3003a5b112bf53707e164b07a6bd33ff723aee167"
+    },
+    {
+      "name": "tagline",
+      "sha256": "e562ddb06d02e52770c7d6810333f29536ea71018a15d15e7fb18bd10d14ce73"
+    }
+  ]
+}

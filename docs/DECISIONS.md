@@ -46,3 +46,6 @@ Keep structural coverage (token values, icon-name membership, component/screen p
 
 ## ADR-009 — Exact local Figma icon exports
 Keep the 38 exported SVGs unchanged and render them as currentColor CSS masks in explicit sized slots. Preserve Icon names/API; no runtime remote downloads or additional dependency. This preserves Figma geometry and existing semantic colors in the Vite single-file build.
+
+## ADR-010 — Original logo imagery
+Use Figma component4:4/4:7 original PNG mark/wordmark/tagline, composed locally at verified slot dimensions. Do not redraw brand lettering or fabricate vector originals. Shared src/brand owns asset URLs; Vite inlines them into the production artifact.

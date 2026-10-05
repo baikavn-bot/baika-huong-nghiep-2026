@@ -159,10 +159,6 @@
 .hn-footer__main{display:grid;grid-template-columns:216px 1fr 1fr 1.35fr 200px;gap:56px;align-items:start}
 .hn-footer__brand{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;color:var(--hn-text-primary)}
 .hn-footer__brand>strong{font:800 22px/1.05 var(--hn-font-ui);letter-spacing:-.5px}.hn-footer__brand>small{font:600 9px/1.2 var(--hn-font-ui);letter-spacing:1.4px;color:var(--hn-text-muted)}
-.hn-footer__mark{position:relative;width:113px;height:110px;display:block}.hn-footer__mark span,.hn-footer__mark i{position:absolute;display:block;background:var(--hn-brand-primary)}
-.hn-footer__mark span{left:14px;top:8px;width:50px;height:92px;border-radius:16px 16px 12px 12px;transform:skewY(-8deg)}
-.hn-footer__mark i{right:12px;top:34px;width:39px;height:66px;border-radius:12px;background:var(--hn-brand-primary)}
-.hn-footer__mark::after{content:"";position:absolute;right:7px;top:18px;width:25px;height:19px;border-radius:7px;background:var(--hn-brand-spark);transform:skewY(-8deg)}
 .hn-footer__column{display:flex;flex-direction:column;gap:12px;font:400 14px/1.55 var(--hn-font-ui);color:var(--hn-text-secondary)}
 .hn-footer__column p{margin:0 0 2px}.hn-footer__column a{color:inherit;text-decoration:none}.hn-footer__column a:hover{color:var(--hn-text-link)}
 .hn-footer__note{margin:0;width:200px;color:var(--hn-brand-spark-text);font-size:22px;line-height:1.55}
@@ -195,3 +191,7 @@
 .hn-icon{color:var(--hn-text-link)}
 .hn-button--primary .hn-icon,.hn-button--spark .hn-icon,.hn-button:disabled .hn-icon,.hn-checkbox__box .hn-icon,.hn-toast__icon .hn-icon{color:inherit}
 .hn-journey-step__done>.hn-icon{color:var(--hn-text-on-brand)}
+
+/* Original Figma logo image composition, preserving image proportions. */
+.hn-logo{display:flex;align-items:center;flex-shrink:0}.hn-logo--horizontal{flex-direction:row}.hn-logo--stacked{flex-direction:column}.hn-logo>img{display:block;object-fit:contain;flex-shrink:0;max-width:none}
+.hn-nav-desktop>a,.hn-nav-mobile>a{display:flex;align-items:center;text-decoration:none;flex-shrink:0}

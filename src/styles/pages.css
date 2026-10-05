@@ -199,3 +199,5 @@
 
 .hn-quiz-mobile-header{display:none}
 @media(max-width:599px){.hn-quiz-mobile-header{height:56px;display:flex;align-items:center;gap:8px;padding:0 12px;background:var(--hn-bg-surface);border-bottom:1px solid var(--hn-border-default)}.hn-quiz-mobile-header>span{margin-left:auto;font-size:12px;color:var(--hn-text-secondary)}}
+
+.hn-login-logo{display:flex;justify-content:center}.hn-checkout-header .hn-logo,.hn-quiz-bar .hn-logo{display:flex}

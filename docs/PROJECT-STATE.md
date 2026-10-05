@@ -70,3 +70,6 @@ User authorized commit and push of SPEC-001 and ICON-001. This snapshot is recor
 ## ICON-002 — Icon text/link color
 Updated default icon color and explicit blue glyph overrides to --hn-text-link; filled controls preserve contrast. Base main 7dacb4c, clean before edits; previous SPEC-001/ICON-001 commit/push confirmed. Current color update is uncommitted/unpushed. Typecheck/build verification recorded below.
 - ICON-002 validation: typecheck/build PASS; production browser colors match Light rgb(0,75,214) and Dark rgb(138,176,255); primary CTA icon remains white. Existing external data-script build warning retained.
+
+## LOGO-001 — 2026-10-05
+Original Figma PNG assets (mark, wordmark, tagline) installed unchanged under src/brand/assets. Shared Logo composition replaces text/CSS approximations in desktop/mobile navigation, footer, desktop quiz, checkout and login. Nodes4:4/4:7; slot sizes verified against component/screen instances. Typecheck/build PASS; browser image loading and geometry PASS at1440/390. Targeted screenshots inspected. Raster source preserved; no invented vector conversion. No commit/push in this task; pre-existing untracked desktop.ini preserved.

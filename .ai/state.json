@@ -22,11 +22,12 @@
     "visual_regression": "not_established",
     "icon_smoke": "pass_14_routes_at_1440_and_390",
     "icon_assets": "38_of_38_load_and_byte_exact",
-    "icon_color": "pass_light_dark_browser_computed_colors"
+    "icon_color": "pass_light_dark_browser_computed_colors",
+    "logo": "pass_typecheck_build_and_1440_390_browser"
   },
-  "latest_commit": "7dacb4c1b46e2148973707af4c12e99d04fc0b55",
+  "latest_commit": "51028ed",
   "updated_by": "codex",
-  "updated_at": "2026-10-02T09:29:12.935Z",
+  "updated_at": "2026-10-05",
   "notes": [
     "Repository state overrides stale conversational assumptions.",
     "latest_commit records the inspected base; resolve the enclosing snapshot commit through Git.",
@@ -36,12 +37,13 @@
     "State files synchronize versioned context; chats do not automatically synchronize checkouts.",
     "SPEC-001 synchronized documentation only; implementation/content/visual gaps remain.",
     "User authorized committing and pushing SPEC-001 and ICON-001; this snapshot precedes that operation. Verify completion through Git.",
-    "ICON-002 changes icon foreground to text/link with contrast exceptions; no push for this color task."
+    "ICON-002 changes icon foreground to text/link with contrast exceptions; no push for this color task.",
+    "LOGO-001 integrated original Figma PNG logo; no commit/push; provider marks remain outstanding."
   ],
   "git": {
-    "snapshot_scope": "observed_before_icon_color_commit",
+    "snapshot_scope": "observed_before_logo_commit",
     "snapshot_commit_resolution": "git log -1 --format=%H -- .ai/state.json",
-    "working_tree": "dirty_icon_color_edits",
+    "working_tree": "dirty_logo_edits_plus_preexisting_desktop_ini",
     "origin_url": "https://github.com/baikavn-bot/baika-huong-nghiep-2026.git",
     "origin_main": "7dacb4c1b46e2148973707af4c12e99d04fc0b55",
     "remote_main_verified": "608a2191f711e9f1a92120c2728a342a673a8a75",
@@ -64,7 +66,6 @@
     "visual_acceptance": "in_progress",
     "supporting_local_report": ".website-agent/qa/visual-parity-r3.md (gitignored)",
     "outstanding": [
-      "exact approved logo assets",
       "visual audit 1440/1024/768/390",
       "repeatable screenshot comparison"
     ]

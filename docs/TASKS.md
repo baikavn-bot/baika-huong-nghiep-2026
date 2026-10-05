@@ -95,3 +95,6 @@ Status: IMPLEMENTED; targeted browser checks PASS.
 
 ## ICON-002 — Icon text/link color
 Status: IMPLEMENTED. Default glyph colors use semantic text/link, contrast exceptions for filled controls. No icon shape, route or dependency changes.
+
+## LOGO-001 — Original Hướng Nghiệp logo
+Status: DONE. Durable exact Figma raster assets integrated and verified. VP-005 logo asset blocker resolved for Hướng Nghiệp; provider logos and overall visual acceptance remain separate follow-ups. No commit/push.

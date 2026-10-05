@@ -1,0 +1,222 @@
+[
+  {
+    "width": 1440,
+    "route": "/",
+    "logos": [
+      {
+        "label": "Hướng Nghiệp",
+        "width": 187,
+        "height": 40,
+        "images": [
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          }
+        ]
+      },
+      {
+        "label": "Hướng Nghiệp — Một sản phẩm của BAIKA",
+        "width": 216,
+        "height": 173.6875,
+        "images": [
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "route": "/thanh-toan",
+    "logos": [
+      {
+        "label": "Hướng Nghiệp",
+        "width": 187,
+        "height": 40,
+        "images": [
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "route": "/trac-nghiem",
+    "logos": [
+      {
+        "label": "Hướng Nghiệp",
+        "width": 187,
+        "height": 40,
+        "images": [
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "route": "/dang-nhap",
+    "logos": [
+      {
+        "label": "Hướng Nghiệp — Một sản phẩm của BAIKA",
+        "width": 148.796875,
+        "height": 119.65625,
+        "images": [
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "logos": [
+      {
+        "label": "Hướng Nghiệp",
+        "width": 149.59375,
+        "height": 32,
+        "images": [
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          }
+        ]
+      },
+      {
+        "label": "Hướng Nghiệp — Một sản phẩm của BAIKA",
+        "width": 216,
+        "height": 173.6875,
+        "images": [
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "route": "/thanh-toan",
+    "logos": [
+      {
+        "label": "Hướng Nghiệp",
+        "width": 187,
+        "height": 40,
+        "images": [
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "route": "/trac-nghiem",
+    "logos": []
+  },
+  {
+    "width": 390,
+    "route": "/dang-nhap",
+    "logos": [
+      {
+        "label": "Hướng Nghiệp — Một sản phẩm của BAIKA",
+        "width": 148.796875,
+        "height": 119.65625,
+        "images": [
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          },
+          {
+            "loaded": true,
+            "visible": true,
+            "objectFit": "contain"
+          }
+        ]
+      }
+    ]
+  }
+]

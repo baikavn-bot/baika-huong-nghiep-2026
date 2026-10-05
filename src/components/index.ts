@@ -1,3 +1,4 @@
+import { Logo } from '../brand/index.js';
 import { clamp, escapeHTML } from '../lib/html.js';
 import { Icon, type IconName } from '../icons/index.js';
 
@@ -129,14 +130,14 @@ export function NavDesktop(active:string):string {
   const links=[
     ['Học bổng','#/hoc-bong'],['Du học','#/du-hoc'],['Nghề nghiệp','#/nghe-nghiep'],['Tuyển sinh 2026','#/hoc-bong'],['Trắc nghiệm','#/trac-nghiem']
   ];
-  return `<header class="hn-nav-desktop"><a href="#/" aria-label="Hướng Nghiệp">HƯỚNG NGHIỆP</a><nav>${links.map(([label,href])=>`<a class="hn-nav-link" href="${href}"${label===active?' aria-current="page"':''}>${escapeHTML(label)}</a>`).join(' &nbsp;&nbsp; ')}</nav><div class="hn-nav-actions"><a class="hn-nav-hotline" href="tel:0905247365">${Icon('phone',{size:16})}<span>0905 247 365</span></a>${Button({label:'Đăng nhập',type:'ghost',size:'s',attrs:'data-route="#/dang-nhap"'})}${Button({label:'Gói năm 199k',type:'spark',size:'s',attrs:'data-route="#/thanh-toan"'})}</div></header>`;
+  return `<header class="hn-nav-desktop"><a href="#/" aria-label="Hướng Nghiệp">${Logo()}</a><nav>${links.map(([label,href])=>`<a class="hn-nav-link" href="${href}"${label===active?' aria-current="page"':''}>${escapeHTML(label)}</a>`).join(' &nbsp;&nbsp; ')}</nav><div class="hn-nav-actions"><a class="hn-nav-hotline" href="tel:0905247365">${Icon('phone',{size:16})}<span>0905 247 365</span></a>${Button({label:'Đăng nhập',type:'ghost',size:'s',attrs:'data-route="#/dang-nhap"'})}${Button({label:'Gói năm 199k',type:'spark',size:'s',attrs:'data-route="#/thanh-toan"'})}</div></header>`;
 }
 export function NavMobile():string {
-  return `<header class="hn-nav-mobile"><a href="#/" aria-label="Hướng Nghiệp">HƯỚNG NGHIỆP</a><div><a class="hn-touch44" href="#/hoc-bong" aria-label="Tìm kiếm">${Icon('search',{size:22})}</a><a class="hn-touch44" href="#/lo-trinh" aria-label="Đã lưu">${Icon('heart',{size:22})}</a><button class="hn-touch44" type="button" aria-label="Mở menu">${Icon('menu',{size:22})}</button></div></header>`;
+  return `<header class="hn-nav-mobile"><a href="#/" aria-label="Hướng Nghiệp">${Logo('horizontal',0.8)}</a><div><a class="hn-touch44" href="#/hoc-bong" aria-label="Tìm kiếm">${Icon('search',{size:22})}</a><a class="hn-touch44" href="#/lo-trinh" aria-label="Đã lưu">${Icon('heart',{size:22})}</a><button class="hn-touch44" type="button" aria-label="Mở menu">${Icon('menu',{size:22})}</button></div></header>`;
 }
 export function Footer(updated?:string):string {
   return `<footer class="hn-footer"><div class="hn-footer__main hn-container">
-    <div class="hn-footer__brand" aria-label="Hướng Nghiệp · BAIKA"><span class="hn-footer__mark" aria-hidden="true"><span></span><i></i></span><strong>HƯỚNG NGHIỆP</strong><small>MỞ CỬA · THẤY LỐI ĐI</small></div>
+    <div class="hn-footer__brand" aria-label="Hướng Nghiệp · BAIKA">${Logo('stacked',0.9)}</div>
     <nav class="hn-footer__column" aria-label="Khám phá"><p class="hn-eyebrow">KHÁM PHÁ</p><a href="#/hoc-bong">Học bổng</a><a href="#/du-hoc">Du học 32 nước</a><a href="#/nghe-nghiep">Nghề nghiệp &amp; mức lương</a><a href="#/hoc-bong">Tuyển sinh 2026</a><a href="#/trac-nghiem">Trắc nghiệm hướng nghiệp</a></nav>
     <nav class="hn-footer__column" aria-label="Hỗ trợ"><p class="hn-eyebrow">HỖ TRỢ</p><a href="#/">Câu hỏi thường gặp</a><a href="#/thanh-toan">Gói năm 199k</a><a href="#/">Chính sách hoàn tiền</a><a href="#/">Điều khoản sử dụng</a><a href="#/">Chính sách bảo mật</a></nav>
     <div class="hn-footer__column"><p class="hn-eyebrow">LIÊN HỆ</p><span>Hotline · Zalo · WhatsApp</span><span>LINE · WeChat: 0905 247 365</span><a href="mailto:baika.vn@gmail.com">baika.vn@gmail.com</a><span>Tầng 15, 72 Lê Thánh Tôn,</span><span>Phường Sài Gòn, TP. Hồ Chí Minh</span></div>
