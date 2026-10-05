@@ -1,4 +1,5 @@
 import {
+  BenefitRow, PricingFAQRow, NavTabItem,
   Button,
   ChipFilter,
   CountryPostcard,
@@ -72,7 +73,7 @@ function pathCard(index:string,title:string,desc:string,bullets:string[],buttonL
     <div class="hn-path-card__marker">${RisingPanel(72,52)}<strong>${index}</strong></div>
     <h3 class="hn-h3">${title}</h3>
     <p class="hn-body-m">${desc}</p>
-    <ul class="hn-path-card__list">${bullets.map((x,i)=>`<li>${Icon(pathIcons[index][i],{size:18,className:'hn-path__check'})}<span>${x}</span></li>`).join('')}</ul>
+    <ul class="hn-path-card__list">${bullets.map((x,i)=>BenefitRow(x,pathIcons[index][i])).join('')}</ul>
     ${Button({label:buttonLabel,type:buttonType})}
   </article>`;
 }
@@ -83,11 +84,11 @@ function sectionEyebrow(label:string){
 
 function mobileTabBar(){
   return `<nav class="hn-mobile-tabbar" aria-label="Điều hướng chính trên mobile">
-    <a aria-current="page" href="#top">${Icon('house',{size:22,className:'hn-mobile-tabbar__icon'})}<small>Trang chủ</small></a>
-    <a href="#scholarships">${Icon('graduation-cap',{size:22,className:'hn-mobile-tabbar__icon'})}<small>Học bổng</small></a>
-    <a href="#study-abroad">${Icon('plane',{size:22,className:'hn-mobile-tabbar__icon'})}<small>Du học</small></a>
-    <a href="#careers">${Icon('briefcase-business',{size:22,className:'hn-mobile-tabbar__icon'})}<small>Nghề</small></a>
-    <a href="#/lo-trinh">${Icon('user-round',{size:22,className:'hn-mobile-tabbar__icon'})}<small>Của tôi</small></a>
+    ${NavTabItem('Trang chủ','house','#top',true)}
+    ${NavTabItem('Học bổng','graduation-cap','#scholarships',false)}
+    ${NavTabItem('Du học','plane','#study-abroad',false)}
+    ${NavTabItem('Nghề','briefcase-business','#careers',false)}
+    ${NavTabItem('Của tôi','user-round','#/lo-trinh',false)}
   </nav>`;
 }
 
@@ -218,9 +219,9 @@ export function HomePage(): string {
               <h2 class="hn-h1">Xem lướt miễn phí. Đi sâu với 199k một năm.</h2>
               <p class="hn-body-m">Không tự gia hạn. Không quảng cáo. Nếu chưa dùng tới phần trả phí, hoàn tiền trong 7 ngày.</p>
               <ul class="hn-pricing-faq">
-                <li>${Icon('credit-card',{size:18,className:'hn-pricing-faq__icon'})}<span><strong>Thanh toán bằng gì?</strong> VNPay, MoMo, thẻ nội địa và quốc tế.</span></li>
-                <li>${Icon('mail',{size:18,className:'hn-pricing-faq__icon'})}<span><strong>Tài khoản gửi về đâu?</strong> Email bạn đăng ký, trong 1 phút.</span></li>
-                <li>${Icon('smartphone',{size:18,className:'hn-pricing-faq__icon'})}<span><strong>Dùng chung được không?</strong> Một tài khoản, tối đa 2 thiết bị.</span></li>
+                ${PricingFAQRow('Thanh toán bằng gì? VNPay, MoMo, thẻ nội địa và quốc tế.','credit-card')}
+                ${PricingFAQRow('Tài khoản gửi về đâu? Email bạn đăng ký, trong 1 phút.','mail')}
+                ${PricingFAQRow('Dùng chung được không? Một tài khoản, tối đa 2 thiết bị.','smartphone')}
               </ul>
             </div>
             <div class="hn-pricing-cards"><div>${PricingTicket('free')}</div><div>${PricingTicket('year')}</div></div>

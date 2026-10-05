@@ -1,0 +1,42 @@
+/* Career detail is a viewport overlay; only the panel scrolls. Figma 183:5188. */
+.hn-career-overlay { position:fixed; inset:0; z-index:100; display:block; padding:0; overflow:hidden; }
+.hn-career-overlay>.hn-scrim { position:absolute; inset:0; background:rgba(120,120,120,.2); backdrop-filter:none; }
+.hn-career-overlay>.hn-drawer { position:absolute; right:0; top:76px; bottom:0; width:min(680px,100%); height:auto; min-height:0; max-height:none; padding:32px 48px 48px; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; scrollbar-gutter:stable; box-shadow:0 20px 40px -16px rgba(1,89,249,.22); }
+.hn-career-overlay .hn-drawer>header { gap:8px; }
+.hn-career-overlay .hn-drawer>header .hn-eyebrow { border-radius:999px; padding:4px 10px; background:var(--hn-bg-sunken); color:var(--hn-text-secondary); font:500 12px/1.45 var(--hn-font-ui); text-transform:none; letter-spacing:.024px; }
+.hn-career-overlay .hn-drawer>header .hn-stamp { padding:0; border:0; background:none; color:var(--hn-brand-spark-text); font:500 14px/1.4 var(--hn-font-mono); }
+.hn-career-overlay [data-close-overlay].hn-touch44 { border-radius:12px; background:var(--hn-bg-sunken); }
+.hn-career-overlay .hn-drawer h1 { margin:36px 0 8px; font:700 40px/1.15 var(--hn-font-ui); letter-spacing:-.6px; }
+.hn-career-overlay .hn-drawer>.hn-accent-m { margin:0 0 8px; color:var(--hn-text-muted); font:500 14px/1.4 var(--hn-font-mono); }
+.hn-career-overlay .hn-drawer>.hn-body-l { margin:0; font:400 18px/1.6 var(--hn-font-ui); }
+.hn-career-overlay .hn-drawer>section { margin-top:36px; }
+.hn-career-overlay .hn-drawer h2 { margin:0 0 14px; font:700 24px/1.25 var(--hn-font-ui); letter-spacing:-.12px; }
+.hn-career-overlay .hn-task-list { margin:0; gap:14px; }
+.hn-career-overlay .hn-task-list li { grid-template-columns:40px minmax(0,1fr); gap:14px; align-items:center; padding:0; border:0; font:400 16px/1.6 var(--hn-font-ui); }
+.hn-career-overlay .hn-task-list strong { position:relative; width:40px; height:30px; display:grid; place-items:center; font:700 14px/1.4 var(--hn-font-mono); color:var(--hn-text-link); }
+.hn-career-overlay .hn-task-list strong>img { position:absolute; inset:0; }
+.hn-career-overlay .hn-task-list strong>span { position:relative; }
+.hn-career-overlay .hn-day-timeline { padding-left:4px; }
+.hn-career-overlay .hn-real-talk { display:flex; gap:14px; margin:36px 0; padding:20px; border-radius:16px; }
+.hn-career-overlay .hn-real-talk>strong { flex:none; color:var(--hn-brand-spark-text); font:600 12px/1.3 var(--hn-font-ui); letter-spacing:.96px; text-transform:uppercase; }
+.hn-career-overlay .hn-real-talk>p { margin:0; font:400 20px/1.25 var(--hn-font-hand); }
+.hn-career-paywall { display:flex; flex-direction:column; gap:16px; border:1px solid var(--hn-border-default); border-radius:20px; padding:28px; }
+.hn-career-paywall__preview { display:grid; gap:10px; }
+.hn-career-paywall__preview i { display:block; height:12px; border-radius:6px; background:var(--hn-bg-sunken); }
+.hn-career-paywall__preview i:nth-child(1){width:96%}.hn-career-paywall__preview i:nth-child(2){width:88%}.hn-career-paywall__preview i:nth-child(3){width:100%}.hn-career-paywall__preview i:nth-child(4){width:72%}
+.hn-career-paywall__body { display:flex; align-items:center; gap:14px; }
+.hn-career-paywall__body>span { flex:0 0 48px; height:48px; display:grid; place-items:center; border-radius:14px; background:var(--hn-bg-peach); }
+.hn-career-paywall h3 { margin:0 0 4px; font:600 20px/1.35 var(--hn-font-ui); }
+.hn-career-paywall p { margin:0; font:400 14px/1.55 var(--hn-font-ui); color:var(--hn-text-secondary); }
+.hn-career-paywall__actions,.hn-career-detail-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+.hn-career-detail-actions { margin-top:36px; }
+@media(max-width:599px){
+ .hn-career-overlay>.hn-drawer { top:60px; width:100%; padding:24px 20px calc(32px + env(safe-area-inset-bottom)); }
+ .hn-career-overlay .hn-drawer h1 { font-size:32px; }
+ .hn-career-overlay .hn-drawer>.hn-body-l { font-size:16px; }
+ .hn-career-overlay .hn-real-talk { flex-direction:column; }
+}
+.hn-career-salary>div:first-child{display:flex;align-items:center;justify-content:space-between}.hn-career-salary__track{height:26px;position:relative;display:flex;align-items:center;margin:8px 0}.hn-career-salary__track::before{content:"";position:absolute;inset:10px 0;border-radius:3px;background:var(--hn-bg-sunken)}.hn-career-salary__track>img{position:relative;margin-left:84px}.hn-career-salary__ticks{display:flex;justify-content:space-between;font:500 12px/1.45 var(--hn-font-ui);color:var(--hn-text-muted)}.hn-career-salary>p{display:flex;align-items:center;gap:6px;margin:8px 0 0;font:400 14px/1.55 var(--hn-font-ui);color:var(--hn-text-secondary)}
+.hn-career-open #app>.hn-page:has(>.hn-nav-desktop),.hn-career-open #app>.hn-home:has(>.hn-nav-desktop){padding-top:76px}
+.hn-career-open .hn-nav-desktop{position:fixed;top:0;left:0;right:0}
+@media(max-width:599px){.hn-career-open #app>.hn-page:has(>.hn-nav-mobile),.hn-career-open #app>.hn-home:has(>.hn-nav-mobile){padding-top:60px}.hn-career-open .hn-nav-mobile{position:fixed;top:0;left:0;right:0}}

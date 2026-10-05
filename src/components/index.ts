@@ -1,3 +1,7 @@
+import timelinePrimary from './assets/timeline-primary.svg?url';
+import timelineSpark from './assets/timeline-spark.svg?url';
+import formPanel from './assets/form-panel.svg?url';
+const timelineDots = {primary:timelinePrimary,spark:timelineSpark};
 import { Logo } from '../brand/index.js';
 import { clamp, escapeHTML } from '../lib/html.js';
 import { Icon, type IconName } from '../icons/index.js';
@@ -29,7 +33,7 @@ export function Select(value:string, options:string[]):string {
   return `<span class="hn-select-wrap"><select class="hn-select" aria-label="Sắp xếp">${options.map(o=>`<option${o===value?' selected':''}>${escapeHTML(o)}</option>`).join('')}</select>${Icon('chevron-down',{size:18,className:'hn-select__icon'})}</span>`;
 }
 export function Checkbox(label:string,checked=false):string {
-  return `<label class="hn-checkbox"><input type="checkbox"${checked?' checked':''}/><span class="hn-checkbox__box">${Icon('check',{size:16})}</span><span>${escapeHTML(label)}</span></label>`;
+  return `<label class="hn-checkbox">${checkboxContent(label,checked)}</label>`;
 }
 
 export interface ScholarshipCardProps {
@@ -155,4 +159,49 @@ export function RisingPanel(width:number,height:number,rise=26):string {
 }
 export function Spark(size=18):string {
   const h=Math.round(size*.7142857); return `<svg class="hn-brand-shape hn-brand-shape--spark" width="${size}" height="${h}" viewBox="0 0 56 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 11.8C0 9.8 1 8.63 3 8.3L53 .5C55 .17 56 1 56 3V28.2C56 30.2 55 31.37 53 31.7L3 39.5C1 39.83 0 39 0 37V11.8Z" fill="var(--hn-brand-spark)"/></svg>`;
+}
+
+export interface TimelineDayRowProps { time:string; activity:string; position?:'middle'|'last'; tone?:'primary'|'spark'; }
+export function TimelineDayRow({time,activity,position='middle',tone='primary'}:TimelineDayRowProps):string {
+  return '<div class="hn-timeline-row" data-position="'+position+'" data-tone="'+tone+'"><strong class="hn-timeline-row__time">'+escapeHTML(time)+'</strong><img class="hn-timeline-row__dot" src="'+timelineDots[tone]+'" width="12" height="12" alt=""><span class="hn-timeline-row__activity">'+escapeHTML(activity)+'</span></div>';
+}
+export function SkillChip(label:string):string {
+  return '<span class="hn-skill-chip">'+escapeHTML(label)+'</span>';
+}
+export function BenefitRow(label:string,icon:IconName):string {
+  return '<li class="hn-benefit-row">'+Icon(icon,{size:18})+'<span>'+escapeHTML(label)+'</span></li>';
+}
+export function PricingFAQRow(answer:string,icon:IconName):string {
+  return '<li class="hn-faq-row">'+Icon(icon,{size:18})+'<span>'+escapeHTML(answer)+'</span></li>';
+}
+export function OTPDigit(index:number):string {
+  return '<input class="hn-otp-digit" inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="'+(index===0?'one-time-code':'off')+'" aria-label="Số '+(index+1)+'">';
+}
+export function CheckboxCountRow(label:string,count?:string,checked=false):string {
+  return '<label class="hn-checkbox-count-row"><span class="hn-checkbox">'+checkboxContent(label,checked)+'</span>'+(count!==undefined?'<small>'+escapeHTML(count)+'</small>':'')+'</label>';
+}
+export function NavTabItem(label:string,icon:IconName,href:string,active=false):string {
+  return '<a class="hn-nav-tab" href="'+escapeHTML(href)+'"'+(active?' aria-current="page"':'')+'>'+Icon(icon,{size:22})+'<small>'+escapeHTML(label)+'</small>'+(active?'<span class="hn-nav-tab__marker" aria-hidden="true"></span>':'')+'</a>';
+}
+export function SummaryText(title:string,subtitle:string):string {
+  return '<span class="hn-summary-text"><strong>'+escapeHTML(title)+'</strong><small>'+escapeHTML(subtitle)+'</small></span>';
+}
+export function ScholarshipInlineRow(title:string,subtitle:string,statusLabel:string,status:StatusKind,href:string):string {
+  return '<a class="hn-scholarship-inline-row" href="'+escapeHTML(href)+'">'+SummaryText(title,subtitle)+StatusBadge(statusLabel,status)+'</a>';
+}
+export function MobileActionBar(value:string,detail:string,button:ButtonProps):string {
+  return '<div class="hn-mobile-action-bar"><div class="hn-action-status"><strong>'+escapeHTML(value)+'</strong><small>'+escapeHTML(detail)+'</small></div>'+Button(button)+'</div>';
+}
+export function AccountSuccessItem(title:string,description:string):string {
+  return '<div class="hn-success-row hn-account-success-item">'+SummaryText(title,description)+'</div>';
+}
+export function JourneyTaskRow(task:string,deadline:string,done=false):string {
+  return '<label class="hn-journey-task-row"><input type="checkbox"'+(done?' checked':'')+'><span class="hn-journey-task-row__box" aria-hidden="true">'+Icon('clock',{size:16})+'</span><span class="hn-journey-task-row__task">'+escapeHTML(task)+'</span><small class="hn-journey-task-row__deadline">'+escapeHTML(deadline)+'</small></label>';
+}
+
+export function FormSectionHeading(title:string,step:'account'|'invoice'):string {
+  return '<h2 class="hn-form-heading"><span class="hn-form-heading__marker" aria-hidden="true"><img src="'+formPanel+'" width="44" height="34" alt="">'+Icon(step==='account'?'user-round':'receipt-text',{size:18})+'</span><span>'+escapeHTML(title)+'</span></h2>';
+}
+function checkboxContent(label:string,checked:boolean):string {
+  return `<input type="checkbox"${checked?' checked':''}/><span class="hn-checkbox__box">${Icon('check',{size:16})}</span><span>${escapeHTML(label)}</span>`;
 }

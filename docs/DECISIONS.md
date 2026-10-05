@@ -49,3 +49,6 @@ Keep the 38 exported SVGs unchanged and render them as currentColor CSS masks in
 
 ## ADR-010 — Original logo imagery
 Use Figma component4:4/4:7 original PNG mark/wordmark/tagline, composed locally at verified slot dimensions. Do not redraw brand lettering or fabricate vector originals. Shared src/brand owns asset URLs; Vite inlines them into the production artifact.
+
+## ADR-011 — Career detail preserves its opener
+Career detail hash route mounts a modal layer over the existing page DOM. Closing restores the same page input state, scroll and focus; a direct detail URL uses the careers page as its background. Only the modal panel scrolls while open. This implements the approved interaction without changing the hash routing scheme.

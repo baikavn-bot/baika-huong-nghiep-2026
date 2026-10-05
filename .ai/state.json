@@ -23,9 +23,26 @@
     "icon_smoke": "pass_14_routes_at_1440_and_390",
     "icon_assets": "38_of_38_load_and_byte_exact",
     "icon_color": "pass_light_dark_browser_computed_colors",
-    "logo": "pass_typecheck_build_and_1440_390_browser"
+    "logo": "pass_typecheck_build_and_1440_390_browser",
+    "component_sync": {
+      "implementation": "complete_targeted_ui_contracts",
+      "typecheck": "pass",
+      "build": "pass",
+      "dom_interactions": "pass",
+      "pixel_review": "pending_browser_screenshot_timeout",
+      "report": "docs/COMPONENT-SOURCE-SYNC.md"
+    },
+    "career_overlay": {
+      "status": "pass_typecheck_build_and_browser",
+      "figma_node": "183:4663",
+      "desktop": "680px_panel_top76_scroll_independent",
+      "mobile": "390px_top60_no_horizontal_overflow",
+      "restoration": "search_scroll_focus_preserved",
+      "direct_link_close": "pass",
+      "screenshot": "inspected"
+    }
   },
-  "latest_commit": "51028ed",
+  "latest_commit": "1fa9b5d840853b41e26ac2c2452c94c28c882aa7",
   "updated_by": "codex",
   "updated_at": "2026-10-05",
   "notes": [
@@ -38,14 +55,16 @@
     "SPEC-001 synchronized documentation only; implementation/content/visual gaps remain.",
     "User authorized committing and pushing SPEC-001 and ICON-001; this snapshot precedes that operation. Verify completion through Git.",
     "ICON-002 changes icon foreground to text/link with contrast exceptions; no push for this color task.",
-    "LOGO-001 integrated original Figma PNG logo; no commit/push; provider marks remain outstanding."
+    "LOGO-001 integrated original Figma PNG logo; no commit/push; provider marks remain outstanding.",
+    "COMPONENT-SYNC-001 preserves runtime behavior; no commit/push. Screenshot capture blocked; no overall pixel-parity claim.",
+    "CAREER-OVERLAY-001 implemented; no commit/push; prior component-sync changes preserved."
   ],
   "git": {
-    "snapshot_scope": "observed_before_logo_commit",
+    "snapshot_scope": "observed_after_component_sync_before_commit",
     "snapshot_commit_resolution": "git log -1 --format=%H -- .ai/state.json",
-    "working_tree": "dirty_logo_edits_plus_preexisting_desktop_ini",
+    "working_tree": "dirty_component_sync_plus_preexisting_desktop_ini",
     "origin_url": "https://github.com/baikavn-bot/baika-huong-nghiep-2026.git",
-    "origin_main": "7dacb4c1b46e2148973707af4c12e99d04fc0b55",
+    "origin_main": "1fa9b5d840853b41e26ac2c2452c94c28c882aa7",
     "remote_main_verified": "608a2191f711e9f1a92120c2728a342a673a8a75",
     "ahead": 0,
     "behind": 0,

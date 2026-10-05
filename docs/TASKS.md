@@ -98,3 +98,9 @@ Status: IMPLEMENTED. Default glyph colors use semantic text/link, contrast excep
 
 ## LOGO-001 — Original Hướng Nghiệp logo
 Status: DONE. Durable exact Figma raster assets integrated and verified. VP-005 logo asset blocker resolved for Hướng Nghiệp; provider logos and overall visual acceptance remain separate follow-ups. No commit/push.
+
+## COMPONENT-SYNC-001 — Figma component contracts → source
+Status: VERIFY. Implementation complete; typecheck/build and targeted DOM/interaction checks PASS. Screenshot/pixel review pending due browser capture timeout. See COMPONENT-SOURCE-SYNC.md for exact coverage. Active verification task COMPONENT-SYNC-001; VP-002/003/004 remain broader screen audits.
+
+## CAREER-OVERLAY-001 — Career detail overlay
+Status: DONE. Preserved background page with independently scrollable career panel; X/Escape/scrim close and direct-link fallback. Desktop/mobile browser behavior and screenshot checked. No commit/push. Broader visual audits remain separate.

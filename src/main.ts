@@ -4,4 +4,6 @@ import './styles/foundations.css';
 import './styles/components.css';
 import './styles/home.css';
 import './styles/pages.css';
+import './styles/component-sync.css';
+import './styles/career-overlay.css';
 import './runtime.js';
