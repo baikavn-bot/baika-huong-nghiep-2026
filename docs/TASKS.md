@@ -104,3 +104,7 @@ Status: VERIFY. Implementation complete; typecheck/build and targeted DOM/intera
 
 ## CAREER-OVERLAY-001 — Career detail overlay
 Status: DONE. Preserved background page with independently scrollable career panel; X/Escape/scrim close and direct-link fallback. Desktop/mobile browser behavior and screenshot checked. No commit/push. Broader visual audits remain separate.
+
+
+## NAV-SPACING-001 — 2026-10-05
+Status: DONE with mobile spacing preference pending. Navigation and shared page gutter implementation verified. No commit/push for this task.

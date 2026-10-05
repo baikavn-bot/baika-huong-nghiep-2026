@@ -40,9 +40,16 @@
       "restoration": "search_scroll_focus_preserved",
       "direct_link_close": "pass",
       "screenshot": "inspected"
+    },
+    "navigation_spacing": {
+      "figma_node": "9:45",
+      "typecheck": "pass",
+      "build": "pass",
+      "browser": "pass_targeted_1440_1024_768_390",
+      "horizontal_gutter": "space/80_from_600px_mobile20_pending_preference"
     }
   },
-  "latest_commit": "1fa9b5d840853b41e26ac2c2452c94c28c882aa7",
+  "latest_commit": "948feaf039752b708ee3e78a9a809663fc6bb0a5",
   "updated_by": "codex",
   "updated_at": "2026-10-05",
   "notes": [
@@ -57,14 +64,15 @@
     "ICON-002 changes icon foreground to text/link with contrast exceptions; no push for this color task.",
     "LOGO-001 integrated original Figma PNG logo; no commit/push; provider marks remain outstanding.",
     "COMPONENT-SYNC-001 preserves runtime behavior; no commit/push. Screenshot capture blocked; no overall pixel-parity claim.",
-    "CAREER-OVERLAY-001 implemented; no commit/push; prior component-sync changes preserved."
+    "CAREER-OVERLAY-001 implemented; no commit/push; prior component-sync changes preserved.",
+    "NAV-SPACING-001 implements Figma navigation and 80px page gutters; mobile20 retained pending user preference; no commit/push."
   ],
   "git": {
-    "snapshot_scope": "observed_after_component_sync_before_commit",
+    "snapshot_scope": "observed_after_navigation_spacing_before_commit",
     "snapshot_commit_resolution": "git log -1 --format=%H -- .ai/state.json",
-    "working_tree": "dirty_component_sync_plus_preexisting_desktop_ini",
+    "working_tree": "dirty_navigation_spacing_plus_preexisting_desktop_ini",
     "origin_url": "https://github.com/baikavn-bot/baika-huong-nghiep-2026.git",
-    "origin_main": "1fa9b5d840853b41e26ac2c2452c94c28c882aa7",
+    "origin_main": "948feaf039752b708ee3e78a9a809663fc6bb0a5",
     "remote_main_verified": "608a2191f711e9f1a92120c2728a342a673a8a75",
     "ahead": 0,
     "behind": 0,

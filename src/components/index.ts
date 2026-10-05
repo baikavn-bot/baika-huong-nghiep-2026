@@ -134,7 +134,7 @@ export function NavDesktop(active:string):string {
   const links=[
     ['Học bổng','#/hoc-bong'],['Du học','#/du-hoc'],['Nghề nghiệp','#/nghe-nghiep'],['Tuyển sinh 2026','#/hoc-bong'],['Trắc nghiệm','#/trac-nghiem']
   ];
-  return `<header class="hn-nav-desktop"><a href="#/" aria-label="Hướng Nghiệp">${Logo()}</a><nav>${links.map(([label,href])=>`<a class="hn-nav-link" href="${href}"${label===active?' aria-current="page"':''}>${escapeHTML(label)}</a>`).join(' &nbsp;&nbsp; ')}</nav><div class="hn-nav-actions"><a class="hn-nav-hotline" href="tel:0905247365">${Icon('phone',{size:16})}<span>0905 247 365</span></a>${Button({label:'Đăng nhập',type:'ghost',size:'s',attrs:'data-route="#/dang-nhap"'})}${Button({label:'Gói năm 199k',type:'spark',size:'s',attrs:'data-route="#/thanh-toan"'})}</div></header>`;
+  return `<header class="hn-nav-desktop"><a href="#/" aria-label="Hướng Nghiệp">${Logo()}</a><div class="hn-nav-right"><nav aria-label="Điều hướng chính">${links.map(([label,href])=>`<a class="hn-nav-link" href="${href}"${label===active?' aria-current="page"':''}>${escapeHTML(label)}</a>`).join('')}</nav><div class="hn-nav-actions">${Button({label:'Đăng nhập',type:'primary',size:'s',attrs:'data-route="#/dang-nhap"'})}</div></div></header>`;
 }
 export function NavMobile():string {
   return `<header class="hn-nav-mobile"><a href="#/" aria-label="Hướng Nghiệp">${Logo('horizontal',0.8)}</a><div><a class="hn-touch44" href="#/hoc-bong" aria-label="Tìm kiếm">${Icon('search',{size:22})}</a><a class="hn-touch44" href="#/lo-trinh" aria-label="Đã lưu">${Icon('heart',{size:22})}</a><button class="hn-touch44" type="button" aria-label="Mở menu">${Icon('menu',{size:22})}</button></div></header>`;

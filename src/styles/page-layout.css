@@ -1,0 +1,27 @@
+/* Shared page gutters and Nav/Desktop — Figma 9:45. */
+.hn-nav-right { display:flex; align-items:center; gap:var(--hn-space-40); }
+.hn-nav-desktop nav { display:flex; align-items:center; gap:var(--hn-space-32); }
+.hn-nav-link { display:flex; flex-direction:column; align-items:center; gap:4px; white-space:nowrap; color:var(--hn-text-secondary); }
+.hn-nav-link::after { content:""; position:static; width:18px; height:4px; border-radius:2px; background:transparent; transform:none; }
+.hn-nav-link[aria-current="page"] { color:var(--hn-text-primary); }
+.hn-nav-link[aria-current="page"]::after { position:static; border-radius:2px; transform:none; background:var(--hn-brand-spark); }
+@media (min-width:600px) {
+  .hn-container { width:calc(100% - 2 * var(--hn-space-80)); max-width:none; }
+  .hn-nav-desktop,.hn-checkout-header,.hn-quiz-bar { padding-inline:var(--hn-space-80); }
+  .hn-checkout-layout { width:calc(100% - 2 * var(--hn-space-80)); }
+}
+@media (min-width:1024px) {
+  .hn-checkout-layout { grid-template-columns:minmax(0,1fr) minmax(280px,420px); }
+  .hn-order-summary { width:100%; }
+  .hn-order-summary .hn-button { max-width:100%; }
+  .hn-quiz-number { left:var(--hn-space-80); }
+  .hn-quiz-question { left:auto; right:var(--hn-space-80); width:min(620px,calc(100% - 560px)); }
+  .hn-result-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .hn-score-chart { width:100%; gap:clamp(4px,1.1vw,16px); }
+  .hn-score-col { flex:1; min-width:0; }
+}
+@media (min-width:600px) and (max-width:1199px) {
+  .hn-nav-right { gap:16px; }
+  .hn-nav-desktop nav { gap:12px; }
+  .hn-nav-desktop { flex-wrap:wrap; gap:12px; padding-block:12px; }
+}
